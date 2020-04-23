@@ -198,7 +198,7 @@
         </xsl:choose>
         <!-- IMG_FILENAME -->
         <xsl:text>"</xsl:text>
-        <xsl:value-of select="illustration[1]/@href"/>
+        <xsl:value-of select="tokenize(illustration[1]/@href,'/')"/>
         <xsl:text>",</xsl:text>
         <!-- IMG_DESCRIPTION - Empty for now.  --> 
         <xsl:text>"</xsl:text>

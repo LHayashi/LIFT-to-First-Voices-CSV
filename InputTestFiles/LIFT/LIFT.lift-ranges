@@ -179,15 +179,6 @@
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
-<range-element id="adjective" guid="9ce36ec0-b10f-4036-a616-9458fd49f2d7" parent="kinship term noun">
-<label>
-<form lang="en"><text>adjective</text></form>
-</label>
-<abbrev>
-<form lang="en"><text>adj</text></form>
-</abbrev>
-<trait name="catalog-source-id" value=""/>
-</range-element>
 <range-element id="interjection" guid="a9de932a-65b7-4748-80c2-86228f45491f">
 <label>
 <form lang="en"><text>interjection</text></form>
@@ -527,6 +518,15 @@
 </label>
 <abbrev>
 <form lang="en"><text>CL-INIT</text></form>
+</abbrev>
+<trait name="catalog-source-id" value=""/>
+</range-element>
+<range-element id="adjective" guid="9ce36ec0-b10f-4036-a616-9458fd49f2d7">
+<label>
+<form lang="en"><text>adjective</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>adj</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -31293,15 +31293,6 @@
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
-<range-element id="adjective" guid="9ce36ec0-b10f-4036-a616-9458fd49f2d7" parent="kinship term noun">
-<label>
-<form lang="en"><text>adjective</text></form>
-</label>
-<abbrev>
-<form lang="en"><text>adj</text></form>
-</abbrev>
-<trait name="catalog-source-id" value=""/>
-</range-element>
 <range-element id="interjection" guid="a9de932a-65b7-4748-80c2-86228f45491f">
 <label>
 <form lang="en"><text>interjection</text></form>
@@ -31641,6 +31632,15 @@
 </label>
 <abbrev>
 <form lang="en"><text>CL-INIT</text></form>
+</abbrev>
+<trait name="catalog-source-id" value=""/>
+</range-element>
+<range-element id="adjective" guid="9ce36ec0-b10f-4036-a616-9458fd49f2d7">
+<label>
+<form lang="en"><text>adjective</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>adj</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
