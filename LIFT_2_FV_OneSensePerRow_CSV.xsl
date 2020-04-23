@@ -61,38 +61,39 @@
     <xsl:output method="text" encoding="UTF-8" omit-xml-declaration="yes" indent="no"/>
     <!--Need to know the writing systems that are in use. Perhaps create parameters for these-->
     <xsl:template match="lift">
-        <xsl:text>"WORD","PART_OF_SPEECH","PRONUNCIATION","DEFINITION","LITERAL_TRANSLATION","RELATED_PHRASE","RELATED_PHRASE_DEFINITION","RELATED_PHRASE_LITERAL_TRANSLATION","RELATED_PHRASE_AUDIO_TITLE","RELATED_PHRASE_AUDIO_DESCRIPTION","RELATED_PHRASE_AUDIO_FILENAME","RELATED_PHRASE_AUDIO_SHARED_WITH_OTHER_DIALECTS","RELATED_PHRASE_AUDIO_CHILD_FOCUSED","RELATED_PHRASE_AUDIO_SOURCE","RELATED_PHRASE_AUDIO_RECORDER","CATEGORIES","CULTURAL_NOTE","CULTURAL_NOTE_2","REFERENCE","INCLUDE_IN_GAMES","CHILD_FRIENDLY","AUDIO_TITLE","AUDIO_DESCRIPTION","AUDIO_FILENAME","AUDIO_SHARED_WITH_OTHER_DIALECTS","AUDIO_CHILD_FOCUSED","AUDIO_SOURCE","AUDIO_RECORDER","IMG_TITLE","IMG_FILENAME","IMG_DESCRIPTION","IMG_SHARED_WITH_OTHER_DIALECTS","IMG_CHILD_FOCUSED","IMG_SOURCE","IMG_RECORDER","VIDEO_TITLE","VIDEO_FILENAME","VIDEO_DESCRIPTION","VIDEO_SHARED_WITH_OTHER_DIALECTS","VIDEO_CHILD_FOCUSED","VIDEO_SOURCE","VIDEO_RECORDER","USERNAME","CONTRIBUTOR"&#13;</xsl:text>
+        <xsl:text>"WORD","PART_OF_SPEECH","PRONUNCIATION","DEFINITION","LITERAL_TRANSLATION","RELATED_PHRASE","RELATED_PHRASE_DEFINITION","RELATED_PHRASE_LITERAL_TRANSLATION","RELATED_PHRASE_AUDIO_TITLE","RELATED_PHRASE_AUDIO_FILENAME","RELATED_PHRASE_AUDIO_SOURCE","CATEGORIES","CULTURAL_NOTE","REFERENCE","INCLUDE_IN_GAMES","CHILD_FRIENDLY","AUDIO_TITLE","AUDIO_DESCRIPTION","AUDIO_FILENAME","AUDIO_SHARED_WITH_OTHER_DIALECTS","AUDIO_CHILD_FOCUSED","AUDIO_SOURCE","AUDIO_RECORDER","IMG_TITLE","IMG_FILENAME","IMG_DESCRIPTION","IMG_SOURCE","USERNAME","CONTRIBUTOR"&#13;</xsl:text>
         <xsl:apply-templates select="entry/sense"/>
     </xsl:template>
     <!--Instead of matching against entry, we match against sense for better use of the First Voices presentation to the user. 
         Thus no entries in FV will have multiple senses and instead there will be some entries in FV that are homographs.-->
     <xsl:template match="entry/sense">
         <!--Here we capture the lexeme form and exclude the audio-writing-system data that stores the sound files link.-->
-        <!--\WORD River  /lift/entry/lexical-unit/form/text-->
+        <!--WORD River  /lift/entry/lexical-unit/form/text-->
         <!--Store the form in variable vWord for use in later fields-->
         <xsl:variable name="vWord">
             <xsl:value-of select="../lexical-unit/form[@lang[not(contains(.,'audio'))]]/text"/>
         </xsl:variable>
+        <!--WORD River  /lift/entry/lexical-unit/form/text. Don't use the form from audio-writing-system -->
         <xsl:text>"</xsl:text>
-        <xsl:value-of select="../lexical-unit/form[@lang[not(contains(.,'audio'))]]/text"/>
+        <xsl:value-of select="../lexical-unit/form[@lang[not(contains(.,'x-audio'))]]/text"/>
         <xsl:text>",</xsl:text>
-        <!--\PART_OF_SPEECH noun /lift/entry/sense/grammatical-info[1]/@value-->
+        <!--PART_OF_SPEECH noun /lift/entry/sense/grammatical-info[1]/@value-->
         <xsl:text>"</xsl:text>
         <xsl:value-of select="grammatical-info/@value"/>
         <xsl:text>",</xsl:text>
-        <!--\PRONUNCIATION ɹɪvəɹ /lift/entry[1]/pronunciation[1]/form[1]/text[1]-->
+        <!--PRONUNCIATION ɹɪvəɹ /lift/entry[1]/pronunciation[1]/form[1]/text[1]-->
         <xsl:text>"</xsl:text>
         <xsl:value-of select="../pronunciation[1]/form[1]/text[1]"/>
         <xsl:text>",</xsl:text>
-        <!--\DEFINITION A large and often winding stream which drains a land mass, carrying water down from higher areas to a lower point, ending at an ocean or in an inland sea. /lift/entry[1]/sense[1]/definition[1]/form[1]/text[1]-->
+        <!--DEFINITION A large and often winding stream which drains a land mass, carrying water down from higher areas to a lower point, ending at an ocean or in an inland sea. /lift/entry[1]/sense[1]/definition[1]/form[1]/text[1]-->
         <xsl:text>"</xsl:text>
         <xsl:value-of select="definition/form/text"/>
         <xsl:text>",</xsl:text>
-        <!-- \LITERAL_TRANSLATION /lift/entry[99]/field[@type='literal-meaning]/form[1]/text[1]'-->
+        <!-- LITERAL_TRANSLATION /lift/entry[99]/field[@type='literal-meaning]/form[1]/text[1]'-->
         <xsl:text>"</xsl:text>
         <xsl:value-of select="../field[@type='literal-meaning']/form[1]/text[1]"/>
         <xsl:text>",</xsl:text>
-        <!-- \RELATED_PHRASE sense[1]/example[1]/form[1]/text[1] - Note that FV does not support multiple example sentences so we only export the first example on a sense-->
+        <!-- RELATED_PHRASE or what FieldWorks calls EXAMPLE SENTENCE: sense[1]/example[1]/form[1]/text[1] - Note that FV does not support multiple example sentences so we only export the first example on a sense-->
         <xsl:text>"</xsl:text>
         <xsl:value-of select="example[1]/form[1]/text[1]/."/>
         <xsl:text>",</xsl:text>
@@ -100,7 +101,7 @@
         <xsl:text>"</xsl:text>
         <xsl:value-of select="example[1]/translation[@type='Free translation']/form[1]/text[1]/."/>
         <xsl:text>",</xsl:text>
-        <!-- RELATED_PHRASE_LITERAL_TRANSLATION (same as Literalt translation on an example sentence) -->
+        <!-- RELATED_PHRASE_LITERAL_TRANSLATION (same as Literal translation on an example sentence) -->
         <xsl:text>"</xsl:text>
         <xsl:value-of select="example[1]/translation[@type='Literal translation']/form[1]/text[1]/."/>
         <xsl:text>",</xsl:text>
@@ -118,7 +119,6 @@
                 <xsl:text>",</xsl:text>
             </xsl:otherwise>
         </xsl:choose>
-
         <!-- RELATED_PHRASE_AUDIO_FILENAME-->
         <xsl:text>"</xsl:text>
         <xsl:value-of select="example[1]/form[@lang[ends-with(., 'x-audio')]]/text[1]/."/>
@@ -127,13 +127,93 @@
         <xsl:text>"</xsl:text>
         <xsl:value-of select="example[1]/note[@type='reference']/form/text/."/>
         <xsl:text>",</xsl:text>
-        <!--"RELATED_PHRASE_AUDIO_RECORDER"
-        "CATEGORIES"
-        "CULTURAL_NOTE"
-        "REFERENCE"
-        "INCLUDE_IN_GAMES"
-        "CHILD_FRIENDLY"
-        "AUDIO_TITLE","AUDIO_DESCRIPTION","AUDIO_FILENAME","AUDIO_SHARED_WITH_OTHER_DIALECTS","AUDIO_CHILD_FOCUSED","AUDIO_SOURCE","AUDIO_RECORDER","IMG_TITLE","IMG_FILENAME","IMG_DESCRIPTION","IMG_SHARED_WITH_OTHER_DIALECTS","IMG_CHILD_FOCUSED","IMG_SOURCE","IMG_RECORDER","VIDEO_TITLE","VIDEO_FILENAME","VIDEO_DESCRIPTION","VIDEO_SHARED_WITH_OTHER_DIALECTS","VIDEO_CHILD_FOCUSED","VIDEO_SOURCE","VIDEO_RECORDER","USERNAME","CONTRIBUTOR"-->
+        <!-- ____________________ PREVIOUS ELEMENTS ARE FOR AUDIO FILE FOR EXAMPLE SENTENCE ____________________ -->
+        <!--"CATEGORIES" FV uses a specified set of categories. FieldWorks users should create a custom field called FV_Categories on each sense, along with a FieldWorks custom list called FV_Categories. For now empty.-->
+        <xsl:text>"</xsl:text>
+        <xsl:text>",</xsl:text>
+        <!-- "CULTURAL_NOTE" Sm'algyax project uses this to refer to some anthropological categorization. For now empty.-->
+        <xsl:text>"</xsl:text>
+        <xsl:text>",</xsl:text>
+        <!-- "REFERENCE" -->
+        <xsl:text>"</xsl:text>
+        <xsl:value-of select="../note[@type='bibliography']/form/text/."/>
+        <xsl:text>",</xsl:text>
+        <!-- "INCLUDE_IN_GAMES" For now, indicated as yes with 1. Eventually need to treat this as a publication type or use a custom field FV_Games-->
+        <xsl:text>"</xsl:text>
+        <xsl:text>1</xsl:text>
+        <xsl:text>",</xsl:text>
+        <!--"CHILD_FRIENDLY" Not used for now.-->
+        <xsl:text>"</xsl:text>
+        <xsl:text>",</xsl:text>
+        <!-- ____________________ NEXT ELEMENTS ARE FOR AUDIO FILE FOR ENTRY ____________________ -->
+        <!--This section is for entries that have their headwords recording using the audio-writing-system method in FieldWorks -->
+        <!--"AUDIO_TITLE" Required by FV, Web-friendly title for the audio. Generated only if there is an audio file, otherwise empty ""   -->
+        <xsl:choose>
+            <xsl:when test="../lexical-unit/form[@lang[ends-with(., 'x-audio')]]/text[1]/.">
+                <xsl:text>"</xsl:text>
+                <xsl:text>Person saying: </xsl:text>
+                <xsl:value-of select="$vWord"/>
+                <xsl:text>",</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:text>"</xsl:text>
+                <xsl:text>",</xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
+        <!-- "AUDIO_DESCRIPTION" Not currently used. Empty for now. -->
+        <xsl:text>"</xsl:text>
+        <xsl:text>",</xsl:text>
+        <!-- "AUDIO_FILENAME" -->
+        <xsl:text>"</xsl:text>
+        <xsl:value-of select="../lexical-unit/form[@lang[ends-with(., 'x-audio')]]/text[1]/."/>
+        <xsl:text>",</xsl:text>
+        <!-- ""AUDIO_SHARED_WITH_OTHER_DIALECTS"" Not used for now. -->
+        <xsl:text>"</xsl:text>
+        <xsl:text>",</xsl:text>
+        <!-- "AUDIO_CHILD_FOCUSED" Not used for now. -->
+        <xsl:text>"</xsl:text>
+        <xsl:text>",</xsl:text>
+        <!-- "AUDIO_SOURCE" Not used for now. -->
+        <xsl:text>"</xsl:text>
+        <xsl:text>",</xsl:text>
+        <!-- "AUDIO_RECORDER", Not user for now -->
+        <xsl:text>"</xsl:text>
+        <xsl:text>",</xsl:text>
+        <!-- ____________________ PREVIOUS ELEMENTS ARE FOR AUDIO FILE FOR ENTRY ____________________ -->
+        
+        <!-- ____________________ FOLLOWING ELEMENTS ARE FOR FIRST IMAGE FILE FOR THIS SENSE ____________________ -->
+        <!-- IMG_TITLE - For image found on a sense. These are shown at the entry level in FV -->
+        <xsl:choose>
+            <!--Test to see if the sense has an illustration. If so, generate a title, otherwise, generate empty.-->
+            <xsl:when test="illustration">
+                <xsl:text>"</xsl:text>
+                <xsl:text>Image depicting: </xsl:text>
+                <xsl:value-of select="$vWord"/>
+                <xsl:text>",</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:text>"</xsl:text>
+                <xsl:text>",</xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
+        <!-- IMG_FILENAME -->
+        <xsl:text>"</xsl:text>
+        <xsl:value-of select="illustration[1]/@href"/>
+        <xsl:text>",</xsl:text>
+        <!-- IMG_DESCRIPTION - Empty for now.  --> 
+        <xsl:text>"</xsl:text>
+        <xsl:text>",</xsl:text>
+        <!-- IMG_SOURCE - FieldWorks Illustration label is mapped to this field-->
+        <xsl:text>"</xsl:text>
+        <xsl:value-of select="illustration[1]/label/form/text/."/>
+        <xsl:text>",</xsl:text>
+        <!-- ____________________ PREVIOUS ELEMENTS ARE FOR FIRST IMAGE FILE FOR THIS SENSE ____________________ -->
+        <!--USERNAME Empty for now.-->
+        <xsl:text>"</xsl:text>
+        <xsl:text>",</xsl:text>
+        <!--CONTRIBUTOR Empty for now.-->
+        <xsl:text>"</xsl:text>
+        <xsl:text>",</xsl:text>
         <xsl:text>&#13;</xsl:text>
     </xsl:template>
 

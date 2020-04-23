@@ -32517,6 +32517,45 @@
 </range-element>
 </range>
 <!-- This is a custom list or other list which is not output by default but if referenced in the data of a field.  -->
+<range id="dialect-labels" guid="a3a8188b-ab00-4a43-b925-a1eed62287ba">
+<range-element id="Kitkatla" guid="8f76df73-9be9-4a26-ad0c-e11338e21c93">
+<label>
+<form lang="en"><text>Kitkatla</text></form>
+<form lang="tsi"><text>Gitxaała</text></form>
+</label>
+<abbrev>
+<form lang="tsi"><text>Gitxaała</text></form>
+</abbrev>
+<description>
+<form lang="en"><text>Pronunciation specific to Gitxaała</text></form>
+</description>
+</range-element>
+<range-element id="Hartley Bay" guid="f4e679bb-c985-4649-a7f2-befa1f8e1539">
+<label>
+<form lang="en"><text>Hartley Bay</text></form>
+<form lang="tsi"><text>Txałgiiw</text></form>
+</label>
+<abbrev>
+<form lang="tsi"><text>Txałgiiw</text></form>
+</abbrev>
+<description>
+<form lang="tsi"><text>Pronunciation specific to Hartley Bay speakers</text></form>
+</description>
+</range-element>
+<range-element id="Port Simpson" guid="d97af090-b355-4fab-bcf0-54d56156bf3f">
+<label>
+<form lang="en"><text>Port Simpson</text></form>
+<form lang="tsi"><text>La̱x Kw'alaams</text></form>
+</label>
+<abbrev>
+<form lang="tsi"><text>La̱x Kw'alaams</text></form>
+</abbrev>
+<description>
+<form lang="tsi"><text>Pronunciation specific to La̱x Kw'alaams</text></form>
+</description>
+</range-element>
+</range>
+<!-- This is a custom list or other list which is not output by default but if referenced in the data of a field.  -->
 <range id="domain-type" guid="4a107b18-09db-44b7-97ad-61cb7f5c827b">
 <range-element id="anatomy" guid="370bff1f-77c9-4fed-825d-e7a8c0559ec3">
 <label>
@@ -33268,45 +33307,6 @@
 <abbrev>
 <form lang="en"><text>neologism</text></form>
 </abbrev>
-</range-element>
-</range>
-<!-- This is a custom list or other list which is not output by default but if referenced in the data of a field.  -->
-<range id="dialect-labels" guid="a3a8188b-ab00-4a43-b925-a1eed62287ba">
-<range-element id="Kitkatla" guid="8f76df73-9be9-4a26-ad0c-e11338e21c93">
-<label>
-<form lang="en"><text>Kitkatla</text></form>
-<form lang="tsi"><text>Gitxaała</text></form>
-</label>
-<abbrev>
-<form lang="tsi"><text>Gitxaała</text></form>
-</abbrev>
-<description>
-<form lang="en"><text>Pronunciation specific to Gitxaała</text></form>
-</description>
-</range-element>
-<range-element id="Hartley Bay" guid="f4e679bb-c985-4649-a7f2-befa1f8e1539">
-<label>
-<form lang="en"><text>Hartley Bay</text></form>
-<form lang="tsi"><text>Txałgiiw</text></form>
-</label>
-<abbrev>
-<form lang="tsi"><text>Txałgiiw</text></form>
-</abbrev>
-<description>
-<form lang="tsi"><text>Pronunciation specific to Hartley Bay speakers</text></form>
-</description>
-</range-element>
-<range-element id="Port Simpson" guid="d97af090-b355-4fab-bcf0-54d56156bf3f">
-<label>
-<form lang="en"><text>Port Simpson</text></form>
-<form lang="tsi"><text>La̱x Kw'alaams</text></form>
-</label>
-<abbrev>
-<form lang="tsi"><text>La̱x Kw'alaams</text></form>
-</abbrev>
-<description>
-<form lang="tsi"><text>Pronunciation specific to La̱x Kw'alaams</text></form>
-</description>
 </range-element>
 </range>
 </lift-ranges>
