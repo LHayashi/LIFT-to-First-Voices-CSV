@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ldml>
+	<identity>
+		<version number="" />
+		<generation date="2020-04-09T07:07:35Z" />
+		<language type="tsi" />
+		<special xmlns:sil="urn://www.sil.org/ldml/0.1">
+			<sil:identity windowsLCID="4105" />
+		</special>
+	</identity>
+	<characters>
+		<exemplarCharacters>[']</exemplarCharacters>
+	</characters>
+	<layout>
+		<orientation>
+			<characterOrder>left-to-right</characterOrder>
+		</orientation>
+	</layout>
+	<collations>
+		<defaultCollation>standard</defaultCollation>
+		<collation type="standard">
+			<cr><![CDATA[& '' < a <<< A < a̱  < b <<< B < c <<< C < d <<< D < dz <<< Dz < e <<< E < f <<< F < g <<< G < g̱< gw <<< Gw < gy <<< Gy < h <<< H < i <<< I < k <<< K < k'' <<< K'' < ḵ <<< Ḵ < ḵ' <<< Ḵ' < kw <<< Kw < ky <<< Ky < kw'' <<< K''w < ky'' <<< K''y < l <<< L < ''l <<< ''L < ł <<< ɫ <<< Ł < m <<< M < ''m <<< ''M < n <<< N < ''n <<< ''N < o <<< O < p <<< P < p'' <<< P'' < s <<< S < t <<< T < t'' <<< T'' < ts <<< Ts < ts'' <<< Ts'' < u <<< U <ü <<<Ü < w <<< W < ''w <<< ''W < x <<< X < y <<< Y < ''y <<< ''Y]]></cr>
+		</collation>
+	</collations>
+	<special xmlns:sil="urn://www.sil.org/ldml/0.1">
+		<sil:external-resources>
+			<sil:font name="Charis SIL" types="default" />
+			<sil:font name="Unicode BMP Fallback SIL" types="default" />
+		</sil:external-resources>
+	</special>
+</ldml>

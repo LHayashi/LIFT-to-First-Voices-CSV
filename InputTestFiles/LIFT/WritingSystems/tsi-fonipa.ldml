@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ldml>
+	<identity>
+		<version number="" />
+		<generation date="2020-03-13T23:30:42Z" />
+		<language type="tsi" />
+		<variant type="fonipa" />
+		<special xmlns:sil="urn://www.sil.org/ldml/0.1">
+			<sil:identity windowsLCID="4105" />
+		</special>
+	</identity>
+	<characters>
+		<exemplarCharacters>['\-\u00B2\u00B3\u00B9\u0F0B\u0F0C\u200C\u200D\u2070\u2074-\u2079\uA78B\uA78C]</exemplarCharacters>
+		<exemplarCharacters type="punctuation">[]</exemplarCharacters>
+	</characters>
+	<layout>
+		<orientation>
+			<characterOrder>left-to-right</characterOrder>
+		</orientation>
+	</layout>
+	<collations>
+		<defaultCollation>standard</defaultCollation>
+		<collation type="standard">
+			<cr><![CDATA[& a <<< A < b <<< B < c <<< C < d <<< D < dz <<< Dz < e <<< E < f <<< F < g <<< G < gw <<< Gw < gy <<< Gy < g̱ <<< G̱ < h <<< H < i <<< I < k <<< K < k'' <<< K'' < kw <<< Kw < ky <<< Ky < k''w <<< K''w < k''y <<< K''y < ḵ <<< Ḵ < ḵ'' <<< Ḵ'' < l <<< L < ''l <<< ''L < ł <<< ɫ <<< Ł <<< ɫ <<< Ł <<< L̴ < m <<< M < ''m <<< ''M < n <<< N < ''n <<< ''N < o <<< O < p <<< P < p'' <<< P'' < s <<< S < t <<< T < t'' <<< T'' < ts <<< Ts < ts'' <<< Ts'' < u <<< U < ü <<< Ü < w <<< W < ''w <<< ''W < ẅ <<< Ẅ < ''ẅ <<< ''Ẅ < x <<< X < y <<< Y < ''y <<< ''Y < '']]></cr>
+		</collation>
+	</collations>
+	<special xmlns:sil="urn://www.sil.org/ldml/0.1">
+		<sil:external-resources>
+			<sil:font name="Charis SIL" types="default" />
+		</sil:external-resources>
+	</special>
+</ldml>
