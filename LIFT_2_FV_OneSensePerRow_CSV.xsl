@@ -61,7 +61,7 @@
     <xsl:output method="text" encoding="UTF-8" omit-xml-declaration="yes" indent="no"/>
     <!--Need to know the writing systems that are in use. Perhaps create parameters for these-->
     <xsl:template match="lift">
-        <xsl:text>"WORD","PART_OF_SPEECH","PRONUNCIATION","DEFINITION","LITERAL_TRANSLATION","RELATED_PHRASE","RELATED_PHRASE_DEFINITION","RELATED_PHRASE_LITERAL_TRANSLATION","RELATED_PHRASE_AUDIO_TITLE","RELATED_PHRASE_AUDIO_FILENAME","RELATED_PHRASE_AUDIO_SOURCE","CATEGORIES","CULTURAL_NOTE","REFERENCE","INCLUDE_IN_GAMES","CHILD_FRIENDLY","AUDIO_TITLE","AUDIO_DESCRIPTION","AUDIO_FILENAME","AUDIO_SHARED_WITH_OTHER_DIALECTS","AUDIO_CHILD_FOCUSED","AUDIO_SOURCE","AUDIO_RECORDER","IMG_TITLE","IMG_FILENAME","IMG_DESCRIPTION","IMG_SOURCE","USERNAME","CONTRIBUTOR"&#13;</xsl:text>
+        <xsl:text>"WORD_ID","WORD","PART_OF_SPEECH","PRONUNCIATION","DEFINITION","LITERAL_TRANSLATION","RELATED_PHRASE","RELATED_PHRASE_DEFINITION","RELATED_PHRASE_LITERAL_TRANSLATION","RELATED_PHRASE_AUDIO_TITLE","RELATED_PHRASE_AUDIO_FILENAME","RELATED_PHRASE_AUDIO_SOURCE","CATEGORIES","CULTURAL_NOTE","REFERENCE","INCLUDE_IN_GAMES","CHILD_FRIENDLY","AUDIO_TITLE","AUDIO_DESCRIPTION","AUDIO_FILENAME","AUDIO_SHARED_WITH_OTHER_DIALECTS","AUDIO_CHILD_FOCUSED","AUDIO_SOURCE","AUDIO_RECORDER","IMG_TITLE","IMG_FILENAME","IMG_DESCRIPTION","IMG_SOURCE","USERNAME","CONTRIBUTOR"&#13;</xsl:text>
         <xsl:apply-templates select="entry/sense"/>
     </xsl:template>
     <!--Instead of matching against entry, we match against sense for better use of the First Voices presentation to the user. 
@@ -70,6 +70,10 @@
         <!--Here we capture the lexeme form and exclude the audio-writing-system data that stores the sound files link.-->
         <!--WORD River  /lift/entry/lexical-unit/form/text-->
         <!--Store the form in variable vWord for use in later fields-->
+        <!--WORD_ID Using the sense guid to create a unique identifier for each row-->
+        <xsl:text>"</xsl:text>
+        <xsl:value-of select="@id"/>
+        <xsl:text>",</xsl:text>
         <xsl:variable name="vWord">
             <xsl:value-of select="../lexical-unit/form[@lang[not(contains(.,'audio'))]]/text"/>
         </xsl:variable>
@@ -95,15 +99,16 @@
         <xsl:text>",</xsl:text>
         <!-- RELATED_PHRASE or what FieldWorks calls EXAMPLE SENTENCE: sense[1]/example[1]/form[1]/text[1] - Note that FV does not support multiple example sentences so we only export the first example on a sense-->
         <xsl:text>"</xsl:text>
-        <xsl:value-of select="example[1]/form[1]/text[1]/."/>
+        <!--Here we use replace to escape double-quotes found within the example sentence itself - Wolf said to Fish, "Let's go swimming!"-->
+        <xsl:value-of select="replace(example[1]/form[1]/text[1]/. , '&quot;' , '\\&quot;')"/>
         <xsl:text>",</xsl:text>
         <!-- RELATED_PHRASE_DEFINITION (same as Free translation on an example sentence) -->
         <xsl:text>"</xsl:text>
-        <xsl:value-of select="example[1]/translation[@type='Free translation']/form[1]/text[1]/."/>
+        <xsl:value-of select="replace(example[1]/translation[@type='Free translation']/form[1]/text[1]/.,'&quot;' , '\\&quot;')"/>
         <xsl:text>",</xsl:text>
         <!-- RELATED_PHRASE_LITERAL_TRANSLATION (same as Literal translation on an example sentence) -->
         <xsl:text>"</xsl:text>
-        <xsl:value-of select="example[1]/translation[@type='Literal translation']/form[1]/text[1]/."/>
+        <xsl:value-of select="replace(example[1]/translation[@type='Literal translation']/form[1]/text[1]/.,'&quot;' , '\\&quot;')"/>
         <xsl:text>",</xsl:text>
         <!-- ____________________ NEXT ELEMENTS ARE FOR AUDIO FILE FOR EXAMPLE SENTENCE ____________________ -->
         <!--"RELATED_PHRASE_AUDIO_TITLE" Required by FV, Web-friendly title for the audio. Generated only if there is an audio file, otherwise empty ""   -->
@@ -121,7 +126,8 @@
         </xsl:choose>
         <!-- RELATED_PHRASE_AUDIO_FILENAME-->
         <xsl:text>"</xsl:text>
-        <xsl:value-of select="example[1]/form[@lang[ends-with(., 'x-audio')]]/text[1]/."/>
+        <!-- Replaces .wav with mp3 -->
+        <xsl:value-of select="replace(example[1]/form[@lang[ends-with(., 'x-audio')]]/text[1]/.,'.wav','.mp3')"/>
         <xsl:text>",</xsl:text>
         <!--RELATED_PHRASE_AUDIO_SOURCE -->
         <xsl:text>"</xsl:text>
@@ -165,7 +171,9 @@
         <xsl:text>",</xsl:text>
         <!-- "AUDIO_FILENAME" -->
         <xsl:text>"</xsl:text>
-        <xsl:value-of select="../lexical-unit/form[@lang[ends-with(., 'x-audio')]]/text[1]/."/>
+<!--        <xsl:value-of select="../lexical-unit/form[@lang[ends-with(., 'x-audio')]]/text[1]/."/>-->
+        <!-- Replaces .wav with .mp-->
+        <xsl:value-of select="replace(example[1]/form[@lang[ends-with(., 'x-audio')]]/text[1]/.,'.wav','.mp3')"/>
         <xsl:text>",</xsl:text>
         <!-- ""AUDIO_SHARED_WITH_OTHER_DIALECTS"" Not used for now. -->
         <xsl:text>"</xsl:text>
@@ -198,7 +206,8 @@
         </xsl:choose>
         <!-- IMG_FILENAME -->
         <xsl:text>"</xsl:text>
-        <xsl:value-of select="tokenize(illustration[1]/@href,'/')"/>
+        <!--The string of functions here tokenizes the string based on the \ character and then selects the last token-->
+        <xsl:value-of select="subsequence(reverse(tokenize(illustration[1]/@href,'\\')), 1, 1)"/>
         <xsl:text>",</xsl:text>
         <!-- IMG_DESCRIPTION - Empty for now.  --> 
         <xsl:text>"</xsl:text>
@@ -209,11 +218,11 @@
         <xsl:text>",</xsl:text>
         <!-- ____________________ PREVIOUS ELEMENTS ARE FOR FIRST IMAGE FILE FOR THIS SENSE ____________________ -->
         <!--USERNAME Empty for now.-->
-        <xsl:text>"</xsl:text>
+        <xsl:text>"admin</xsl:text>
         <xsl:text>",</xsl:text>
         <!--CONTRIBUTOR Empty for now.-->
         <xsl:text>"</xsl:text>
-        <xsl:text>",</xsl:text>
+        <xsl:text>"</xsl:text>
         <xsl:text>&#13;</xsl:text>
     </xsl:template>
 
