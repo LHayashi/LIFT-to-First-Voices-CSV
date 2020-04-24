@@ -91,24 +91,26 @@
         <xsl:text>",</xsl:text>
         <!--DEFINITION A large and often winding stream which drains a land mass, carrying water down from higher areas to a lower point, ending at an ocean or in an inland sea. /lift/entry[1]/sense[1]/definition[1]/form[1]/text[1]-->
         <xsl:text>"</xsl:text>
-        <xsl:value-of select="definition/form/text"/>
+        <xsl:value-of select="replace(definition/form[1]/text,'&quot;' , '&quot;&quot;')"/>
         <xsl:text>",</xsl:text>
         <!-- LITERAL_TRANSLATION /lift/entry[99]/field[@type='literal-meaning]/form[1]/text[1]'-->
         <xsl:text>"</xsl:text>
-        <xsl:value-of select="../field[@type='literal-meaning']/form[1]/text[1]"/>
+        <xsl:value-of select="replace(../field[@type='literal-meaning']/form[1]/text[1],'&quot;' , '&quot;&quot;')"/>
         <xsl:text>",</xsl:text>
         <!-- RELATED_PHRASE or what FieldWorks calls EXAMPLE SENTENCE: sense[1]/example[1]/form[1]/text[1] - Note that FV does not support multiple example sentences so we only export the first example on a sense-->
         <xsl:text>"</xsl:text>
         <!--Here we use replace to escape double-quotes found within the example sentence itself - Wolf said to Fish, "Let's go swimming!"-->
-        <xsl:value-of select="replace(example[1]/form[1]/text[1]/. , '&quot;' , '\\&quot;')"/>
+        <xsl:value-of select="replace(example[1]/form[1]/text[1]/. , '&quot;' , '&quot;&quot;')"/>
         <xsl:text>",</xsl:text>
         <!-- RELATED_PHRASE_DEFINITION (same as Free translation on an example sentence) -->
         <xsl:text>"</xsl:text>
-        <xsl:value-of select="replace(example[1]/translation[@type='Free translation']/form[1]/text[1]/.,'&quot;' , '\\&quot;')"/>
+        <!--Here we use replace to escape double-quotes found within the example sentence itself - Wolf said to Fish, "Let's go swimming!"-->
+        <xsl:value-of select="replace(example[1]/translation[@type='Free translation']/form[1]/text[1]/.,'&quot;' , '&quot;&quot;')"/>
         <xsl:text>",</xsl:text>
         <!-- RELATED_PHRASE_LITERAL_TRANSLATION (same as Literal translation on an example sentence) -->
         <xsl:text>"</xsl:text>
-        <xsl:value-of select="replace(example[1]/translation[@type='Literal translation']/form[1]/text[1]/.,'&quot;' , '\\&quot;')"/>
+        <!--Here we use replace to escape double-quotes found within the example sentence itself - Wolf said to Fish, "Let's go swimming!"-->
+        <xsl:value-of select="replace(example[1]/translation[@type='Literal translation']/form[1]/text[1]/.,'&quot;' , '&quot;&quot;')"/>
         <xsl:text>",</xsl:text>
         <!-- ____________________ NEXT ELEMENTS ARE FOR AUDIO FILE FOR EXAMPLE SENTENCE ____________________ -->
         <!--"RELATED_PHRASE_AUDIO_TITLE" Required by FV, Web-friendly title for the audio. Generated only if there is an audio file, otherwise empty ""   -->
@@ -142,7 +144,8 @@
         <xsl:text>",</xsl:text>
         <!-- "REFERENCE" -->
         <xsl:text>"</xsl:text>
-        <xsl:value-of select="../note[@type='bibliography']/form/text/."/>
+        <!--Here we use replace to escape double-quotes found within the example sentence itself - Wolf said to Fish, "Let's go swimming!"-->
+        <xsl:value-of select="replace(../note[@type='bibliography']/form/text/., '&quot;' , '&quot;&quot;')"/>
         <xsl:text>",</xsl:text>
         <!-- "INCLUDE_IN_GAMES" For now, indicated as yes with 1. Eventually need to treat this as a publication type or use a custom field FV_Games-->
         <xsl:text>"</xsl:text>
