@@ -176,7 +176,7 @@
         <xsl:text>"</xsl:text>
 <!--        <xsl:value-of select="../lexical-unit/form[@lang[ends-with(., 'x-audio')]]/text[1]/."/>-->
         <!-- Replaces .wav with .mp-->
-        <xsl:value-of select="replace(example[1]/form[@lang[ends-with(., 'x-audio')]]/text[1]/.,'.wav','.mp3')"/>
+        <xsl:value-of select="replace(../lexical-unit/form[@lang[ends-with(., 'x-audio')]]/text[1]/.,'.wav','.mp3')"/>
         <xsl:text>",</xsl:text>
         <!-- ""AUDIO_SHARED_WITH_OTHER_DIALECTS"" Not used for now. -->
         <xsl:text>"</xsl:text>
@@ -210,7 +210,7 @@
         <!-- IMG_FILENAME -->
         <xsl:text>"</xsl:text>
         <!--The string of functions here tokenizes the string based on the \ character and then selects the last token-->
-        <xsl:value-of select="subsequence(reverse(tokenize(illustration[1]/@href,'\\')), 1, 1)"/>
+        <xsl:value-of select="replace(subsequence(reverse(tokenize(illustration[1]/@href,'\\')), 1, 1),'.bmp','.jpg')"/>
         <xsl:text>",</xsl:text>
         <!-- IMG_DESCRIPTION - Empty for now.  --> 
         <xsl:text>"</xsl:text>

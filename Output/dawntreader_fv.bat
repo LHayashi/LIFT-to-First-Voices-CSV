@@ -1,0 +1,1 @@
+java -Xmx1g -jar fv-batch-import-2.0.0.jar -domain FV -username admin -password IhalIhnkPs815 -url http://dawntreader.canil.ca:8080/nuxeo -dialect-id c4f6f4ee-995f-4626-b973-c3c9ba579207 -csv-file C:\Users\Larry\Desktop\FVwork\FV.csv -data-path C:\Users\Larry\Desktop\FVwork\MP3s\ -limit 8
