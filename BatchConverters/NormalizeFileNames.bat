@@ -1,0 +1,1 @@
+"" # very artless draft of possible solution Get-ChildItem "D:\test\1097217*" | ForEach-Object { $y = $_.Name.Normalize("FormC") if ( $y.Length -ne $_.Name.Length ) { Rename-Item -NewName $y -LiteralPath $_ -WhatIf } else { " : file name is already normalized $_" } }

@@ -1,0 +1,303 @@
+ MISSING BUT FOUND ON GOOGLE DRIVE 
+ -> Missing file 10-salmonberries-ab-ed-calendar-IMG_419.jpg in Column IMG_FILENAME, Line 4282
+ -> Missing file 3CAONES&PADDLESGREY-ab-ed.jpg in Column IMG_FILENAME, Line 4308
+ -> Missing file 4 children.jpg in Column IMG_FILENAME, Line 2246
+ -> Missing file 8-OOLICHANS-ab-ed-calendar.jpg in Column IMG_FILENAME, Line 6465
+ -> Missing file BEAR-ab-ed-calendar-henry-k.jpg in Column IMG_FILENAME, Line 4483
+ -> Missing file BEAVER-ab-ed-calendar-henry-k.jpg in Column IMG_FILENAME, Line 1569
+ -> Missing file CHILKAT_BLANKET-ab-ed-calendar.jpg in Column IMG_FILENAME, Line 4454
+ -> Missing file GRIZZLYSEA-ab-ed-calendar.jpg in Column IMG_FILENAME, Line 4344
+ -> Missing file family-pics0011.jpg in Column IMG_FILENAME, Line 6643
+-> Missing file family-pics0016.jpg in Column IMG_FILENAME, Line 3406
+-> Missing file ab-ed-CLAM1.jpg in Column IMG_FILENAME, Line 130
+-> Missing file kitchen-ab-ed-calendar-IMG_0155.jpg in Column IMG_FILENAME, Line 4793
+
+NOT FOUND
+ -> Missing file 5HATS-ab-ed-calendar.jpg in Column IMG_FILENAME, Line 4816  MISSING FROM GOOGLE DRIVE
+ 
+MISSING BUT FOUND ON GOOGLE DRIVE 
+-> Missing file ?aks-open up-br-K-2014.mp3 in Column RELATED_PHRASE_AUDIO_FILENAME, Line 425 FIXED with 'aks-open up-br-K-2014.wav in fwdata BUT MISSING
+-> Missing file ?n-?nageeka-below-vn-hb-2015_1.mp3 in Column RELATED_PHRASE_AUDIO_FILENAME, Line 6078 FIXED WITH 'n-'nageeka-below-vn-hb-2015.wav in fwdata BUT MISSING
+-> Missing file ?n-?niyuusk-private hiding place-vn-hb-2015_1.mp3 in Column RELATED_PHRASE_AUDIO_FILENAME, Line 3829 FIXED with  'n-'niyuusk-private hiding place-vn-hb-2015.wav BUT MISSING
+-> Missing file ?on-hand-arm-br-K-2014.mp3 in Column RELATED_PHRASE_AUDIO_FILENAME, Line 365 FIXED IN FWDATA with 'on-hand-arm-br-K-2014.wav BUT MISSING
+-> Missing file ?na-?nagee-on this side-vn-hb-2015_1.mp3 in Column RELATED_PHRASE_AUDIO_FILENAME, Line 1270 FIXED IN FWDATA with 'na-'nagee-on this side-vn-hb-2015.wav BUT MISSING
+-> Missing file ?yu?uk-boy-br-K-2014.mp3 in Column RELATED_PHRASE_AUDIO_FILENAME, Line 3409 MISSING but also fixed in the database SMART QUOTE to regular
+ -> Missing file ?yensm g?a?nga?ba-leafy green vegetables-br-K-2014.mp3 in Column RELATED_PHRASE_AUDIO_FILENAME, Line 384 FIXED IN fwdata but MISSING
+ -> Missing file ?yensm ??amksiwa?h-vegetables-br-K-2014.mp3 in Column RELATED_PHRASE_AUDIO_FILENAME, Line 5360 FIXED IN FWDATA but MISSING
+  -> Missing file ?yay?nii waalt-that?s right-br-K-2014.mp3 in Column RELATED_PHRASE_AUDIO_FILENAME, Line 2585 FIXED IN FWDATA as 'yay'nii waalt-thats right-br-K-2014.wav but MISSING
+  -> Missing file ?agam-aside-br-K-2014.mp3 in Column RELATED_PHRASE_AUDIO_FILENAME, Line 154 FIXED WITH 'agam-aside-br-K-2014.wav BUT MISSING
+
+MISSING FROM GOOGLE DRIVE
+-> Missing file xbiism gwini'itsnsk-mb-kk-06.mp3 in Column RELATED_PHRASE_AUDIO_FILENAME, Line 3874 MISSING FROM GOOGLE DRIVE
+-> Missing file ndaayu di wil waatgn-ac-ps-06.mp3 in Column RELATED_PHRASE_AUDIO_FILENAME, Line 5407 MISSING FROM GOOGLE DRIVE
+-> Missing file nda di hawn-ac-ps-06.mp3 in Column RELATED_PHRASE_AUDIO_FILENAME, Line 3928 MISSING FROM GOOGLE DRIVE
+-> Missing file lukwil aam wila loosm-ac-ps-06.mp3 in Column RELATED_PHRASE_AUDIO_FILENAME, Line 1698 MISSING FROM GOOGLE DRIVE
+-> Missing file lax sgyiik di pdeegu-ac-ps-06.mp3 in Column RELATED_PHRASE_AUDIO_FILENAME, Line 2776 MISSING FROM GOOGLE DRIVE
+-> Missing file gwini'itsnL a k'oy-db-kk-06.mp3 in Column RELATED_PHRASE_AUDIO_FILENAME, Line 43 MISSING FROM GOOGLE DRIVE
+
+-> Missing file clean-fish-ab-ed-calendar100-0099.jpg in Column IMG_FILENAME, Line 3837
+> Missing file i in Column RELATED_PHRASE_AUDIO_FILENAME, Line 3378 This file is a bad link. Need to find out where it should pointing to. Entry = spa'wil
+  
+ FIXED: 
+ -> Missing file ts'iibA lAxA-dl-hb-03_1.mp3 in Column RELATED_PHRASE_AUDIO_FILENAME, Line 1478    _1.mp3 was an issue.  Fixed in fwdata
+  -> Missing file maadmgyeks-vn-hb-01_1.mp3 in Column AUDIO_FILENAME, Line 793 Ditto as above.
+  -> Missing file pts'ih-db-laxklan-00_1.mp3 in Column AUDIO_FILENAME, Line 3233 NOT sure if both of these were fixed in source, or if converter is messing up things.
+ -> Missing file pts'ih-db-laxklan-00_1.mp3 in Column AUDIO_FILENAME, Line 3234
+ -> Missing file p'asii_1.mp3 in Column AUDIO_FILENAME, Line 70
+ -> Missing file psah-db-laxklan-00_1.mp3 in Column AUDIO_FILENAME, Line 1713
+ -> Missing file ptiiltk-db-laxklan-00_1.mp3 in Column AUDIO_FILENAME, Line 5908
+ -> Missing file pts'aan-db-laxklan-00_1.mp3 in Column AUDIO_FILENAME, Line 5542
+  -> Missing file michael-daniel-dangeli-2002.jpg in Column IMG_FILENAME, Line 4401 Changed name of referent in database to mike-dangeli-michael
+   -> Missing file dz in Column AUDIO_FILENAME, Line 3986 Put the proper file reference in: lgooks-em-hb-02.wav
+    -> Missing file a?a?yaa??-nothern lights-vn-hb-2014.mp3 in Column RELATED_PHRASE_AUDIO_FILENAME, Line 6159 Filename and reference to it. Used to be smart quote and nothern instead of northern
+	 -> Missing file Unit 1- action- to tip toe.gif in Column IMG_FILENAME, Line 3840 Fixed in fwdata to refer to jpg
+	
+FIXED: BMP names need to be changed to jpg Fixed in converter
+ -> Missing file william-nelson-wooms.BMP in Column IMG_FILENAME, Line 2566
+ -> Missing file vance-leask-house-deprsn.BMP in Column IMG_FILENAME, Line 3305
+ -> Missing file vance-leask-house-deprsn.BMP in Column IMG_FILENAME, Line 6255
+ -> Missing file vanessa-leighton-eagle-feath.BMP in Column IMG_FILENAME, Line 4765
+  -> Missing file kiesha-pahl-ts-ts-waap.BMP in Column IMG_FILENAME, Line 4406
+   -> Missing file graham-lindsay-tsugaaam.BMP in Column IMG_FILENAME, Line 759
+    -> Missing file brianne-gladstone-yensm.BMP in Column IMG_FILENAME, Line 5764
+ 
+ 
+ 
+ UNKNOWN issue with umlaut u
+ -> Missing file xgüüs-catch salmon-vn-hb-2014.mp3 in Column RELATED_PHRASE_AUDIO_FILENAME, Line 5629
+  -> Missing file s-süülga sah-middle of the day-vn-hb-2015_1.mp3 in Column RELATED_PHRASE_AUDIO_FILENAME, Line 920
+ -> Missing file saGawsgÜÜ-em-2018.mp3 in Column RELATED_PHRASE_AUDIO_FILENAME, Line 796
+ -> Missing file saGayt-k'ÜÜl2-em-2018.mp3 in Column RELATED_PHRASE_AUDIO_FILENAME, Line 6183
+ -> Missing file n-ni'it'üüt-unpleasant-vn-hb-2015_1.mp3 in Column AUDIO_FILENAME, Line 2667
+ -> Missing file n-ni'it'üüt-unpleasant-vn-hb-2015_1.mp3 in Column AUDIO_FILENAME, Line 2668
+  -> Missing file n-naasü-raspberries-vn-hb-2015_1.mp3 in Column AUDIO_FILENAME, Line 5222
+  -> Missing file m-me?üü-pillow-vn-hb-2015_1.mp3 in Column AUDIO_FILENAME, Line 5371
+ -> Missing file m-mi?ak?üül-eachone-vn-hb-2015_1.mp3 in Column AUDIO_FILENAME, Line 4340
+ -> Missing file m-mi?ak?üül-eachone-vn-hb-2015_1.mp3 in Column AUDIO_FILENAME, Line 4341
+ -> Missing file m-misüü-greyhair-vn-hb-2015_1.mp3 in Column AUDIO_FILENAME, Line 1235
+ -> Missing file n-n?üü-underneath-vn-hb-2015_1.mp3 in Column RELATED_PHRASE_AUDIO_FILENAME, Line 771
+ -> Missing file n-na?üü-beneath-vn-hb-2015_1.mp3 in Column AUDIO_FILENAME, Line 558
+ 
+ FIXED
+ -> Missing file xbism ??ax-be upside down-vn-hb-2014.mp3 in Column RELATED_PHRASE_AUDIO_FILENAME, Line 5382  SMART SINGLE QUOTE PROBLEM. Should be: xbism ḵ'ax-be upside down-vn-hb-2014.wav
+   -> Missing file n-nag?ats?aa?-some-vn-hb-2015_1.mp3 in Column AUDIO_FILENAME, Line 1061 Fixed file name ' and its reference in the database.
+  -> Missing file n-ni??awks-hairoil-vn-hb-2015_1.mp3 in Column AUDIO_FILENAME, Line 356
+ -> Missing file ü_u'uuml-ab-takwaan-01.mp3 in Column RELATED_PHRASE_AUDIO_FILENAME, Line 3126
+ -> Missing file ü_uksawulks-dl-hb-03.mp3 in Column RELATED_PHRASE_AUDIO_FILENAME, Line 4358
+ -> Missing file ü_uul-dl-hb-03.mp3 in Column RELATED_PHRASE_AUDIO_FILENAME, Line 6122
+ -> Missing file ü_uula-dl-hb-03.mp3 in Column RELATED_PHRASE_AUDIO_FILENAME, Line 2921
+ -> Missing file ü_uunksk-dl-hb-03.mp3 in Column RELATED_PHRASE_AUDIO_FILENAME, Line 1903
+ -> Missing file ü_uunx-dl-hb-03.mp3 in Column RELATED_PHRASE_AUDIO_FILENAME, Line 548
+ 
+ NEED TO ASK MARGARET FOR THESE: 
+  -> Missing file 636659171359369772'namiik.mp3 in Column AUDIO_FILENAME, Line 121
+ -> Missing file 636741013290801993saksk.mp3 in Column AUDIO_FILENAME, Line 416
+ -> Missing file 636813675045544726A LexExampleSentence.mp3 in Column RELATED_PHRASE_AUDIO_FILENAME, Line 6171
+ -> Missing file 636849891626854711A LexExampleSentence.mp3 in Column RELATED_PHRASE_AUDIO_FILENAME, Line 10
+ -> Missing file 636855929069407156A LexExampleSentence.mp3 in Column RELATED_PHRASE_AUDIO_FILENAME, Line 5358
+ -> Missing file 636862820968434785tgi g?ol.mp3 in Column AUDIO_FILENAME, Line 1655
+ -> Missing file 636865415109795258na?'a? g?a?naaw.mp3 in Column AUDIO_FILENAME, Line 4478
+ -> Missing file 636888679570176334k'na.mp3 in Column AUDIO_FILENAME, Line 5045
+ -> Missing file 636894208220104103ha'wa?kadi wikwaaltga? sah.mp3 in Column AUDIO_FILENAME, Line 1739
+ -> Missing file 636894801610146248dzinap.mp3 636894803089905888dzinop.mp3 in Column AUDIO_FILENAME, Line 3057
+ -> Missing file 636894801610146248dzinap.mp3 636894803089905888dzinop.mp3 in Column AUDIO_FILENAME, Line 3058
+ -> Missing file 636894801610146248dzinap.mp3 636894803089905888dzinop.mp3 in Column AUDIO_FILENAME, Line 3059
+ -> Missing file 636936288334177990A LexExampleSentence.mp3 in Column RELATED_PHRASE_AUDIO_FILENAME, Line 1404
+ -> Missing file 636985488587763300A LexExampleSentence.mp3 in Column RELATED_PHRASE_AUDIO_FILENAME, Line 5412
+ -> Missing file 637080701525394914t'aag?oot.mp3 in Column AUDIO_FILENAME, Line 4348
+ -> Missing file 637080701525394914t'aag?oot.mp3 in Column AUDIO_FILENAME, Line 4349
+ -> Missing file 637084852075520403ham?moo'ma?x.mp3 in Column AUDIO_FILENAME, Line 5003
+ -> Missing file 637094405186743416la.mp3 in Column AUDIO_FILENAME, Line 6353
+ -> Missing file 637094405848306347la?.mp3 in Column AUDIO_FILENAME, Line 3888
+ -> Missing file 637094406936349444la dadoo algya?x.mp3 in Column AUDIO_FILENAME, Line 3583
+ -> Missing file 637094407253564878la dzap.mp3 in Column AUDIO_FILENAME, Line 4350
+ -> Missing file 637094407521047017laal.mp3 in Column AUDIO_FILENAME, Line 122
+ -> Missing file 637094408125515228laalt.mp3 in Column AUDIO_FILENAME, Line 4178
+ -> Missing file 637094408377594992laaltk.mp3 in Column AUDIO_FILENAME, Line 6408
+ -> Missing file 637094409108485496laalxs.mp3 in Column AUDIO_FILENAME, Line 3694
+ -> Missing file 637094410543247298laa?k.mp3 in Column AUDIO_FILENAME, Line 317
+ -> Missing file 637094410993434464laam.mp3 in Column AUDIO_FILENAME, Line 3582
+ -> Missing file 637094413088956013laan.mp3 in Column AUDIO_FILENAME, Line 14
+ -> Missing file 637094413357518631laandza.mp3 in Column AUDIO_FILENAME, Line 6294
+ -> Missing file 637094413832305085laanm hana?'a?.mp3 in Column AUDIO_FILENAME, Line 97
+ -> Missing file 637094414207886188laanmhoon.mp3 in Column AUDIO_FILENAME, Line 3278
+ -> Missing file 637094414554644090laa'na?.mp3 in Column AUDIO_FILENAME, Line 743
+ -> Missing file 637094415016926615laasbax.mp3 in Column AUDIO_FILENAME, Line 2930
+ -> Missing file 637094415326587543laat.mp3 in Column AUDIO_FILENAME, Line 684
+ -> Missing file 637094415618698733laawks.mp3 in Column AUDIO_FILENAME, Line 1323
+ -> Missing file 637094415964023888laawksm goom.mp3 in Column AUDIO_FILENAME, Line 5911
+ -> Missing file 637094416193011370laawksm gyelx.mp3 in Column AUDIO_FILENAME, Line 2641
+ -> Missing file 637094416479588231laawksm ts'amti.mp3 in Column AUDIO_FILENAME, Line 5372
+ -> Missing file 637094416772983478laawksm yeey.mp3 in Column AUDIO_FILENAME, Line 3086
+ -> Missing file 637094416985087059laa?.mp3 in Column AUDIO_FILENAME, Line 903
+ -> Missing file 637094418728780692la?ba?'on.mp3 in Column AUDIO_FILENAME, Line 6421
+ -> Missing file 637094419041978978la?bn.mp3 in Column AUDIO_FILENAME, Line 776
+ -> Missing file 637094419387227001la?guulk.mp3 in Column AUDIO_FILENAME, Line 5288
+ -> Missing file 637094419387227001la?guulk.mp3 in Column AUDIO_FILENAME, Line 5289
+ -> Missing file 637094419970848642laguulk'a.mp3 in Column AUDIO_FILENAME, Line 3019
+ -> Missing file 637094420402638509la?g?a?lik.mp3 in Column AUDIO_FILENAME, Line 6786
+ -> Missing file 637094421059973893la?g?a?lip.mp3 in Column AUDIO_FILENAME, Line 6042
+ -> Missing file 637094421059973893la?g?a?lip.mp3 in Column AUDIO_FILENAME, Line 6043
+ -> Missing file 637094421431940998lag?a?lip ma?.mp3 in Column AUDIO_FILENAME, Line 4412
+ -> Missing file 637094422186055744lag?awk.mp3 in Column AUDIO_FILENAME, Line 712
+ -> Missing file 637094422186055744lag?awk.mp3 in Column AUDIO_FILENAME, Line 713
+ -> Missing file 637094423014401151la?g?a?x.mp3 in Column AUDIO_FILENAME, Line 2263
+ -> Missing file 637094423378492876la?g?a?x algya?x.mp3 in Column AUDIO_FILENAME, Line 2272
+ -> Missing file 637094423606826463la?g?a?x ni'itsk.mp3 in Column AUDIO_FILENAME, Line 2481
+ -> Missing file 637094426760021731la?g?a?x txa?naa?.mp3 in Column AUDIO_FILENAME, Line 5086
+ -> Missing file 637094427080971847la?g?a?xgigyootk.mp3 in Column AUDIO_FILENAME, Line 8
+ -> Missing file 637094427310936911la?g?a?xg?a?deelpk.mp3 in Column AUDIO_FILENAME, Line 1337
+ -> Missing file 637094428130435234la?g?a?x'lihaytk.mp3 in Column AUDIO_FILENAME, Line 5093
+ -> Missing file 637094428504624406la?g?a?xna?ks.mp3 in Column AUDIO_FILENAME, Line 6779
+ -> Missing file 637094428888646750la?g?a?xts'ap.mp3 in Column AUDIO_FILENAME, Line 1037
+ -> Missing file 637094428888646750la?g?a?xts'ap.mp3 in Column AUDIO_FILENAME, Line 1038
+ -> Missing file 637094429226653937la?g?ayt.mp3 in Column AUDIO_FILENAME, Line 1553
+ -> Missing file 637094429465096312la?g?m.mp3 in Column AUDIO_FILENAME, Line 3793
+ -> Missing file 637094429465096312la?g?m.mp3 in Column AUDIO_FILENAME, Line 3794
+ -> Missing file 637094429465096312la?g?m.mp3 in Column AUDIO_FILENAME, Line 3795
+ -> Missing file 637094429737945062lag?m baa.mp3 in Column AUDIO_FILENAME, Line 1488
+ -> Missing file 637094429737945062lag?m baa.mp3 in Column AUDIO_FILENAME, Line 1489
+ -> Missing file 637094430414441474la?g?m ?ee.mp3 in Column AUDIO_FILENAME, Line 1060
+ -> Missing file 637094430993149445la?g?m t'aa.mp3 in Column AUDIO_FILENAME, Line 5447
+ -> Missing file 637094431427896581lahaal.mp3 in Column AUDIO_FILENAME, Line 4385
+ -> Missing file 637094431802665089lahaw.mp3 in Column AUDIO_FILENAME, Line 2968
+ -> Missing file 637094432111254319lahaytga g?oot.mp3 in Column AUDIO_FILENAME, Line 2124
+ -> Missing file 637094432385269946lahaytk.mp3 in Column AUDIO_FILENAME, Line 1056
+ -> Missing file 637094432385269946lahaytk.mp3 in Column AUDIO_FILENAME, Line 1057
+ -> Missing file 637094432385269946lahaytk.mp3 in Column AUDIO_FILENAME, Line 1058
+ -> Missing file 637094432773175764laheel.mp3 in Column AUDIO_FILENAME, Line 5200
+ -> Missing file 637094433179501873la?k.mp3 in Column AUDIO_FILENAME, Line 2721
+ -> Missing file 637094433445134508lak'wil.mp3 in Column AUDIO_FILENAME, Line 4368
+ -> Missing file 637094433445134508lak'wil.mp3 in Column AUDIO_FILENAME, Line 4369
+ -> Missing file 637094433864610275la?'al.mp3 in Column AUDIO_FILENAME, Line 596
+ -> Missing file 637094434131712031lalaagwit.mp3 in Column AUDIO_FILENAME, Line 3426
+ -> Missing file 637094434415319146laliin.mp3 in Column AUDIO_FILENAME, Line 3855
+ -> Missing file 637094435336213974lam.mp3 in Column AUDIO_FILENAME, Line 6304
+ -> Missing file 637094435692321693la?mdza?x.mp3 in Column AUDIO_FILENAME, Line 6149
+ -> Missing file 637094435969412158la?mga g?ag?oot.mp3 in Column AUDIO_FILENAME, Line 6299
+ -> Missing file 637094436272341281la?mk.mp3 in Column AUDIO_FILENAME, Line 3187
+ -> Missing file 637094436734651343la?msa?x.mp3 in Column AUDIO_FILENAME, Line 6534
+ -> Missing file 637094437214686546lamt'am.mp3 in Column AUDIO_FILENAME, Line 976
+ -> Missing file 637094437577149488laniist.mp3 in Column AUDIO_FILENAME, Line 5806
+ -> Missing file 637094437906321348la'niits.mp3 in Column AUDIO_FILENAME, Line 2866
+ -> Missing file 637094438598315963lap.mp3 in Column AUDIO_FILENAME, Line 2826
+ -> Missing file 637094438795809099laps.mp3 in Column AUDIO_FILENAME, Line 3929
+ -> Missing file 637094439077479913lapweel.mp3 in Column AUDIO_FILENAME, Line 6314
+ -> Missing file 637094439265398207lap'l.mp3 in Column AUDIO_FILENAME, Line 1107
+ -> Missing file 637094439539524212lap'l waal.mp3 in Column AUDIO_FILENAME, Line 5817
+ -> Missing file 637094440328573898la?taab.mp3 in Column AUDIO_FILENAME, Line 459
+ -> Missing file 637094440878201349lat'aa g?oot.mp3 in Column AUDIO_FILENAME, Line 616
+ -> Missing file 637094441269467548lat'aa? g?oot.mp3 in Column AUDIO_FILENAME, Line 2288
+ -> Missing file 637094441777668659lawaal.mp3 in Column AUDIO_FILENAME, Line 874
+ -> Missing file 637094442283266530lawk yaa.mp3 in Column AUDIO_FILENAME, Line 494
+ -> Missing file 637094442905398640la?x.mp3 in Column AUDIO_FILENAME, Line 5333
+ -> Missing file 637094443854589527La?x Da?'a?x.mp3 in Column AUDIO_FILENAME, Line 1363
+ -> Missing file 637094444208804317La?x G?a?lts'ap.mp3 in Column AUDIO_FILENAME, Line 1823
+ -> Missing file 637094444452644348la?x Hayda.mp3 in Column AUDIO_FILENAME, Line 957
+ -> Missing file 637094444762739622La?x Klan.mp3 in Column AUDIO_FILENAME, Line 2386
+ -> Missing file 637094445163368153La?x Ksay?.mp3 in Column AUDIO_FILENAME, Line 4670
+ -> Missing file 637094499715754142La?x Kxeen.mp3 in Column AUDIO_FILENAME, Line 5317
+ -> Missing file 637094500574609058La?x Kwa?x?.mp3 in Column AUDIO_FILENAME, Line 383
+ -> Missing file 637094500946093005Lax Kw'alaams.mp3 in Column AUDIO_FILENAME, Line 6664
+ -> Missing file 637094501634633996La?x ?'as'waan.mp3 in Column AUDIO_FILENAME, Line 3600
+ -> Missing file 637094502505943684la?x stup'l.mp3 in Column AUDIO_FILENAME, Line 4868
+ -> Missing file 637094502995707527la?x süülda?.mp3 in Column AUDIO_FILENAME, Line 4974
+ -> Missing file 637094503306946395la?x taag?a?n.mp3 in Column AUDIO_FILENAME, Line 4011
+ -> Missing file 637094503968711298La?x Txa?l.mp3 in Column AUDIO_FILENAME, Line 1175
+ -> Missing file 637094504228805464la?x t'aa.mp3 in Column AUDIO_FILENAME, Line 5866
+ -> Missing file 637094504577536029La?x wil uks p'iins.mp3 in Column AUDIO_FILENAME, Line 3957
+ -> Missing file 637094504890192646la?x woop.mp3 in Column AUDIO_FILENAME, Line 5617
+ -> Missing file 637094505140080745la?xa?.mp3 in Column AUDIO_FILENAME, Line 2517
+ -> Missing file 637094505140080745la?xa?.mp3 in Column AUDIO_FILENAME, Line 2518
+ -> Missing file 637094505350047159la?xa?mp'aal.mp3 in Column AUDIO_FILENAME, Line 4833
+ -> Missing file 637094505705211664la?xa?x.mp3 in Column AUDIO_FILENAME, Line 6238
+ -> Missing file 637094505946446348la?xdii.mp3 in Column AUDIO_FILENAME, Line 3606
+ -> Missing file 637094506239929800La?xgibuu.mp3 in Column AUDIO_FILENAME, Line 711
+ -> Missing file 637094506509949535la?xgwa?tks.mp3 in Column AUDIO_FILENAME, Line 5737
+ -> Missing file 637094506732447922la?xgwiidaks.mp3 in Column AUDIO_FILENAME, Line 3183
+ -> Missing file 637094507040697227La?xgwiikw.mp3 in Column AUDIO_FILENAME, Line 2698
+ -> Missing file 637094507615966928la?xg?ayna?.mp3 in Column AUDIO_FILENAME, Line 424
+ -> Missing file 637094507960214489la?xha.mp3 in Column AUDIO_FILENAME, Line 1743
+ -> Missing file 637094507960214489la?xha.mp3 in Column AUDIO_FILENAME, Line 1744
+ -> Missing file 637094507960214489la?xha.mp3 in Column AUDIO_FILENAME, Line 1745
+ -> Missing file 637094508152822497la?xhuu.mp3 in Column AUDIO_FILENAME, Line 4180
+ -> Missing file 637094508152822497la?xhuu.mp3 in Column AUDIO_FILENAME, Line 4181
+ -> Missing file 637094508483339547Laxki'i.mp3 in Column AUDIO_FILENAME, Line 786
+ -> Missing file 637094508770003855Laxkwilwa?.mp3 in Column AUDIO_FILENAME, Line 1880
+ -> Missing file 637094509506781619la?xla?g?mks.mp3 in Column AUDIO_FILENAME, Line 3299
+ -> Missing file 637094509881502588la?xla?x.mp3 in Column AUDIO_FILENAME, Line 5987
+ -> Missing file 637094510295079016la?xla?xha.mp3 in Column AUDIO_FILENAME, Line 4475
+ -> Missing file 637094510496820299la?xmediik.mp3 in Column AUDIO_FILENAME, Line 5748
+ -> Missing file 637094510679176574la?xmoon.mp3 in Column AUDIO_FILENAME, Line 30
+ -> Missing file 637094511286400141la?xna?baa.mp3 in Column AUDIO_FILENAME, Line 4976
+ -> Missing file 637094511728360164la?xs.mp3 in Column AUDIO_FILENAME, Line 3221
+ -> Missing file 637094512228043329la?xsana?xnox.mp3 in Column AUDIO_FILENAME, Line 2769
+ -> Missing file 637094512569628962La?xsgiik.mp3 in Column AUDIO_FILENAME, Line 2776
+ -> Missing file 637094512868203654la?xsgyen.mp3 in Column AUDIO_FILENAME, Line 3051
+ -> Missing file 637094513067100785La?xsgyiik.mp3 in Column AUDIO_FILENAME, Line 2708
+ -> Missing file 637094513407319747la?xsiit.mp3 in Column AUDIO_FILENAME, Line 5848
+ -> Missing file 637094513646831997la?xsimaay.mp3 in Column AUDIO_FILENAME, Line 4235
+ -> Missing file 637094513967416798la?xsmxs'waanx.mp3 in Column AUDIO_FILENAME, Line 1203
+ -> Missing file 637094532499818650la?xs'neexs.mp3 in Column AUDIO_FILENAME, Line 3591
+ -> Missing file 637094533624514580la?xs'niild.mp3 in Column AUDIO_FILENAME, Line 3180
+ -> Missing file 637094533884370628la?xs'nii?.mp3 in Column AUDIO_FILENAME, Line 6196
+ -> Missing file 637094534154027697la?xst'ooyx.mp3 in Column AUDIO_FILENAME, Line 6643
+ -> Missing file 637094534510505876la?xsu'yens.mp3 in Column AUDIO_FILENAME, Line 2565
+ -> Missing file 637094534841869159la?xt'aa.mp3 in Column AUDIO_FILENAME, Line 4375
+ -> Missing file 637094535097671155la?xwusii.mp3 in Column AUDIO_FILENAME, Line 1777
+ -> Missing file 637094535294305565la?x'wiihoon.mp3 in Column AUDIO_FILENAME, Line 5689
+ -> Missing file 637094535486729795la?xyuup.mp3 in Column AUDIO_FILENAME, Line 5923
+ -> Missing file 637094535742031464la?x'aam.mp3 in Column AUDIO_FILENAME, Line 58
+ -> Missing file 637094536355470963la?x'aws.mp3 in Column AUDIO_FILENAME, Line 932
+ -> Missing file 637094536646017472la?x'o.mp3 in Column AUDIO_FILENAME, Line 5228
+ -> Missing file 637094537003783420la?x'oo.mp3 in Column AUDIO_FILENAME, Line 1769
+ -> Missing file 637094537003783420la?x'oo.mp3 in Column AUDIO_FILENAME, Line 1770
+ -> Missing file 637094537378295960la?x'oo waap.mp3 in Column AUDIO_FILENAME, Line 3821
+ -> Missing file 637094537741369322la?x'ool.mp3 in Column AUDIO_FILENAME, Line 3733
+ -> Missing file 637094538132749518la?x'oop'a?x.mp3 in Column AUDIO_FILENAME, Line 821
+ -> Missing file 637094538456050866layk.mp3 in Column AUDIO_FILENAME, Line 3494
+ -> Missing file 637094538902324679layoon.mp3 in Column AUDIO_FILENAME, Line 1295
+ -> Missing file 637094539155384120la'aks.mp3 in Column AUDIO_FILENAME, Line 6792
+ -> Missing file 637094539487743185la'aksk.mp3 in Column AUDIO_FILENAME, Line 6393
+ -> Missing file 637094539802799706la?'a?l g?a?lksiyaaku.mp3 in Column AUDIO_FILENAME, Line 4535
+ -> Missing file 637094540862740552la?'a?lsk.mp3 in Column AUDIO_FILENAME, Line 3919
+ -> Missing file 637094541564677261la'at.mp3 in Column AUDIO_FILENAME, Line 1828
+ -> Missing file 637094541564677261la'at.mp3 in Column AUDIO_FILENAME, Line 1829
+ -> Missing file 637094541880868110la'awk.mp3 in Column AUDIO_FILENAME, Line 4786
+ -> Missing file 637094542117312908la'awk yaa.mp3 in Column AUDIO_FILENAME, Line 344
+ -> Missing file 637094542448039979la'ooy.mp3 in Column AUDIO_FILENAME, Line 2259
+ -> Missing file 637094542951364858lee.mp3 in Column AUDIO_FILENAME, Line 4025
+ -> Missing file 637094543489244580leeg?oli.mp3 in Column AUDIO_FILENAME, Line 4720
+ -> Missing file 637094543711050780leeks.mp3 in Column AUDIO_FILENAME, Line 1418
+ -> Missing file 637094544016011167leeksa aks.mp3 in Column AUDIO_FILENAME, Line 3987
+ -> Missing file 637094544232773488legi.mp3 in Column AUDIO_FILENAME, Line 2510
+ -> Missing file 637094544585647450lels.mp3 in Column AUDIO_FILENAME, Line 2440
+ -> Missing file 637094544869991017leta.mp3 in Column AUDIO_FILENAME, Line 4381
+ -> Missing file 637094545120974248li.mp3 in Column AUDIO_FILENAME, Line 6223
+ -> Missing file 637094545376780383libaal.mp3 in Column AUDIO_FILENAME, Line 4074
+ -> Missing file 637094545614946794libaalsk.mp3 in Column AUDIO_FILENAME, Line 1707
+ -> Missing file 637094546075818925libaalx.mp3 in Column AUDIO_FILENAME, Line 4409
+ -> Missing file 637094546317736435libaas.mp3 in Column AUDIO_FILENAME, Line 534
+ -> Missing file 637094546551990803libag?ayt.mp3 in Column AUDIO_FILENAME, Line 4844
+ -> Missing file 637094546551990803libag?ayt.mp3 in Column AUDIO_FILENAME, Line 4845
+ -> Missing file 637094546814329770libag?ayt baa.mp3 in Column AUDIO_FILENAME, Line 6722
+ -> Missing file 637094547068285109libag?ayt haw.mp3 in Column AUDIO_FILENAME, Line 499
+ -> Missing file 637094548199592765libag?ayt haw g?oot.mp3 in Column AUDIO_FILENAME, Line 1439
+ -> Missing file 637094548720504348libag?ayt t'o'osk.mp3 in Column AUDIO_FILENAME, Line 327
+ -> Missing file 637094549356351246libag?ayt waal.mp3 in Column AUDIO_FILENAME, Line 3334
+ -> Missing file 637094549867002123libayt.mp3 in Column AUDIO_FILENAME, Line 5152
+ -> Missing file 637094550149164698libaythaw g?oot.mp3 in Column AUDIO_FILENAME, Line 5665
+ -> Missing file 637094550412124006libets'a?.mp3 in Column AUDIO_FILENAME, Line 1658
+ -> Missing file 637094550899866348liblt.mp3 in Column AUDIO_FILENAME, Line 5249
+ -> Missing file 637094551136403013liblt haw.mp3 in Column AUDIO_FILENAME, Line 3259
+ -> Missing file 637094551410887431liblt waal.mp3 in Column AUDIO_FILENAME, Line 4828
+ -> Missing file 637094551410887431liblt waal.mp3 in Column AUDIO_FILENAME, Line 4829
+ -> Missing file 637094551609884077liblt waaltk.mp3 in Column AUDIO_FILENAME, Line 4408
+ -> Missing file 637094551895274333lidolks.mp3 in Column AUDIO_FILENAME, Line 612
+ -> Missing file 637094552179544444ligi.mp3 in Column AUDIO_FILENAME, Line 5242
+ -> Missing file 637094552416283457ligi alx.mp3 in Column AUDIO_FILENAME, Line 1345
+ -> Missing file 637094552620746828ligi goo.mp3 in Column AUDIO_FILENAME, Line 4605
+ -> Missing file 637094552846831392ligi lip goo.mp3 in Column AUDIO_FILENAME, Line 2167
+ -> Missing file 637094553055643464ligi lip naa.mp3 in Column AUDIO_FILENAME, Line 3842
+ -> Missing file 637094553268801388ligi lip ndeh.mp3 in Column AUDIO_FILENAME, Line 4580
+ -> Missing file 637094553850399585ligi lip wilaloo.mp3 in Column AUDIO_FILENAME, Line 440

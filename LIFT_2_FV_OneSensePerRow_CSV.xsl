@@ -210,7 +210,7 @@
         <!-- IMG_FILENAME -->
         <xsl:text>"</xsl:text>
         <!--The string of functions here tokenizes the string based on the \ character and then selects the last token-->
-        <xsl:value-of select="replace(subsequence(reverse(tokenize(illustration[1]/@href,'\\')), 1, 1),'.bmp','.jpg')"/>
+        <xsl:value-of select="replace(subsequence(reverse(tokenize(illustration[1]/@href,'\\')), 1, 1),'.bmp|.BMP','.jpg')"/>
         <xsl:text>",</xsl:text>
         <!-- IMG_DESCRIPTION - Empty for now.  --> 
         <xsl:text>"</xsl:text>
