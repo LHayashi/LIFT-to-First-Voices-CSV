@@ -1,0 +1,1 @@
+c:\ll\components2\2Software\saxonb9\bin\Transform.exe -o:"C:\ProgramData\SIL\FieldWorks\Projects\Smalgyax\testout.xml" -s:"C:\ProgramData\SIL\FieldWorks\Projects\Smalgyax\SmalgyaxCopy.fwdata" -xsl:"C:\ll\components2\3XSL\Fix fwdata files\ConvertPronunciationMediaFilesToAudioWS.xsl"
