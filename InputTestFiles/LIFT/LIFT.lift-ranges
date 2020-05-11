@@ -13,14 +13,14 @@
 </range>
 <range id="grammatical-info">
 <!-- These are all the parts of speech in the FLEx db, used or unused.  These are used as the basic grammatical-info values. -->
-<range-element id="Adverb" guid="1dc86d89-0649-4ed8-8b5f-4283648a8a78">
+<range-element id="adverb" guid="1dc86d89-0649-4ed8-8b5f-4283648a8a78">
 <label>
-<form lang="en"><text>Adverb</text></form>
+<form lang="en"><text>adverb</text></form>
 <form lang="es"><text>Adverbio</text></form>
 <form lang="fr"><text>Adverbe</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Adverb</text></form>
+<form lang="en"><text>adverb</text></form>
 <form lang="es"><text>adv</text></form>
 <form lang="fr"><text>adv</text></form>
 </abbrev>
@@ -29,14 +29,14 @@
 </description>
 <trait name="catalog-source-id" value="Adverb"/>
 </range-element>
-<range-element id="Noun" guid="f6f726cb-6976-4480-aed7-27a3a3bce2f0">
+<range-element id="noun" guid="f6f726cb-6976-4480-aed7-27a3a3bce2f0">
 <label>
-<form lang="en"><text>Noun</text></form>
+<form lang="en"><text>noun</text></form>
 <form lang="es"><text>Nombre</text></form>
 <form lang="fr"><text>Nom</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>n</text></form>
+<form lang="en"><text>noun</text></form>
 <form lang="es"><text>sus</text></form>
 <form lang="fr"><text>n</text></form>
 </abbrev>
@@ -45,42 +45,26 @@
 </description>
 <trait name="catalog-source-id" value="Noun"/>
 </range-element>
-<range-element id="Pro-form" guid="0f108c94-9fd7-4141-a7dc-c4d5fb8279c7">
+<range-element id="pro-form" guid="0f108c94-9fd7-4141-a7dc-c4d5fb8279c7">
 <label>
-<form lang="en"><text>Pro-form</text></form>
+<form lang="en"><text>pro-form</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>pro-form</text></form>
+<form lang="en"><text>?pronoun</text></form>
 </abbrev>
 <description>
-<form lang="en"><text>A pro-form is a part of speech whose members usually substitute for other constituents, including phrases, clauses, or sentences, and whose meaning is recoverable from the linguistic or extralinguistic context.</text></form>
+<form lang="en"><text>pro-form A pro-form is a part of speech whose members usually substitute for other constituents, including phrases, clauses, or sentences, and whose meaning is recoverable from the linguistic or extralinguistic context.</text></form>
 </description>
 <trait name="catalog-source-id" value="Pro-form"/>
 </range-element>
-<range-element id="Pronoun" guid="5fdb1585-5330-4e3b-829c-b5ef6f7e2555" parent="Pro-form">
+<range-element id="verb" guid="4b620a70-dab8-4135-a43c-6706eb900b68">
 <label>
-<form lang="en"><text>Pronoun</text></form>
-<form lang="es"><text>Pronombre</text></form>
-<form lang="fr"><text>Pronom</text></form>
-</label>
-<abbrev>
-<form lang="en"><text>pro</text></form>
-<form lang="es"><text>pro</text></form>
-<form lang="fr"><text>pro</text></form>
-</abbrev>
-<description>
-<form lang="en"><text>A pronoun is a pro-form which functions like a noun and substitutes for a noun or noun phrase.</text></form>
-</description>
-<trait name="catalog-source-id" value="Pronoun"/>
-</range-element>
-<range-element id="Verb" guid="4b620a70-dab8-4135-a43c-6706eb900b68">
-<label>
-<form lang="en"><text>Verb</text></form>
+<form lang="en"><text>verb</text></form>
 <form lang="es"><text>Verbo</text></form>
 <form lang="fr"><text>Verbe</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>v</text></form>
+<form lang="en"><text>verb</text></form>
 <form lang="es"><text>v</text></form>
 <form lang="fr"><text>v</text></form>
 </abbrev>
@@ -89,36 +73,12 @@
 </description>
 <trait name="catalog-source-id" value="Verb"/>
 </range-element>
-<range-element id="Transitive verb" guid="454ac493-0fd5-4067-8819-d9dfd2b8f294" parent="Verb">
-<label>
-<form lang="en"><text>Transitive verb</text></form>
-</label>
-<abbrev>
-<form lang="en"><text>Vt</text></form>
-</abbrev>
-<description>
-<form lang="en"><text>A transitive verb is a verb that takes a direct object, and describes a relation between two participants.</text></form>
-</description>
-<trait name="catalog-source-id" value="TransitiveVerb"/>
-</range-element>
-<range-element id="Intransitive verb" guid="b93437ce-df57-4129-aa0c-08c4a522e0df" parent="Verb">
-<label>
-<form lang="en"><text>Intransitive verb</text></form>
-</label>
-<abbrev>
-<form lang="en"><text>Vi</text></form>
-</abbrev>
-<description>
-<form lang="en"><text>An intransitive verb is a verb that cannot take a direct object, and describes a property, state, or situation involving only one participant.</text></form>
-</description>
-<trait name="catalog-source-id" value="IntransitiveVerb"/>
-</range-element>
 <range-element id="common noun" guid="b8c48e05-88ec-4a79-9156-92f158d28ea2">
 <label>
 <form lang="en"><text>common noun</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>N[common]</text></form>
+<form lang="en"><text>noun</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -127,8 +87,11 @@
 <form lang="en"><text>possessive noun</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Noun[possessive]</text></form>
+<form lang="en"><text>pronoun</text></form>
 </abbrev>
+<description>
+<form lang="en"><text>Noun[possessive]</text></form>
+</description>
 <trait name="catalog-source-id" value=""/>
 </range-element>
 <range-element id="transitive verb" guid="cb4f92ce-a35b-46e0-9eca-1102d3a51790">
@@ -136,8 +99,11 @@
 <form lang="en"><text>transitive verb</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Verb[transitive]</text></form>
+<form lang="en"><text>transitive_verb</text></form>
 </abbrev>
+<description>
+<form lang="en"><text>Verb[transitive]</text></form>
+</description>
 <trait name="catalog-source-id" value=""/>
 </range-element>
 <range-element id="intransitive verb" guid="c2b8766f-c66c-41e4-833f-85abaf1837cc">
@@ -145,8 +111,11 @@
 <form lang="en"><text>intransitive verb</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Verb[intransitive]</text></form>
+<form lang="en"><text>intransitive_verb</text></form>
 </abbrev>
+<description>
+<form lang="en"><text>Verb[intransitive]</text></form>
+</description>
 <trait name="catalog-source-id" value=""/>
 </range-element>
 <range-element id="preverbal" guid="8b14dd43-981a-4e1e-a8e4-7a5dea8f2d93">
@@ -154,7 +123,7 @@
 <form lang="en"><text>preverbal</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Preverbal</text></form>
+<form lang="en"><text>modifier_verb</text></form>
 </abbrev>
 <description>
 <form lang="en"><text>An element which may be compounded to the front of a verb, to signal information such as tense, direction, etc.</text></form>
@@ -166,8 +135,11 @@
 <form lang="en"><text>proper noun</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Noun[proper]</text></form>
+<form lang="en"><text>noun</text></form>
 </abbrev>
+<description>
+<form lang="en"><text>Noun[proper]</text></form>
+</description>
 <trait name="catalog-source-id" value=""/>
 </range-element>
 <range-element id="kinship term noun" guid="5357a926-c834-4009-ab2e-a73025c0932c">
@@ -175,8 +147,11 @@
 <form lang="en"><text>kinship term noun</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>N[kinship term noun]</text></form>
+<form lang="en"><text>noun</text></form>
 </abbrev>
+<description>
+<form lang="en"><text>N[kinship term noun]</text></form>
+</description>
 <trait name="catalog-source-id" value=""/>
 </range-element>
 <range-element id="interjection" guid="a9de932a-65b7-4748-80c2-86228f45491f">
@@ -184,7 +159,7 @@
 <form lang="en"><text>interjection</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Interjection</text></form>
+<form lang="en"><text>interjection</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -193,7 +168,7 @@
 <form lang="en"><text>conjunction</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Conjunction</text></form>
+<form lang="en"><text>conjunction</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -202,7 +177,7 @@
 <form lang="en"><text>preposition</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Preposition</text></form>
+<form lang="en"><text>preposition</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -211,7 +186,7 @@
 <form lang="en"><text>CN-PRD</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>CN-PRD</text></form>
+<form lang="en"><text>connective</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -220,16 +195,7 @@
 <form lang="en"><text>CN-POSS</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>CN-POSS</text></form>
-</abbrev>
-<trait name="catalog-source-id" value=""/>
-</range-element>
-<range-element id="CN-ATT " guid="3f6beb1f-5086-41c1-b91e-07d3552c0963">
-<label>
-<form lang="en"><text>CN-ATT </text></form>
-</label>
-<abbrev>
-<form lang="en"><text>CN-ATT </text></form>
+<form lang="en"><text>connective</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -238,7 +204,7 @@
 <form lang="en"><text>CL-INIT subordinating conjunction</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>CL-INIT subordinating conjunction</text></form>
+<form lang="en"><text>conjunction</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -247,7 +213,7 @@
 <form lang="en"><text>CL-INIT coordinating conjunction</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>CL-INIT coordinating conjunction</text></form>
+<form lang="en"><text>conjunction</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -256,8 +222,11 @@
 <form lang="en"><text>prenominal</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Prenominal</text></form>
+<form lang="en"><text>modifier_noun</text></form>
 </abbrev>
+<description>
+<form lang="en"><text>Prenominal</text></form>
+</description>
 <trait name="catalog-source-id" value=""/>
 </range-element>
 <range-element id="CL-INIT negative" guid="502a77fb-50c9-4fb2-ba0d-cbde039dcce3">
@@ -265,7 +234,7 @@
 <form lang="en"><text>CL-INIT negative</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>CL-INIT negative</text></form>
+<form lang="en"><text>negation</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -274,7 +243,7 @@
 <form lang="en"><text>indefinite pronoun</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Pronoun[indefinite]</text></form>
+<form lang="en"><text>pronoun</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -283,7 +252,7 @@
 <form lang="en"><text>CL-INIT tense-aspect marker</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>CL-INIT tense-aspect marker</text></form>
+<form lang="en"><text>tense_aspect</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -292,7 +261,7 @@
 <form lang="en"><text>discourse marker</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Discourse marker</text></form>
+<form lang="en"><text>?Discourse marker</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -301,7 +270,7 @@
 <form lang="en"><text>demonstrative</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Demonstrative</text></form>
+<form lang="en"><text>demonstrative</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -310,7 +279,7 @@
 <form lang="en"><text>CL-INIT interrogative</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>CL-INIT interrogative</text></form>
+<form lang="en"><text>interrogative</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -319,7 +288,7 @@
 <form lang="en"><text>negation</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Negation</text></form>
+<form lang="en"><text>negation</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -328,7 +297,7 @@
 <form lang="en"><text>plural marker</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>plural marker</text></form>
+<form lang="en"><text>plural_marker</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -337,7 +306,7 @@
 <form lang="en"><text>nominal - term of address</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Nominal - term of address</text></form>
+<form lang="en"><text>?noun</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -346,7 +315,7 @@
 <form lang="en"><text>derivational suffix</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Derivational suffix</text></form>
+<form lang="en"><text>suffix</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -355,7 +324,7 @@
 <form lang="en"><text>CN</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>CN</text></form>
+<form lang="en"><text>connective</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -364,7 +333,7 @@
 <form lang="en"><text>auxiliary verb</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Auxiliary Verb</text></form>
+<form lang="en"><text>particle_auxiliary_verb</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -373,7 +342,7 @@
 <form lang="en"><text>honorific marker</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Honorific</text></form>
+<form lang="en"><text>?Honorific</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -382,7 +351,7 @@
 <form lang="en"><text>marker</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Marker</text></form>
+<form lang="en"><text>?Marker ?particle</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -391,8 +360,11 @@
 <form lang="en"><text>personal pronoun</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Pronoun[personal]</text></form>
+<form lang="en"><text>pronoun_personal</text></form>
 </abbrev>
+<description>
+<form lang="en"><text>Pronoun[personal]</text></form>
+</description>
 <trait name="catalog-source-id" value=""/>
 </range-element>
 <range-element id="relative pronoun" guid="831ca5e3-3c6d-42b6-abfb-f82665719bcd">
@@ -400,16 +372,19 @@
 <form lang="en"><text>relative pronoun</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Pronoun[relative]</text></form>
+<form lang="en"><text>pronoun_relative</text></form>
 </abbrev>
+<description>
+<form lang="en"><text>Pronoun[relative]</text></form>
+</description>
 <trait name="catalog-source-id" value=""/>
 </range-element>
-<range-element id="Question Word" guid="89644769-b2db-4d19-8370-27f91f68d0e9">
+<range-element id="question word" guid="89644769-b2db-4d19-8370-27f91f68d0e9">
 <label>
-<form lang="en"><text>Question Word</text></form>
+<form lang="en"><text>question word</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Q</text></form>
+<form lang="en"><text>question_word</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -418,7 +393,7 @@
 <form lang="en"><text>number</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Number</text></form>
+<form lang="en"><text>number</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -427,16 +402,7 @@
 <form lang="en"><text>quantifier</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Quantifier</text></form>
-</abbrev>
-<trait name="catalog-source-id" value=""/>
-</range-element>
-<range-element id="derivational prefix" guid="c5c45237-c0a7-4c24-a6ef-d8c1acf1fb4e">
-<label>
-<form lang="en"><text>derivational prefix</text></form>
-</label>
-<abbrev>
-<form lang="en"><text>Derivational prefix</text></form>
+<form lang="en"><text>particle_quantifier</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -445,7 +411,7 @@
 <form lang="en"><text>bitransitive verb</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>bitrans</text></form>
+<form lang="en"><text>transitive_verb</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -454,8 +420,11 @@
 <form lang="en"><text>indirect object pronoun</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Pronoun[indirect object]</text></form>
+<form lang="en"><text>pronoun</text></form>
 </abbrev>
+<description>
+<form lang="en"><text>Originally the Abbreviation: Pronoun[indirect object]</text></form>
+</description>
 <trait name="catalog-source-id" value=""/>
 </range-element>
 <range-element id="CNirrealis" guid="d71baeef-a03f-4e84-91f5-13f882cd45ff">
@@ -463,7 +432,7 @@
 <form lang="en"><text>CNirrealis</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>CNirrealis</text></form>
+<form lang="en"><text>connective_irrealis</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -472,8 +441,11 @@
 <form lang="en"><text>possessive pronoun</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Pronoun[possessive]</text></form>
+<form lang="en"><text>pronoun</text></form>
 </abbrev>
+<description>
+<form lang="en"><text>Pronoun[possessive]</text></form>
+</description>
 <trait name="catalog-source-id" value=""/>
 </range-element>
 <range-element id="precategorial" guid="51ead2be-0281-427c-a28b-f7192690d95d">
@@ -490,7 +462,7 @@
 <form lang="en"><text>demonstrative pronoun</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Pronoun[demonstrative]</text></form>
+<form lang="en"><text>demonstrative</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -503,13 +475,32 @@
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
+<range-element id="pronoun" guid="5fdb1585-5330-4e3b-829c-b5ef6f7e2555">
+<label>
+<form lang="en"><text>pronoun</text></form>
+<form lang="es"><text>Pronombre</text></form>
+<form lang="fr"><text>Pronom</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>pronoun</text></form>
+<form lang="es"><text>pro</text></form>
+<form lang="fr"><text>pro</text></form>
+</abbrev>
+<description>
+<form lang="en"><text>A pronoun is a pro-form which functions like a noun and substitutes for a noun or noun phrase.</text></form>
+</description>
+<trait name="catalog-source-id" value="Pronoun"/>
+</range-element>
 <range-element id="Placename" guid="79a3e280-b90c-477e-92ef-d30dd692e860">
 <label>
 <form lang="en"><text>Placename</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Placename</text></form>
+<form lang="en"><text>noun</text></form>
 </abbrev>
+<description>
+<form lang="en"><text>Placename</text></form>
+</description>
 <trait name="catalog-source-id" value=""/>
 </range-element>
 <range-element id="CL-INIT" guid="95f83781-e19d-4f3f-85c0-cbe141eccb70">
@@ -517,7 +508,7 @@
 <form lang="en"><text>CL-INIT</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>CL-INIT</text></form>
+<form lang="en"><text>conjunction</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -526,7 +517,7 @@
 <form lang="en"><text>adjective</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>adj</text></form>
+<form lang="en"><text>adjective</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -535,7 +526,7 @@
 <form lang="en"><text>modifier</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>mod</text></form>
+<form lang="en"><text>?modifier_noun</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -544,112 +535,28 @@
 <form lang="en"><text>reflexive</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Reflexive</text></form>
+<form lang="en"><text>?Reflexive</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
-</range-element>
-<range-element id="Preverb" guid="c7518511-e09b-420b-b5bc-3f5ae6d47256">
-<label>
-<form lang="en"><text>Preverb</text></form>
-</label>
-<abbrev>
-<form lang="en"><text>Preverb</text></form>
-</abbrev>
-<description>
-<form lang="en"><text>An element which may be compounded to the front of a verb, to signal information such as tense, direction, etc..</text></form>
-</description>
-<trait name="catalog-source-id" value="Preverb"/>
-</range-element>
-<range-element id="Noun or Verb" guid="b2fe3c66-1f54-447c-ba8a-9be038898843">
-<label>
-<form lang="en"><text>Noun or Verb</text></form>
-</label>
-<abbrev>
-<form lang="en"><text>Noun or Verb</text></form>
-</abbrev>
-<description>
-<form lang="en"><text>Category to which CVC- reduplicative plurals attach</text></form>
-</description>
-<trait name="catalog-source-id" value=""/>
-</range-element>
-<range-element id="Interjection" guid="d32dff62-4117-4762-a887-96478406769b">
-<label>
-<form lang="en"><text>Interjection</text></form>
-</label>
-<abbrev>
-<form lang="en"><text>interj</text></form>
-</abbrev>
-<description>
-<form lang="en"><text>An interjection is a part of speech, typically brief in form, such as one syllable or word, whose members are used most often as exclamations or parts of an exclamation. An interjection, typically expressing an emotional reaction, often with respect to an accompanying sentence, is not syntactically related to other accompanying expressions, and may include a combination of sounds not otherwise found in the language.</text></form>
-</description>
-<trait name="catalog-source-id" value="Interjection"/>
 </range-element>
 <range-element id="***" guid="7bd1386c-da84-456b-aacb-0d7668fd65af">
 <trait name="catalog-source-id" value=""/>
-</range-element>
-<range-element id="Adjective" guid="30d07580-5052-4d91-bc24-469b8b2d7df9">
-<label>
-<form lang="en"><text>Adjective</text></form>
-</label>
-<abbrev>
-<form lang="en"><text>adj</text></form>
-</abbrev>
-<description>
-<form lang="en"><text>An adjective is a part of speech whose members modify nouns. An adjective specifies the attributes of a noun referent. Note: this is one case among many. Adjectives are a class of modifiers.</text></form>
-</description>
-<trait name="catalog-source-id" value="Adjective"/>
-</range-element>
-<range-element id="Adposition" guid="ae115ea8-2cd7-4501-8ae7-dc638e4f17c5">
-<label>
-<form lang="en"><text>Adposition</text></form>
-</label>
-<abbrev>
-<form lang="en"><text>adp</text></form>
-</abbrev>
-<description>
-<form lang="en"><text>An adposition is a part of speech whose members are of a closed set and occur before or after a complement composed of a noun phrase, noun, pronoun, or clause that functions as a noun phrase and forms a single structure with the complement to express its grammatical and semantic relation to another unit within a clause.</text></form>
-</description>
-<trait name="catalog-source-id" value="Adposition"/>
 </range-element>
 <range-element id="ANY" guid="6e67b749-e4fb-4310-9843-1a517530c23c">
 <label>
 <form lang="en"><text>ANY</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>ANY</text></form>
+<form lang="en"><text>?ANY</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
-<range-element id="Classifier" guid="31616603-aadd-47af-a710-cb565fbbbd57">
+<range-element id="question-marker" guid="b9168e56-2688-417c-91a1-fa199a643e6c">
 <label>
-<form lang="en"><text>Classifier</text></form>
+<form lang="en"><text>question-marker</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>clf</text></form>
-</abbrev>
-<description>
-<form lang="en"><text>A classifier is a part of speech whose members express the classification of a noun.</text></form>
-</description>
-<trait name="catalog-source-id" value="Classifier"/>
-</range-element>
-<range-element id="Connective" guid="6e0682a7-efd4-43c9-b083-22c4ce245419">
-<label>
-<form lang="en"><text>Connective</text></form>
-</label>
-<abbrev>
-<form lang="en"><text>conn</text></form>
-</abbrev>
-<description>
-<form lang="en"><text>Also known as a conjunction, a connective is a class of parts of speech whose members syntactically link words or larger constituents, and expresses a semantic relationship between them. A conjunction is positionally fixed relative to one or more of the elements related by it, thus distinguishing it from constituents such as English conjunctive adverbs.</text></form>
-</description>
-<trait name="catalog-source-id" value="Connective"/>
-</range-element>
-<range-element id="Question-marker" guid="b9168e56-2688-417c-91a1-fa199a643e6c">
-<label>
-<form lang="en"><text>Question-marker</text></form>
-</label>
-<abbrev>
-<form lang="en"><text>Q</text></form>
+<form lang="en"><text>question_marker</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -31127,14 +31034,14 @@
 </range>
 <!-- The parts of speech are duplicated in another range because derivational affixes require a "From" PartOfSpeech as well as a "To" PartOfSpeech. -->
 <range id="from-part-of-speech">
-<range-element id="Adverb" guid="1dc86d89-0649-4ed8-8b5f-4283648a8a78">
+<range-element id="adverb" guid="1dc86d89-0649-4ed8-8b5f-4283648a8a78">
 <label>
-<form lang="en"><text>Adverb</text></form>
+<form lang="en"><text>adverb</text></form>
 <form lang="es"><text>Adverbio</text></form>
 <form lang="fr"><text>Adverbe</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Adverb</text></form>
+<form lang="en"><text>adverb</text></form>
 <form lang="es"><text>adv</text></form>
 <form lang="fr"><text>adv</text></form>
 </abbrev>
@@ -31143,14 +31050,14 @@
 </description>
 <trait name="catalog-source-id" value="Adverb"/>
 </range-element>
-<range-element id="Noun" guid="f6f726cb-6976-4480-aed7-27a3a3bce2f0">
+<range-element id="noun" guid="f6f726cb-6976-4480-aed7-27a3a3bce2f0">
 <label>
-<form lang="en"><text>Noun</text></form>
+<form lang="en"><text>noun</text></form>
 <form lang="es"><text>Nombre</text></form>
 <form lang="fr"><text>Nom</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>n</text></form>
+<form lang="en"><text>noun</text></form>
 <form lang="es"><text>sus</text></form>
 <form lang="fr"><text>n</text></form>
 </abbrev>
@@ -31159,42 +31066,26 @@
 </description>
 <trait name="catalog-source-id" value="Noun"/>
 </range-element>
-<range-element id="Pro-form" guid="0f108c94-9fd7-4141-a7dc-c4d5fb8279c7">
+<range-element id="pro-form" guid="0f108c94-9fd7-4141-a7dc-c4d5fb8279c7">
 <label>
-<form lang="en"><text>Pro-form</text></form>
+<form lang="en"><text>pro-form</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>pro-form</text></form>
+<form lang="en"><text>?pronoun</text></form>
 </abbrev>
 <description>
-<form lang="en"><text>A pro-form is a part of speech whose members usually substitute for other constituents, including phrases, clauses, or sentences, and whose meaning is recoverable from the linguistic or extralinguistic context.</text></form>
+<form lang="en"><text>pro-form A pro-form is a part of speech whose members usually substitute for other constituents, including phrases, clauses, or sentences, and whose meaning is recoverable from the linguistic or extralinguistic context.</text></form>
 </description>
 <trait name="catalog-source-id" value="Pro-form"/>
 </range-element>
-<range-element id="Pronoun" guid="5fdb1585-5330-4e3b-829c-b5ef6f7e2555" parent="Pro-form">
+<range-element id="verb" guid="4b620a70-dab8-4135-a43c-6706eb900b68">
 <label>
-<form lang="en"><text>Pronoun</text></form>
-<form lang="es"><text>Pronombre</text></form>
-<form lang="fr"><text>Pronom</text></form>
-</label>
-<abbrev>
-<form lang="en"><text>pro</text></form>
-<form lang="es"><text>pro</text></form>
-<form lang="fr"><text>pro</text></form>
-</abbrev>
-<description>
-<form lang="en"><text>A pronoun is a pro-form which functions like a noun and substitutes for a noun or noun phrase.</text></form>
-</description>
-<trait name="catalog-source-id" value="Pronoun"/>
-</range-element>
-<range-element id="Verb" guid="4b620a70-dab8-4135-a43c-6706eb900b68">
-<label>
-<form lang="en"><text>Verb</text></form>
+<form lang="en"><text>verb</text></form>
 <form lang="es"><text>Verbo</text></form>
 <form lang="fr"><text>Verbe</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>v</text></form>
+<form lang="en"><text>verb</text></form>
 <form lang="es"><text>v</text></form>
 <form lang="fr"><text>v</text></form>
 </abbrev>
@@ -31203,36 +31094,12 @@
 </description>
 <trait name="catalog-source-id" value="Verb"/>
 </range-element>
-<range-element id="Transitive verb" guid="454ac493-0fd5-4067-8819-d9dfd2b8f294" parent="Verb">
-<label>
-<form lang="en"><text>Transitive verb</text></form>
-</label>
-<abbrev>
-<form lang="en"><text>Vt</text></form>
-</abbrev>
-<description>
-<form lang="en"><text>A transitive verb is a verb that takes a direct object, and describes a relation between two participants.</text></form>
-</description>
-<trait name="catalog-source-id" value="TransitiveVerb"/>
-</range-element>
-<range-element id="Intransitive verb" guid="b93437ce-df57-4129-aa0c-08c4a522e0df" parent="Verb">
-<label>
-<form lang="en"><text>Intransitive verb</text></form>
-</label>
-<abbrev>
-<form lang="en"><text>Vi</text></form>
-</abbrev>
-<description>
-<form lang="en"><text>An intransitive verb is a verb that cannot take a direct object, and describes a property, state, or situation involving only one participant.</text></form>
-</description>
-<trait name="catalog-source-id" value="IntransitiveVerb"/>
-</range-element>
 <range-element id="common noun" guid="b8c48e05-88ec-4a79-9156-92f158d28ea2">
 <label>
 <form lang="en"><text>common noun</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>N[common]</text></form>
+<form lang="en"><text>noun</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -31241,8 +31108,11 @@
 <form lang="en"><text>possessive noun</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Noun[possessive]</text></form>
+<form lang="en"><text>pronoun</text></form>
 </abbrev>
+<description>
+<form lang="en"><text>Noun[possessive]</text></form>
+</description>
 <trait name="catalog-source-id" value=""/>
 </range-element>
 <range-element id="transitive verb" guid="cb4f92ce-a35b-46e0-9eca-1102d3a51790">
@@ -31250,8 +31120,11 @@
 <form lang="en"><text>transitive verb</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Verb[transitive]</text></form>
+<form lang="en"><text>transitive_verb</text></form>
 </abbrev>
+<description>
+<form lang="en"><text>Verb[transitive]</text></form>
+</description>
 <trait name="catalog-source-id" value=""/>
 </range-element>
 <range-element id="intransitive verb" guid="c2b8766f-c66c-41e4-833f-85abaf1837cc">
@@ -31259,8 +31132,11 @@
 <form lang="en"><text>intransitive verb</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Verb[intransitive]</text></form>
+<form lang="en"><text>intransitive_verb</text></form>
 </abbrev>
+<description>
+<form lang="en"><text>Verb[intransitive]</text></form>
+</description>
 <trait name="catalog-source-id" value=""/>
 </range-element>
 <range-element id="preverbal" guid="8b14dd43-981a-4e1e-a8e4-7a5dea8f2d93">
@@ -31268,7 +31144,7 @@
 <form lang="en"><text>preverbal</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Preverbal</text></form>
+<form lang="en"><text>modifier_verb</text></form>
 </abbrev>
 <description>
 <form lang="en"><text>An element which may be compounded to the front of a verb, to signal information such as tense, direction, etc.</text></form>
@@ -31280,8 +31156,11 @@
 <form lang="en"><text>proper noun</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Noun[proper]</text></form>
+<form lang="en"><text>noun</text></form>
 </abbrev>
+<description>
+<form lang="en"><text>Noun[proper]</text></form>
+</description>
 <trait name="catalog-source-id" value=""/>
 </range-element>
 <range-element id="kinship term noun" guid="5357a926-c834-4009-ab2e-a73025c0932c">
@@ -31289,8 +31168,11 @@
 <form lang="en"><text>kinship term noun</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>N[kinship term noun]</text></form>
+<form lang="en"><text>noun</text></form>
 </abbrev>
+<description>
+<form lang="en"><text>N[kinship term noun]</text></form>
+</description>
 <trait name="catalog-source-id" value=""/>
 </range-element>
 <range-element id="interjection" guid="a9de932a-65b7-4748-80c2-86228f45491f">
@@ -31298,7 +31180,7 @@
 <form lang="en"><text>interjection</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Interjection</text></form>
+<form lang="en"><text>interjection</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -31307,7 +31189,7 @@
 <form lang="en"><text>conjunction</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Conjunction</text></form>
+<form lang="en"><text>conjunction</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -31316,7 +31198,7 @@
 <form lang="en"><text>preposition</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Preposition</text></form>
+<form lang="en"><text>preposition</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -31325,7 +31207,7 @@
 <form lang="en"><text>CN-PRD</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>CN-PRD</text></form>
+<form lang="en"><text>connective</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -31334,16 +31216,7 @@
 <form lang="en"><text>CN-POSS</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>CN-POSS</text></form>
-</abbrev>
-<trait name="catalog-source-id" value=""/>
-</range-element>
-<range-element id="CN-ATT " guid="3f6beb1f-5086-41c1-b91e-07d3552c0963">
-<label>
-<form lang="en"><text>CN-ATT </text></form>
-</label>
-<abbrev>
-<form lang="en"><text>CN-ATT </text></form>
+<form lang="en"><text>connective</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -31352,7 +31225,7 @@
 <form lang="en"><text>CL-INIT subordinating conjunction</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>CL-INIT subordinating conjunction</text></form>
+<form lang="en"><text>conjunction</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -31361,7 +31234,7 @@
 <form lang="en"><text>CL-INIT coordinating conjunction</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>CL-INIT coordinating conjunction</text></form>
+<form lang="en"><text>conjunction</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -31370,8 +31243,11 @@
 <form lang="en"><text>prenominal</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Prenominal</text></form>
+<form lang="en"><text>modifier_noun</text></form>
 </abbrev>
+<description>
+<form lang="en"><text>Prenominal</text></form>
+</description>
 <trait name="catalog-source-id" value=""/>
 </range-element>
 <range-element id="CL-INIT negative" guid="502a77fb-50c9-4fb2-ba0d-cbde039dcce3">
@@ -31379,7 +31255,7 @@
 <form lang="en"><text>CL-INIT negative</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>CL-INIT negative</text></form>
+<form lang="en"><text>negation</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -31388,7 +31264,7 @@
 <form lang="en"><text>indefinite pronoun</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Pronoun[indefinite]</text></form>
+<form lang="en"><text>pronoun</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -31397,7 +31273,7 @@
 <form lang="en"><text>CL-INIT tense-aspect marker</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>CL-INIT tense-aspect marker</text></form>
+<form lang="en"><text>tense_aspect</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -31406,7 +31282,7 @@
 <form lang="en"><text>discourse marker</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Discourse marker</text></form>
+<form lang="en"><text>?Discourse marker</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -31415,7 +31291,7 @@
 <form lang="en"><text>demonstrative</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Demonstrative</text></form>
+<form lang="en"><text>demonstrative</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -31424,7 +31300,7 @@
 <form lang="en"><text>CL-INIT interrogative</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>CL-INIT interrogative</text></form>
+<form lang="en"><text>interrogative</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -31433,7 +31309,7 @@
 <form lang="en"><text>negation</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Negation</text></form>
+<form lang="en"><text>negation</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -31442,7 +31318,7 @@
 <form lang="en"><text>plural marker</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>plural marker</text></form>
+<form lang="en"><text>plural_marker</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -31451,7 +31327,7 @@
 <form lang="en"><text>nominal - term of address</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Nominal - term of address</text></form>
+<form lang="en"><text>?noun</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -31460,7 +31336,7 @@
 <form lang="en"><text>derivational suffix</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Derivational suffix</text></form>
+<form lang="en"><text>suffix</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -31469,7 +31345,7 @@
 <form lang="en"><text>CN</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>CN</text></form>
+<form lang="en"><text>connective</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -31478,7 +31354,7 @@
 <form lang="en"><text>auxiliary verb</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Auxiliary Verb</text></form>
+<form lang="en"><text>particle_auxiliary_verb</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -31487,7 +31363,7 @@
 <form lang="en"><text>honorific marker</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Honorific</text></form>
+<form lang="en"><text>?Honorific</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -31496,7 +31372,7 @@
 <form lang="en"><text>marker</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Marker</text></form>
+<form lang="en"><text>?Marker ?particle</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -31505,8 +31381,11 @@
 <form lang="en"><text>personal pronoun</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Pronoun[personal]</text></form>
+<form lang="en"><text>pronoun_personal</text></form>
 </abbrev>
+<description>
+<form lang="en"><text>Pronoun[personal]</text></form>
+</description>
 <trait name="catalog-source-id" value=""/>
 </range-element>
 <range-element id="relative pronoun" guid="831ca5e3-3c6d-42b6-abfb-f82665719bcd">
@@ -31514,16 +31393,19 @@
 <form lang="en"><text>relative pronoun</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Pronoun[relative]</text></form>
+<form lang="en"><text>pronoun_relative</text></form>
 </abbrev>
+<description>
+<form lang="en"><text>Pronoun[relative]</text></form>
+</description>
 <trait name="catalog-source-id" value=""/>
 </range-element>
-<range-element id="Question Word" guid="89644769-b2db-4d19-8370-27f91f68d0e9">
+<range-element id="question word" guid="89644769-b2db-4d19-8370-27f91f68d0e9">
 <label>
-<form lang="en"><text>Question Word</text></form>
+<form lang="en"><text>question word</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Q</text></form>
+<form lang="en"><text>question_word</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -31532,7 +31414,7 @@
 <form lang="en"><text>number</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Number</text></form>
+<form lang="en"><text>number</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -31541,16 +31423,7 @@
 <form lang="en"><text>quantifier</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Quantifier</text></form>
-</abbrev>
-<trait name="catalog-source-id" value=""/>
-</range-element>
-<range-element id="derivational prefix" guid="c5c45237-c0a7-4c24-a6ef-d8c1acf1fb4e">
-<label>
-<form lang="en"><text>derivational prefix</text></form>
-</label>
-<abbrev>
-<form lang="en"><text>Derivational prefix</text></form>
+<form lang="en"><text>particle_quantifier</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -31559,7 +31432,7 @@
 <form lang="en"><text>bitransitive verb</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>bitrans</text></form>
+<form lang="en"><text>transitive_verb</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -31568,8 +31441,11 @@
 <form lang="en"><text>indirect object pronoun</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Pronoun[indirect object]</text></form>
+<form lang="en"><text>pronoun</text></form>
 </abbrev>
+<description>
+<form lang="en"><text>Originally the Abbreviation: Pronoun[indirect object]</text></form>
+</description>
 <trait name="catalog-source-id" value=""/>
 </range-element>
 <range-element id="CNirrealis" guid="d71baeef-a03f-4e84-91f5-13f882cd45ff">
@@ -31577,7 +31453,7 @@
 <form lang="en"><text>CNirrealis</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>CNirrealis</text></form>
+<form lang="en"><text>connective_irrealis</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -31586,8 +31462,11 @@
 <form lang="en"><text>possessive pronoun</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Pronoun[possessive]</text></form>
+<form lang="en"><text>pronoun</text></form>
 </abbrev>
+<description>
+<form lang="en"><text>Pronoun[possessive]</text></form>
+</description>
 <trait name="catalog-source-id" value=""/>
 </range-element>
 <range-element id="precategorial" guid="51ead2be-0281-427c-a28b-f7192690d95d">
@@ -31604,7 +31483,7 @@
 <form lang="en"><text>demonstrative pronoun</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Pronoun[demonstrative]</text></form>
+<form lang="en"><text>demonstrative</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -31617,13 +31496,32 @@
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
+<range-element id="pronoun" guid="5fdb1585-5330-4e3b-829c-b5ef6f7e2555">
+<label>
+<form lang="en"><text>pronoun</text></form>
+<form lang="es"><text>Pronombre</text></form>
+<form lang="fr"><text>Pronom</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>pronoun</text></form>
+<form lang="es"><text>pro</text></form>
+<form lang="fr"><text>pro</text></form>
+</abbrev>
+<description>
+<form lang="en"><text>A pronoun is a pro-form which functions like a noun and substitutes for a noun or noun phrase.</text></form>
+</description>
+<trait name="catalog-source-id" value="Pronoun"/>
+</range-element>
 <range-element id="Placename" guid="79a3e280-b90c-477e-92ef-d30dd692e860">
 <label>
 <form lang="en"><text>Placename</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Placename</text></form>
+<form lang="en"><text>noun</text></form>
 </abbrev>
+<description>
+<form lang="en"><text>Placename</text></form>
+</description>
 <trait name="catalog-source-id" value=""/>
 </range-element>
 <range-element id="CL-INIT" guid="95f83781-e19d-4f3f-85c0-cbe141eccb70">
@@ -31631,7 +31529,7 @@
 <form lang="en"><text>CL-INIT</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>CL-INIT</text></form>
+<form lang="en"><text>conjunction</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -31640,7 +31538,7 @@
 <form lang="en"><text>adjective</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>adj</text></form>
+<form lang="en"><text>adjective</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -31649,7 +31547,7 @@
 <form lang="en"><text>modifier</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>mod</text></form>
+<form lang="en"><text>?modifier_noun</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -31658,112 +31556,28 @@
 <form lang="en"><text>reflexive</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>Reflexive</text></form>
+<form lang="en"><text>?Reflexive</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
-</range-element>
-<range-element id="Preverb" guid="c7518511-e09b-420b-b5bc-3f5ae6d47256">
-<label>
-<form lang="en"><text>Preverb</text></form>
-</label>
-<abbrev>
-<form lang="en"><text>Preverb</text></form>
-</abbrev>
-<description>
-<form lang="en"><text>An element which may be compounded to the front of a verb, to signal information such as tense, direction, etc..</text></form>
-</description>
-<trait name="catalog-source-id" value="Preverb"/>
-</range-element>
-<range-element id="Noun or Verb" guid="b2fe3c66-1f54-447c-ba8a-9be038898843">
-<label>
-<form lang="en"><text>Noun or Verb</text></form>
-</label>
-<abbrev>
-<form lang="en"><text>Noun or Verb</text></form>
-</abbrev>
-<description>
-<form lang="en"><text>Category to which CVC- reduplicative plurals attach</text></form>
-</description>
-<trait name="catalog-source-id" value=""/>
-</range-element>
-<range-element id="Interjection" guid="d32dff62-4117-4762-a887-96478406769b">
-<label>
-<form lang="en"><text>Interjection</text></form>
-</label>
-<abbrev>
-<form lang="en"><text>interj</text></form>
-</abbrev>
-<description>
-<form lang="en"><text>An interjection is a part of speech, typically brief in form, such as one syllable or word, whose members are used most often as exclamations or parts of an exclamation. An interjection, typically expressing an emotional reaction, often with respect to an accompanying sentence, is not syntactically related to other accompanying expressions, and may include a combination of sounds not otherwise found in the language.</text></form>
-</description>
-<trait name="catalog-source-id" value="Interjection"/>
 </range-element>
 <range-element id="***" guid="7bd1386c-da84-456b-aacb-0d7668fd65af">
 <trait name="catalog-source-id" value=""/>
-</range-element>
-<range-element id="Adjective" guid="30d07580-5052-4d91-bc24-469b8b2d7df9">
-<label>
-<form lang="en"><text>Adjective</text></form>
-</label>
-<abbrev>
-<form lang="en"><text>adj</text></form>
-</abbrev>
-<description>
-<form lang="en"><text>An adjective is a part of speech whose members modify nouns. An adjective specifies the attributes of a noun referent. Note: this is one case among many. Adjectives are a class of modifiers.</text></form>
-</description>
-<trait name="catalog-source-id" value="Adjective"/>
-</range-element>
-<range-element id="Adposition" guid="ae115ea8-2cd7-4501-8ae7-dc638e4f17c5">
-<label>
-<form lang="en"><text>Adposition</text></form>
-</label>
-<abbrev>
-<form lang="en"><text>adp</text></form>
-</abbrev>
-<description>
-<form lang="en"><text>An adposition is a part of speech whose members are of a closed set and occur before or after a complement composed of a noun phrase, noun, pronoun, or clause that functions as a noun phrase and forms a single structure with the complement to express its grammatical and semantic relation to another unit within a clause.</text></form>
-</description>
-<trait name="catalog-source-id" value="Adposition"/>
 </range-element>
 <range-element id="ANY" guid="6e67b749-e4fb-4310-9843-1a517530c23c">
 <label>
 <form lang="en"><text>ANY</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>ANY</text></form>
+<form lang="en"><text>?ANY</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
-<range-element id="Classifier" guid="31616603-aadd-47af-a710-cb565fbbbd57">
+<range-element id="question-marker" guid="b9168e56-2688-417c-91a1-fa199a643e6c">
 <label>
-<form lang="en"><text>Classifier</text></form>
+<form lang="en"><text>question-marker</text></form>
 </label>
 <abbrev>
-<form lang="en"><text>clf</text></form>
-</abbrev>
-<description>
-<form lang="en"><text>A classifier is a part of speech whose members express the classification of a noun.</text></form>
-</description>
-<trait name="catalog-source-id" value="Classifier"/>
-</range-element>
-<range-element id="Connective" guid="6e0682a7-efd4-43c9-b083-22c4ce245419">
-<label>
-<form lang="en"><text>Connective</text></form>
-</label>
-<abbrev>
-<form lang="en"><text>conn</text></form>
-</abbrev>
-<description>
-<form lang="en"><text>Also known as a conjunction, a connective is a class of parts of speech whose members syntactically link words or larger constituents, and expresses a semantic relationship between them. A conjunction is positionally fixed relative to one or more of the elements related by it, thus distinguishing it from constituents such as English conjunctive adverbs.</text></form>
-</description>
-<trait name="catalog-source-id" value="Connective"/>
-</range-element>
-<range-element id="Question-marker" guid="b9168e56-2688-417c-91a1-fa199a643e6c">
-<label>
-<form lang="en"><text>Question-marker</text></form>
-</label>
-<abbrev>
-<form lang="en"><text>Q</text></form>
+<form lang="en"><text>question_marker</text></form>
 </abbrev>
 <trait name="catalog-source-id" value=""/>
 </range-element>
@@ -33306,6 +33120,505 @@
 </label>
 <abbrev>
 <form lang="en"><text>neologism</text></form>
+</abbrev>
+</range-element>
+</range>
+<!-- This is a custom list or other list which is not output by default but if referenced in the data of a field.  -->
+<range id="FV_Categories" guid="edf801dc-7f83-487d-917d-bfed3638c671">
+<range-element id="Animals" guid="75c9bdea-8e53-4886-99d3-31c936abbc73">
+<label>
+<form lang="en"><text>Animals</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Animals</text></form>
+</abbrev>
+</range-element>
+<range-element id="Amphibians" guid="de98f5cd-a49a-4162-947f-eb9072e99676" parent="Animals">
+<label>
+<form lang="en"><text>Amphibians</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Amphibians</text></form>
+</abbrev>
+</range-element>
+<range-element id="Birds" guid="6778f4d5-b1f8-48e5-9b03-1673f95a3213" parent="Animals">
+<label>
+<form lang="en"><text>Birds</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Birds</text></form>
+</abbrev>
+</range-element>
+<range-element id="Fish" guid="54a68a92-6440-4781-8adc-3660bb3aa5ec" parent="Animals">
+<label>
+<form lang="en"><text>Fish</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Fish</text></form>
+</abbrev>
+</range-element>
+<range-element id="Insects" guid="5116c3dc-0b71-4838-afb7-8f5b936b9b6a" parent="Animals">
+<label>
+<form lang="en"><text>Insects</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Insects</text></form>
+</abbrev>
+</range-element>
+<range-element id="Mammals" guid="d11906e3-e661-4872-b3cc-990a95a2d360" parent="Animals">
+<label>
+<form lang="en"><text>Mammals</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Mammals</text></form>
+</abbrev>
+</range-element>
+<range-element id="Marsupials" guid="5935084a-d7ff-472d-8daa-c45c65168534" parent="Animals">
+<label>
+<form lang="en"><text>Marsupials</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Marsupials</text></form>
+</abbrev>
+</range-element>
+<range-element id="Reptiles" guid="164cb2a5-ea64-4c33-8862-d0a9848542af" parent="Animals">
+<label>
+<form lang="en"><text>Reptiles</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Reptiles</text></form>
+</abbrev>
+</range-element>
+<range-element id="Shellfish" guid="8531716a-4b58-47fd-829c-4f4d1df37566" parent="Animals">
+<label>
+<form lang="en"><text>Shellfish</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Shellfish</text></form>
+</abbrev>
+</range-element>
+<range-element id="Spiders" guid="c2dae094-694c-4443-91c0-455f31ec6dc6" parent="Animals">
+<label>
+<form lang="en"><text>Spiders</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Spiders</text></form>
+</abbrev>
+</range-element>
+<range-element id="Body" guid="1f10b67c-31b3-49ad-afb0-4d9f5aee0a7a">
+<label>
+<form lang="en"><text>Body</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Body</text></form>
+</abbrev>
+</range-element>
+<range-element id="Bodily Afflictions/Health" guid="a0aea551-18bb-42bd-b426-98d5382ccbde" parent="Body">
+<label>
+<form lang="en"><text>Bodily Afflictions/Health</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Bodily Afflictions/Health</text></form>
+</abbrev>
+</range-element>
+<range-element id="Body Parts" guid="89743ae8-28b0-4b0d-8a7d-536d912b003d" parent="Body">
+<label>
+<form lang="en"><text>Body Parts</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Body Parts</text></form>
+</abbrev>
+</range-element>
+<range-element id="Senses" guid="f1aca2e3-4e86-4aed-8d0b-2a25f976dc98" parent="Body">
+<label>
+<form lang="en"><text>Senses</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Senses</text></form>
+</abbrev>
+</range-element>
+<range-element id="Speech And Language" guid="87398c58-c97d-40d5-bc5a-36b503bd60e7" parent="Body">
+<label>
+<form lang="en"><text>Speech And Language</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Speech And Language</text></form>
+</abbrev>
+</range-element>
+<range-element id="Colours" guid="89d984e3-5891-43ce-81b8-c6dbc9e66a46">
+<label>
+<form lang="en"><text>Colours</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Colours</text></form>
+</abbrev>
+</range-element>
+<range-element id="Conjunctions" guid="1a907376-5011-4557-9735-4811f56b6f6b">
+<label>
+<form lang="en"><text>Conjunctions</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Conjunctions</text></form>
+</abbrev>
+</range-element>
+<range-element id="Events" guid="567f4a24-3aac-4b29-958b-f6832de7d1a5">
+<label>
+<form lang="en"><text>Events</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Events</text></form>
+</abbrev>
+</range-element>
+<range-element id="Activities" guid="469c6f74-93f4-45ee-ae29-6685bf13dd14" parent="Events">
+<label>
+<form lang="en"><text>Activities</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Activities</text></form>
+</abbrev>
+</range-element>
+<range-element id="Motion" guid="4bd9033d-cf8c-4667-abda-bd3e44fc52ed" parent="Events">
+<label>
+<form lang="en"><text>Motion</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Motion</text></form>
+</abbrev>
+</range-element>
+<range-element id="States" guid="7e1a37b8-130c-4e0b-8890-d438251d2108" parent="Events">
+<label>
+<form lang="en"><text>States</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>States</text></form>
+</abbrev>
+</range-element>
+<range-element id="Thinking/Feeling" guid="2a3f5d18-ef26-447e-94ed-875dc4ecf531" parent="Events">
+<label>
+<form lang="en"><text>Thinking/Feeling</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Thinking/Feeling</text></form>
+</abbrev>
+</range-element>
+<range-element id="Time" guid="6bbe7972-e19a-41e8-8371-1ba5289c18df" parent="Events">
+<label>
+<form lang="en"><text>Time</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Time</text></form>
+</abbrev>
+</range-element>
+<range-element id="Food" guid="137679ae-fb7e-40ec-a348-8b7f0a3d1a06">
+<label>
+<form lang="en"><text>Food</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Food</text></form>
+</abbrev>
+</range-element>
+<range-element id="Gathering and Making" guid="c78fdbc0-15ff-4e72-8057-428782e44d12" parent="Food">
+<label>
+<form lang="en"><text>Gathering and Making</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Gathering and Making</text></form>
+</abbrev>
+</range-element>
+<range-element id="Human Relations" guid="6d3d8377-a882-41df-b315-68b9addc9375">
+<label>
+<form lang="en"><text>Human Relations</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Human Relations</text></form>
+</abbrev>
+</range-element>
+<range-element id="Kinship Terms" guid="9bd08ca8-2afc-4cc7-9f44-d531fa2172ed" parent="Human Relations">
+<label>
+<form lang="en"><text>Kinship Terms</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Kinship Terms</text></form>
+</abbrev>
+</range-element>
+<range-element id="Human Things/Activities" guid="c4078b0b-0753-49ad-949c-f9cee0ec612d">
+<label>
+<form lang="en"><text>Human Things/Activities</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Human Things/Activities</text></form>
+</abbrev>
+</range-element>
+<range-element id="Buildings" guid="bd8a9c9f-daf3-429e-a696-593f4653850a" parent="Human Things/Activities">
+<label>
+<form lang="en"><text>Buildings</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Buildings</text></form>
+</abbrev>
+</range-element>
+<range-element id="Clothing" guid="098416a9-a657-47b1-a906-9e5d81137c83" parent="Human Things/Activities">
+<label>
+<form lang="en"><text>Clothing</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Clothing</text></form>
+</abbrev>
+</range-element>
+<range-element id="Dwelling" guid="1bb66a74-0c9a-411c-8cca-fd8adc413a55" parent="Human Things/Activities">
+<label>
+<form lang="en"><text>Dwelling</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Dwelling</text></form>
+</abbrev>
+</range-element>
+<range-element id="Employment/Work" guid="fece4b76-f678-4981-8242-df5885a6d5e2" parent="Human Things/Activities">
+<label>
+<form lang="en"><text>Employment/Work</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Employment/Work</text></form>
+</abbrev>
+</range-element>
+<range-element id="Fishing/Hunting" guid="919d8a11-a150-458a-8abc-a4fa8cc5a8d8" parent="Human Things/Activities">
+<label>
+<form lang="en"><text>Fishing/Hunting</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Fishing/Hunting</text></form>
+</abbrev>
+</range-element>
+<range-element id="Government" guid="81df59de-a496-43e6-b327-88c1fdb751b6" parent="Human Things/Activities">
+<label>
+<form lang="en"><text>Government</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Government</text></form>
+</abbrev>
+</range-element>
+<range-element id="Making Cultural Objects" guid="8ce1417a-bff8-4573-a21a-b406abfd6f65" parent="Human Things/Activities">
+<label>
+<form lang="en"><text>Making Cultural Objects</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Making Cultural Objects</text></form>
+</abbrev>
+</range-element>
+<range-element id="Sport" guid="5b8b7285-b725-42f1-9820-563c4a693316" parent="Human Things/Activities">
+<label>
+<form lang="en"><text>Sport</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Sport</text></form>
+</abbrev>
+</range-element>
+<range-element id="Tools/Implements" guid="88e5a978-959c-4ae5-8e41-a2ef91c82c8e" parent="Human Things/Activities">
+<label>
+<form lang="en"><text>Tools/Implements</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Tools/Implements</text></form>
+</abbrev>
+</range-element>
+<range-element id="Trade" guid="5fc3adfd-b452-4e96-b1bd-a2fb87ac6ccb" parent="Human Things/Activities">
+<label>
+<form lang="en"><text>Trade</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Trade</text></form>
+</abbrev>
+</range-element>
+<range-element id="Transportation" guid="6fc28567-8e29-45a7-9994-3efa733b2825" parent="Human Things/Activities">
+<label>
+<form lang="en"><text>Transportation</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Transportation</text></form>
+</abbrev>
+</range-element>
+<range-element id="Nature/Environment" guid="5bc4e047-3d99-4c69-80d5-1cda042afba9">
+<label>
+<form lang="en"><text>Nature/Environment</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Nature/Environment</text></form>
+</abbrev>
+</range-element>
+<range-element id="Landscape" guid="28361fa5-9178-4a05-9c7c-449b1e90600c" parent="Nature/Environment">
+<label>
+<form lang="en"><text>Landscape</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Landscape</text></form>
+</abbrev>
+</range-element>
+<range-element id="Natural Resources" guid="a2f8bbb8-dfcf-485d-ba22-11742bcbb79a" parent="Nature/Environment">
+<label>
+<form lang="en"><text>Natural Resources</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Natural Resources</text></form>
+</abbrev>
+</range-element>
+<range-element id="Place/Location" guid="fd833e30-b93e-47cd-a843-ba5e817fb9b3" parent="Nature/Environment">
+<label>
+<form lang="en"><text>Place/Location</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Place/Location</text></form>
+</abbrev>
+</range-element>
+<range-element id="Place Names" guid="acc17576-6aac-4e10-9537-4b2b9a3565c2" parent="Nature/Environment">
+<label>
+<form lang="en"><text>Place Names</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Place Names</text></form>
+</abbrev>
+</range-element>
+<range-element id="Seasons" guid="c5d10d09-c569-47f7-8998-b72fafa19bd6" parent="Nature/Environment">
+<label>
+<form lang="en"><text>Seasons</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Seasons</text></form>
+</abbrev>
+</range-element>
+<range-element id="Weather" guid="11603e8c-7280-4891-a7f3-da5a3051d02f" parent="Nature/Environment">
+<label>
+<form lang="en"><text>Weather</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Weather</text></form>
+</abbrev>
+</range-element>
+<range-element id="Numbers" guid="7e1a92cf-5ac0-4692-844e-546c69e6fca7">
+<label>
+<form lang="en"><text>Numbers</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Numbers</text></form>
+</abbrev>
+</range-element>
+<range-element id="Plants" guid="0049e5e2-43ba-4bb8-9cd9-7ac246d19024">
+<label>
+<form lang="en"><text>Plants</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Plants</text></form>
+</abbrev>
+</range-element>
+<range-element id="Ferns" guid="08c28e03-5ffd-4f69-b69b-2a7c46be0fe2" parent="Plants">
+<label>
+<form lang="en"><text>Ferns</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Ferns</text></form>
+</abbrev>
+</range-element>
+<range-element id="Flowers" guid="c45c523a-7722-41ab-b957-e40066188335" parent="Plants">
+<label>
+<form lang="en"><text>Flowers</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Flowers</text></form>
+</abbrev>
+</range-element>
+<range-element id="Food Plants" guid="5982d4fa-b7aa-448a-9603-9f344f09d1f6" parent="Plants">
+<label>
+<form lang="en"><text>Food Plants</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Food Plants</text></form>
+</abbrev>
+</range-element>
+<range-element id="Fungi" guid="604fcaec-3da4-4232-9288-46219758cee8" parent="Plants">
+<label>
+<form lang="en"><text>Fungi</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Fungi</text></form>
+</abbrev>
+</range-element>
+<range-element id="Grasses" guid="0733c221-2eb6-4bdd-a548-a4f7c080c30b" parent="Plants">
+<label>
+<form lang="en"><text>Grasses</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Grasses</text></form>
+</abbrev>
+</range-element>
+<range-element id="Lichens" guid="c368b82c-1ca9-48ef-9eb1-d492c72320c6" parent="Plants">
+<label>
+<form lang="en"><text>Lichens</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Lichens</text></form>
+</abbrev>
+</range-element>
+<range-element id="Medicine Plants" guid="c5cc79dc-a9a3-4820-921e-9d6d776f9e92" parent="Plants">
+<label>
+<form lang="en"><text>Medicine Plants</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Medicine Plants</text></form>
+</abbrev>
+</range-element>
+<range-element id="Shrubs" guid="7ce012ca-45a0-4c97-ae44-70df6bf33a7a" parent="Plants">
+<label>
+<form lang="en"><text>Shrubs</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Shrubs</text></form>
+</abbrev>
+</range-element>
+<range-element id="Trees" guid="1cdd502f-5f2a-4a63-a1e1-d403540352ea" parent="Plants">
+<label>
+<form lang="en"><text>Trees</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Trees</text></form>
+</abbrev>
+</range-element>
+<range-element id="Vegetable" guid="22f7d175-c3af-4db1-a63b-de6038247c29" parent="Plants">
+<label>
+<form lang="en"><text>Vegetable</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Vegetable</text></form>
+</abbrev>
+</range-element>
+<range-element id="Prepositions" guid="9e2433b1-ea87-4873-b027-8c452c79b623">
+<label>
+<form lang="en"><text>Prepositions</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Prepositions</text></form>
+</abbrev>
+</range-element>
+<range-element id="Question Words" guid="f8c317a3-a1fc-44ac-972f-13225f231ea2">
+<label>
+<form lang="en"><text>Question Words</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Question Words</text></form>
+</abbrev>
+</range-element>
+<range-element id="Spirit" guid="c808b0f1-9e3b-46b8-b4e5-71a8fc2a69d3">
+<label>
+<form lang="en"><text>Spirit</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Spirit</text></form>
+</abbrev>
+</range-element>
+<range-element id="Spiritual Beliefs" guid="8fb1630a-4e51-463a-abef-0227f8df5453" parent="Spirit">
+<label>
+<form lang="en"><text>Spiritual Beliefs</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>Spiritual Beliefs</text></form>
 </abbrev>
 </range-element>
 </range>

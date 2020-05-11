@@ -59,6 +59,27 @@
     \CONTRIBUTOR Daniel Yona - Not sure what to do with this yet. 
     -->
     <xsl:output method="text" encoding="UTF-8" omit-xml-declaration="yes" indent="no"/>
+    <!-- 
+<range id="grammatical-info">
+<range-element id="adverb" guid="1dc86d89-0649-4ed8-8b5f-4283648a8a78">
+<label>
+<form lang="en"><text>adverb</text></form>
+<form lang="es"><text>Adverbio</text></form>
+<form lang="fr"><text>Adverbe</text></form>
+</label>
+<abbrev>
+<form lang="en"><text>adverb</text></form>
+<form lang="es"><text>adv</text></form>
+<form lang="fr"><text>adv</text></form>
+</abbrev>
+</range-element>
+...
+</range>
+Based on the above structure found in LIFT.lift-ranges, an external XML file, we load just the parts-of-speech node with all of its elements
+        into the varialbe vPOSRangeList. This variable is called later to retrieve the abbreviation for the Grammatical Category.
+        The range/@id is the same as the full name of the default Analysis writing system for each element. -->
+    <xsl:variable name="vPOSRangeList"
+        select="document('InputTestFiles/LIFT/LIFT.lift-ranges')/lift-ranges/range[@id='grammatical-info']"/>
     <!--Need to know the writing systems that are in use. Perhaps create parameters for these-->
     <xsl:template match="lift">
         <xsl:text>"WORD_ID","WORD","PART_OF_SPEECH","PRONUNCIATION","DEFINITION","LITERAL_TRANSLATION","RELATED_PHRASE","RELATED_PHRASE_DEFINITION","RELATED_PHRASE_LITERAL_TRANSLATION","RELATED_PHRASE_AUDIO_TITLE","RELATED_PHRASE_AUDIO_FILENAME","RELATED_PHRASE_AUDIO_SOURCE","CATEGORIES","CULTURAL_NOTE","REFERENCE","INCLUDE_IN_GAMES","CHILD_FRIENDLY","AUDIO_TITLE","AUDIO_DESCRIPTION","AUDIO_FILENAME","AUDIO_SHARED_WITH_OTHER_DIALECTS","AUDIO_CHILD_FOCUSED","AUDIO_SOURCE","AUDIO_RECORDER","IMG_TITLE","IMG_FILENAME","IMG_DESCRIPTION","IMG_SOURCE","USERNAME","CONTRIBUTOR"&#13;</xsl:text>
@@ -81,9 +102,16 @@
         <xsl:text>"</xsl:text>
         <xsl:value-of select="../lexical-unit/form[@lang[not(contains(.,'x-audio'))]]/text"/>
         <xsl:text>",</xsl:text>
-        <!--PART_OF_SPEECH noun /lift/entry/sense/grammatical-info[1]/@value-->
+        <!--PART_OF_SPEECH noun /lift/entry/sense/grammatical-info[1]/@value
+        We load this value into the variable vCurrentPOS. 
+        We then use the variable we set up at the very start of the document for LIFT.lift-ranges data
+        where we have loaded all of the xml for the Grammatical categories.
+        We match vCurrentPOS to the range-element/@id in the Grammatical categories, retrieve the abbreviation and its English form.-->
+        <!-- Note that for now, the English abbreviation captures the First Voices category use -->
         <xsl:text>"</xsl:text>
-        <xsl:value-of select="grammatical-info/@value"/>
+        <xsl:variable name="vCurrentPOS" select="grammatical-info/@value"/>
+        <xsl:value-of
+            select="$vPOSRangeList/range-element[@id=$vCurrentPOS]/abbrev/form[@lang='en']/text"/>
         <xsl:text>",</xsl:text>
         <!--PRONUNCIATION ɹɪvəɹ /lift/entry[1]/pronunciation[1]/form[1]/text[1]-->
         <xsl:text>"</xsl:text>
@@ -95,7 +123,8 @@
         <xsl:text>",</xsl:text>
         <!-- LITERAL_TRANSLATION /lift/entry[99]/field[@type='literal-meaning]/form[1]/text[1]'-->
         <xsl:text>"</xsl:text>
-        <xsl:value-of select="replace(../field[@type='literal-meaning']/form[1]/text[1],'&quot;' , '&quot;&quot;')"/>
+        <xsl:value-of
+            select="replace(../field[@type='literal-meaning']/form[1]/text[1],'&quot;' , '&quot;&quot;')"/>
         <xsl:text>",</xsl:text>
         <!-- RELATED_PHRASE or what FieldWorks calls EXAMPLE SENTENCE: sense[1]/example[1]/form[1]/text[1] - Note that FV does not support multiple example sentences so we only export the first example on a sense-->
         <xsl:text>"</xsl:text>
@@ -105,12 +134,14 @@
         <!-- RELATED_PHRASE_DEFINITION (same as Free translation on an example sentence) -->
         <xsl:text>"</xsl:text>
         <!--Here we use replace to escape double-quotes found within the example sentence itself - Wolf said to Fish, "Let's go swimming!"-->
-        <xsl:value-of select="replace(example[1]/translation[@type='Free translation']/form[1]/text[1]/.,'&quot;' , '&quot;&quot;')"/>
+        <xsl:value-of
+            select="replace(example[1]/translation[@type='Free translation']/form[1]/text[1]/.,'&quot;' , '&quot;&quot;')"/>
         <xsl:text>",</xsl:text>
         <!-- RELATED_PHRASE_LITERAL_TRANSLATION (same as Literal translation on an example sentence) -->
         <xsl:text>"</xsl:text>
         <!--Here we use replace to escape double-quotes found within the example sentence itself - Wolf said to Fish, "Let's go swimming!"-->
-        <xsl:value-of select="replace(example[1]/translation[@type='Literal translation']/form[1]/text[1]/.,'&quot;' , '&quot;&quot;')"/>
+        <xsl:value-of
+            select="replace(example[1]/translation[@type='Literal translation']/form[1]/text[1]/.,'&quot;' , '&quot;&quot;')"/>
         <xsl:text>",</xsl:text>
         <!-- ____________________ NEXT ELEMENTS ARE FOR AUDIO FILE FOR EXAMPLE SENTENCE ____________________ -->
         <!--"RELATED_PHRASE_AUDIO_TITLE" Required by FV, Web-friendly title for the audio. Generated only if there is an audio file, otherwise empty ""   -->
@@ -129,15 +160,27 @@
         <!-- RELATED_PHRASE_AUDIO_FILENAME-->
         <xsl:text>"</xsl:text>
         <!-- Replaces .wav with mp3 -->
-        <xsl:value-of select="replace(example[1]/form[@lang[ends-with(., 'x-audio')]]/text[1]/.,'.wav','.mp3')"/>
+        <xsl:value-of
+            select="replace(example[1]/form[@lang[ends-with(., 'x-audio')]]/text[1]/.,'.wav','.mp3')"/>
         <xsl:text>",</xsl:text>
         <!--RELATED_PHRASE_AUDIO_SOURCE -->
         <xsl:text>"</xsl:text>
         <xsl:value-of select="example[1]/note[@type='reference']/form/text/."/>
         <xsl:text>",</xsl:text>
         <!-- ____________________ PREVIOUS ELEMENTS ARE FOR AUDIO FILE FOR EXAMPLE SENTENCE ____________________ -->
-        <!--"CATEGORIES" FV uses a specified set of categories. FieldWorks users should create a custom field called FV_Categories on each sense, along with a FieldWorks custom list called FV_Categories. For now empty.-->
+        <!--"CATEGORIES" FV uses a specified set of categories. 
+            FieldWorks users should create a custom field called FVCategories on each sense, along with a FieldWorks custom list called FV_Categories.
+            These are stored in FieldWorks LIFT as a sequence of traits.
+        <trait name="FVCategories" value="Plants"/>
+        <trait name="FVCategories" value="Food Plants"/>
+        <trait name="FVCategories" value="Shrubs"/> 
+        XSL 2.0 and above allow for the use of the separator attribute leaving its value off the last occurrence.
+        Ain't that sweet? -->
         <xsl:text>"</xsl:text>
+        <xsl:value-of select="trait[@name='FVCategories']/@value" separator=", "/>
+        <!--<xsl:for-each select="trait[@name='FVCategories']">
+                <xsl:value-of select="@value" separator=", "/>
+        </xsl:for-each>-->
         <xsl:text>",</xsl:text>
         <!-- "CULTURAL_NOTE" Sm'algyax project uses this to refer to some anthropological categorization. For now empty.-->
         <xsl:text>"</xsl:text>
@@ -145,7 +188,8 @@
         <!-- "REFERENCE" -->
         <xsl:text>"</xsl:text>
         <!--Here we use replace to escape double-quotes found within the example sentence itself - Wolf said to Fish, "Let's go swimming!"-->
-        <xsl:value-of select="replace(../note[@type='bibliography']/form/text/., '&quot;' , '&quot;&quot;')"/>
+        <xsl:value-of
+            select="replace(../note[@type='bibliography']/form/text/., '&quot;' , '&quot;&quot;')"/>
         <xsl:text>",</xsl:text>
         <!-- "INCLUDE_IN_GAMES" For now, indicated as yes with 1. Eventually need to treat this as a publication type or use a custom field FV_Games-->
         <xsl:text>"</xsl:text>
@@ -174,9 +218,10 @@
         <xsl:text>",</xsl:text>
         <!-- "AUDIO_FILENAME" -->
         <xsl:text>"</xsl:text>
-<!--        <xsl:value-of select="../lexical-unit/form[@lang[ends-with(., 'x-audio')]]/text[1]/."/>-->
+        <!--        <xsl:value-of select="../lexical-unit/form[@lang[ends-with(., 'x-audio')]]/text[1]/."/>-->
         <!-- Replaces .wav with .mp-->
-        <xsl:value-of select="replace(../lexical-unit/form[@lang[ends-with(., 'x-audio')]]/text[1]/.,'.wav','.mp3')"/>
+        <xsl:value-of
+            select="replace(../lexical-unit/form[@lang[ends-with(., 'x-audio')]]/text[1]/.,'.wav','.mp3')"/>
         <xsl:text>",</xsl:text>
         <!-- ""AUDIO_SHARED_WITH_OTHER_DIALECTS"" Not used for now. -->
         <xsl:text>"</xsl:text>
@@ -191,7 +236,7 @@
         <xsl:text>"</xsl:text>
         <xsl:text>",</xsl:text>
         <!-- ____________________ PREVIOUS ELEMENTS ARE FOR AUDIO FILE FOR ENTRY ____________________ -->
-        
+
         <!-- ____________________ FOLLOWING ELEMENTS ARE FOR FIRST IMAGE FILE FOR THIS SENSE ____________________ -->
         <!-- IMG_TITLE - For image found on a sense. These are shown at the entry level in FV -->
         <xsl:choose>
@@ -210,9 +255,10 @@
         <!-- IMG_FILENAME -->
         <xsl:text>"</xsl:text>
         <!--The string of functions here tokenizes the string based on the \ character and then selects the last token-->
-        <xsl:value-of select="replace(subsequence(reverse(tokenize(illustration[1]/@href,'\\')), 1, 1),'.bmp|.BMP','.jpg')"/>
+        <xsl:value-of
+            select="replace(subsequence(reverse(tokenize(illustration[1]/@href,'\\')), 1, 1),'.bmp|.BMP','.jpg')"/>
         <xsl:text>",</xsl:text>
-        <!-- IMG_DESCRIPTION - Empty for now.  --> 
+        <!-- IMG_DESCRIPTION - Empty for now.  -->
         <xsl:text>"</xsl:text>
         <xsl:text>",</xsl:text>
         <!-- IMG_SOURCE - FieldWorks Illustration label is mapped to this field-->
