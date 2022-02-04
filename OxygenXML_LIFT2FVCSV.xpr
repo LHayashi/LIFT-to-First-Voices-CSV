@@ -25,6 +25,171 @@
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
+                                    <String>Fix%20fwdata%20files%20XSL/FixStray_1wavDuplicateSoundFileLinks/SearchAndReplaceCCT.xsl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>SearchAndReplaceCCT</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XML</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../../Program%20Files/SIL/FieldWorks%209/Language%20Explorer/Export%20Templates/Interlinear/xml2Leipzig.xsl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>xml2Leipzig</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XML</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../Desktop/xml2Leipzig.xsl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>xml2Leipzig</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XML</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../Downloads/Tami%20-%20Copy%20from%20my%20Desktop%202020-07-23%201408%20After%20draft%20of%20grammar%20paper/wfiwordformsOnly.xml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>copyAllButWfiWordforms</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XSL</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../Downloads/Tami%20-%20Copy%20from%20my%20Desktop%202020-10-05%201113%20accidentally%20deleted%20wordforms/Tami%20-%20Copy%20from%20my%20Desktop.fwdata</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>copyAllButWfiWordforms</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XSL</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../Downloads/Tami%20-%20Copy%20from%20my%20Desktop%202020-07-23%201408%20After%20draft%20of%20grammar%20paper/copyAllButWfiWordforms.xsl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>copyAllButWfiWordforms</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XSL</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../Downloads/Tami%20-%20Copy%20from%20my%20Desktop%202020-07-23%201408%20After%20draft%20of%20grammar%20paper/GoodFormsToAddIn.xml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>Tami%20-%20Copy%20from%20my%20Desktop</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XSL</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../Downloads/Tami%20-%20Copy%20from%20my%20Desktop%202020-07-23%201408%20After%20draft%20of%20grammar%20paper/Tami.xml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>Tami%20-%20Copy%20from%20my%20Desktop</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XSL</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../Downloads/Tami%20-%20Copy%20from%20my%20Desktop%202020-07-23%201408%20After%20draft%20of%20grammar%20paper/Tami%20-%20Copy%20from%20my%20Desktop.fwdata</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>Tami%20-%20Copy%20from%20my%20Desktop</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XSL</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>file:/Q:/My%20Drive/__Larry%20at%20SIL%20UNBC%20FNEF/CANIL%20%20%20SIL%20Haisla%20program/00_Prior%20materials%20dictionaries%20corpora/Dictionaries%20and%20Grammars/Bach,%20Emmon%202006%20Dictionary/ConvertHTMLWayBackxml2SFM.xsl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>ConvertHTMLWayBackxml2SFM</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XML</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>file:/Q:/My%20Drive/__Larry%20at%20SIL%20UNBC%20FNEF/CANIL%20%20%20SIL%20Haisla%20program/00_Prior%20materials%20dictionaries%20corpora/Dictionaries%20and%20Grammars/Bach,%20Emmon%202006%20Dictionary/ConvertHTMLxml2SFM.xsl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>ConvertHTMLxml2SFM</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XSL</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
                                     <String>InputTestFiles/LIFT/LIFT_2_FV_OneSensePerRow_CSV.xsl</String>
                                 </field>
                                 <field name="scenarioIds">
@@ -138,6 +303,255 @@
                                     <null/>
                                 </field>
                                 <field name="name">
+                                    <String>ConvertHTMLxml2SFM</String>
+                                </field>
+                                <field name="baseURL">
+                                    <String></String>
+                                </field>
+                                <field name="footerURL">
+                                    <String></String>
+                                </field>
+                                <field name="fOPMethod">
+                                    <String>pdf</String>
+                                </field>
+                                <field name="fOProcessorName">
+                                    <String>Apache FOP</String>
+                                </field>
+                                <field name="headerURL">
+                                    <String></String>
+                                </field>
+                                <field name="inputXSLURL">
+                                    <String>file:/Q:/My%20Drive/__Larry%20at%20SIL%20UNBC%20FNEF/CANIL%20%20%20SIL%20Haisla%20program/00_Prior%20materials%20dictionaries%20corpora/Dictionaries%20and%20Grammars/Bach,%20Emmon%202006%20Dictionary/ConvertHTMLxml2SFM.xsl</String>
+                                </field>
+                                <field name="inputXMLURL">
+                                    <String>file:/Q:/My%20Drive/__Larry%20at%20SIL%20UNBC%20FNEF/CANIL%20%20%20SIL%20Haisla%20program/00_Prior%20materials%20dictionaries%20corpora/Dictionaries%20and%20Grammars/Bach,%20Emmon%202006%20Dictionary/XMLVersionCreatedByHayashi.xml</String>
+                                </field>
+                                <field name="defaultScenario">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="isFOPPerforming">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="type">
+                                    <String>XSL</String>
+                                </field>
+                                <field name="saveAs">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="openInBrowser">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="outputFile">
+                                    <File>Q:/My Drive/__Larry at SIL UNBC FNEF/CANIL   SIL Haisla program/00_Prior materials dictionaries corpora/Dictionaries and Grammars/Bach, Emmon 2006 Dictionary/HTMLXML2SFM.SFM</File>
+                                </field>
+                                <field name="openOtherLocationInBrowser">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="locationToOpenInBrowserURL">
+                                    <null/>
+                                </field>
+                                <field name="openInEditor">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInHTMLPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInXMLPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInSVGPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInResultSetPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="useXSLTInput">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="xsltParams">
+                                    <list/>
+                                </field>
+                                <field name="cascadingStylesheets">
+                                    <String-array/>
+                                </field>
+                                <field name="xslTransformer">
+                                    <String>Saxon-HE</String>
+                                </field>
+                                <field name="extensionURLs">
+                                    <String-array/>
+                                </field>
+                            </scenario>
+                            <scenario>
+                                <field name="advancedOptionsMap">
+                                    <null/>
+                                </field>
+                                <field name="name">
+                                    <String>Tami%20-%20Copy%20from%20my%20Desktop</String>
+                                </field>
+                                <field name="baseURL">
+                                    <String></String>
+                                </field>
+                                <field name="footerURL">
+                                    <String></String>
+                                </field>
+                                <field name="fOPMethod">
+                                    <String>pdf</String>
+                                </field>
+                                <field name="fOProcessorName">
+                                    <String>Apache FOP</String>
+                                </field>
+                                <field name="headerURL">
+                                    <String></String>
+                                </field>
+                                <field name="inputXSLURL">
+                                    <String>file:/C:/Users/Larry/Downloads/Tami%20-%20Copy%20from%20my%20Desktop%202020-07-23%201408%20After%20draft%20of%20grammar%20paper/copyWfiWordforms.xsl</String>
+                                </field>
+                                <field name="inputXMLURL">
+                                    <String>file:/C:/Users/Larry/Downloads/Tami%20-%20Copy%20from%20my%20Desktop%202020-07-23%201408%20After%20draft%20of%20grammar%20paper/Tami.xml</String>
+                                </field>
+                                <field name="defaultScenario">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="isFOPPerforming">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="type">
+                                    <String>XSL</String>
+                                </field>
+                                <field name="saveAs">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="openInBrowser">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="outputFile">
+                                    <File>C:/Users/Larry/Downloads/Tami - Copy from my Desktop 2020-07-23 1408 After draft of grammar paper/wfiwordformsOnly.xml</File>
+                                </field>
+                                <field name="openOtherLocationInBrowser">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="locationToOpenInBrowserURL">
+                                    <null/>
+                                </field>
+                                <field name="openInEditor">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInHTMLPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInXMLPane">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="showInSVGPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInResultSetPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="useXSLTInput">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="xsltParams">
+                                    <list/>
+                                </field>
+                                <field name="cascadingStylesheets">
+                                    <String-array/>
+                                </field>
+                                <field name="xslTransformer">
+                                    <String>Saxon-HE</String>
+                                </field>
+                                <field name="extensionURLs">
+                                    <String-array/>
+                                </field>
+                            </scenario>
+                            <scenario>
+                                <field name="advancedOptionsMap">
+                                    <null/>
+                                </field>
+                                <field name="name">
+                                    <String>copyAllButWfiWordforms</String>
+                                </field>
+                                <field name="baseURL">
+                                    <String></String>
+                                </field>
+                                <field name="footerURL">
+                                    <String></String>
+                                </field>
+                                <field name="fOPMethod">
+                                    <String>pdf</String>
+                                </field>
+                                <field name="fOProcessorName">
+                                    <String>Apache FOP</String>
+                                </field>
+                                <field name="headerURL">
+                                    <String></String>
+                                </field>
+                                <field name="inputXSLURL">
+                                    <String>file:/C:/Users/Larry/Downloads/Tami%20-%20Copy%20from%20my%20Desktop%202020-07-23%201408%20After%20draft%20of%20grammar%20paper/copyAllButWfiWordforms.xsl</String>
+                                </field>
+                                <field name="inputXMLURL">
+                                    <String>${currentFileURL}</String>
+                                </field>
+                                <field name="defaultScenario">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="isFOPPerforming">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="type">
+                                    <String>XSL</String>
+                                </field>
+                                <field name="saveAs">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="openInBrowser">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="outputFile">
+                                    <File>AllButNotIncludingEmptyWfiWordforms.xml</File>
+                                </field>
+                                <field name="openOtherLocationInBrowser">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="locationToOpenInBrowserURL">
+                                    <null/>
+                                </field>
+                                <field name="openInEditor">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="showInHTMLPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInXMLPane">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="showInSVGPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInResultSetPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="useXSLTInput">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="xsltParams">
+                                    <list/>
+                                </field>
+                                <field name="cascadingStylesheets">
+                                    <String-array/>
+                                </field>
+                                <field name="xslTransformer">
+                                    <String>Saxon-HE</String>
+                                </field>
+                                <field name="extensionURLs">
+                                    <String-array/>
+                                </field>
+                            </scenario>
+                            <scenario>
+                                <field name="advancedOptionsMap">
+                                    <null/>
+                                </field>
+                                <field name="name">
                                     <String>CheckupdateExampleSentenceLinksDelete</String>
                                 </field>
                                 <field name="baseURL">
@@ -193,6 +607,89 @@
                                 </field>
                                 <field name="showInXMLPane">
                                     <Boolean>true</Boolean>
+                                </field>
+                                <field name="showInSVGPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInResultSetPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="useXSLTInput">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="xsltParams">
+                                    <list/>
+                                </field>
+                                <field name="cascadingStylesheets">
+                                    <String-array/>
+                                </field>
+                                <field name="xslTransformer">
+                                    <String>Saxon-PE</String>
+                                </field>
+                                <field name="extensionURLs">
+                                    <String-array/>
+                                </field>
+                            </scenario>
+                            <scenario>
+                                <field name="advancedOptionsMap">
+                                    <null/>
+                                </field>
+                                <field name="name">
+                                    <String>ConvertHTMLWayBackxml2SFM</String>
+                                </field>
+                                <field name="baseURL">
+                                    <String></String>
+                                </field>
+                                <field name="footerURL">
+                                    <String></String>
+                                </field>
+                                <field name="fOPMethod">
+                                    <String>pdf</String>
+                                </field>
+                                <field name="fOProcessorName">
+                                    <String>Apache FOP</String>
+                                </field>
+                                <field name="headerURL">
+                                    <String></String>
+                                </field>
+                                <field name="inputXSLURL">
+                                    <String>file:/Q:/My%20Drive/__Larry%20at%20SIL%20UNBC%20FNEF/CANIL%20%20%20SIL%20Haisla%20program/00_Prior%20materials%20dictionaries%20corpora/Dictionaries%20and%20Grammars/Bach,%20Emmon%202006%20Dictionary/ConvertHTMLWayBackxml2SFM.xsl</String>
+                                </field>
+                                <field name="inputXMLURL">
+                                    <String>file:/Q:/My%20Drive/__Larry%20at%20SIL%20UNBC%20FNEF/CANIL%20%20%20SIL%20Haisla%20program/00_Prior%20materials%20dictionaries%20corpora/Dictionaries%20and%20Grammars/Bach,%20Emmon%202006%20Dictionary/XMLFromHTMLWayBack.xml</String>
+                                </field>
+                                <field name="defaultScenario">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="isFOPPerforming">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="type">
+                                    <String>XML</String>
+                                </field>
+                                <field name="saveAs">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="openInBrowser">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="outputFile">
+                                    <File>Q:/My Drive/__Larry at SIL UNBC FNEF/CANIL   SIL Haisla program/00_Prior materials dictionaries corpora/Dictionaries and Grammars/Bach, Emmon 2006 Dictionary/txtConversionWayback.txt</File>
+                                </field>
+                                <field name="openOtherLocationInBrowser">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="locationToOpenInBrowserURL">
+                                    <null/>
+                                </field>
+                                <field name="openInEditor">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="showInHTMLPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInXMLPane">
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInSVGPane">
                                     <Boolean>false</Boolean>
@@ -491,7 +988,7 @@
                                     <String>${currentFileURL}</String>
                                 </field>
                                 <field name="inputXMLURL">
-                                    <String>file:/C:/Users/Larry/Desktop/SmalgyaxLIFT/SmalgyaxLIFT.lift</String>
+                                    <String>file:/C:/Users/Larry/Desktop/LIFT4FirstVoices/LIFT4FirstVoices.lift</String>
                                 </field>
                                 <field name="defaultScenario">
                                     <Boolean>false</Boolean>
@@ -509,7 +1006,7 @@
                                     <Boolean>false</Boolean>
                                 </field>
                                 <field name="outputFile">
-                                    <File>C:/Users/Larry/Desktop/FVwork/FV.csv</File>
+                                    <File>C:/Users/Larry/Desktop/LIFT4FirstVoices/Output/FV.csv</File>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean>false</Boolean>
@@ -525,6 +1022,89 @@
                                 </field>
                                 <field name="showInXMLPane">
                                     <Boolean>true</Boolean>
+                                </field>
+                                <field name="showInSVGPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInResultSetPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="useXSLTInput">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="xsltParams">
+                                    <list/>
+                                </field>
+                                <field name="cascadingStylesheets">
+                                    <String-array/>
+                                </field>
+                                <field name="xslTransformer">
+                                    <String>Saxon-PE</String>
+                                </field>
+                                <field name="extensionURLs">
+                                    <String-array/>
+                                </field>
+                            </scenario>
+                            <scenario>
+                                <field name="advancedOptionsMap">
+                                    <null/>
+                                </field>
+                                <field name="name">
+                                    <String>SearchAndReplaceCCT</String>
+                                </field>
+                                <field name="baseURL">
+                                    <String></String>
+                                </field>
+                                <field name="footerURL">
+                                    <String></String>
+                                </field>
+                                <field name="fOPMethod">
+                                    <String>pdf</String>
+                                </field>
+                                <field name="fOProcessorName">
+                                    <String>Apache FOP</String>
+                                </field>
+                                <field name="headerURL">
+                                    <String></String>
+                                </field>
+                                <field name="inputXSLURL">
+                                    <String>${currentFileURL}</String>
+                                </field>
+                                <field name="inputXMLURL">
+                                    <String>file:/C:/Users/Larry/Desktop/TEmp/CCWin/Smalgyax.fwdata</String>
+                                </field>
+                                <field name="defaultScenario">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="isFOPPerforming">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="type">
+                                    <String>XML</String>
+                                </field>
+                                <field name="saveAs">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="openInBrowser">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="outputFile">
+                                    <File>C:/Users/Larry/Desktop/TEmp/test.xml</File>
+                                </field>
+                                <field name="openOtherLocationInBrowser">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="locationToOpenInBrowserURL">
+                                    <null/>
+                                </field>
+                                <field name="openInEditor">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInHTMLPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInXMLPane">
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="showInSVGPane">
                                     <Boolean>false</Boolean>
@@ -626,6 +1206,89 @@
                                 </field>
                                 <field name="xslTransformer">
                                     <String>Saxon-PE</String>
+                                </field>
+                                <field name="extensionURLs">
+                                    <String-array/>
+                                </field>
+                            </scenario>
+                            <scenario>
+                                <field name="advancedOptionsMap">
+                                    <null/>
+                                </field>
+                                <field name="name">
+                                    <String>xml2Leipzig</String>
+                                </field>
+                                <field name="baseURL">
+                                    <String></String>
+                                </field>
+                                <field name="footerURL">
+                                    <String></String>
+                                </field>
+                                <field name="fOPMethod">
+                                    <String>pdf</String>
+                                </field>
+                                <field name="fOProcessorName">
+                                    <String>Apache FOP</String>
+                                </field>
+                                <field name="headerURL">
+                                    <String></String>
+                                </field>
+                                <field name="inputXSLURL">
+                                    <String>${currentFileURL}</String>
+                                </field>
+                                <field name="inputXMLURL">
+                                    <String>file:/C:/Users/Larry/Desktop/gotong.flextext</String>
+                                </field>
+                                <field name="defaultScenario">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="isFOPPerforming">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="type">
+                                    <String>XML</String>
+                                </field>
+                                <field name="saveAs">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="openInBrowser">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="outputFile">
+                                    <File>C:/Users/Larry/Desktop/sentences.html</File>
+                                </field>
+                                <field name="openOtherLocationInBrowser">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="locationToOpenInBrowserURL">
+                                    <null/>
+                                </field>
+                                <field name="openInEditor">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInHTMLPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInXMLPane">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="showInSVGPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInResultSetPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="useXSLTInput">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="xsltParams">
+                                    <list/>
+                                </field>
+                                <field name="cascadingStylesheets">
+                                    <String-array/>
+                                </field>
+                                <field name="xslTransformer">
+                                    <String>Saxon6.5.5</String>
                                 </field>
                                 <field name="extensionURLs">
                                     <String-array/>

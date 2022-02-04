@@ -1,0 +1,380 @@
+<xsl:stylesheet version="2.0"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:output omit-xml-declaration="yes" indent="yes"/>
+    <xsl:strip-space elements="*"/>
+    <xsl:param name="pReps">
+        <elem name="Run[contains(@ws,'audio')]">
+            <replace><this>aa-vn-hb-06_1.wav</this><with>aa-vn-hb-06.wav</with></replace>
+<replace><this>aadasgyet-mb-k-01_1.wav</this><with>aadasgyet-mb-k-01.wav</with></replace>
+<!--<replace><this>aadek-mb-k-01_1.wav</this><with>aadek-mb-k-01.wav</with></replace>
+<replace><this>aadmhoon-vn-hb-01_1.wav</this><with>aadmhoon-vn-hb-01.wav</with></replace>
+<replace><this>aadmmisoo2-db-kk-03_1.wav</this><with>aadmmisoo2-db-kk-03.wav</with></replace>
+<replace><this>aadmuux-vn-hb-01_1.wav</this><with>aadmuux-vn-hb-01.wav</with></replace>
+<replace><this>aadmyee-vn-hb-01_1.wav</this><with>aadmyee-vn-hb-01.wav</with></replace>
+<replace><this>aadzax-vn-hb-01_1.wav</this><with>aadzax-vn-hb-01.wav</with></replace>
+<replace><this>aalbagn-vn-hb-01_1.wav</this><with>aalbagn-vn-hb-01.wav</with></replace>
+<replace><this>aam-vn-hb-01_1.wav</this><with>aam-vn-hb-01.wav</with></replace>
+<replace><this>amsgabuu-mb-k-01_1.wav</this><with>amsgabuu-mb-k-01.wav</with></replace>
+<replace><this>aamsgadapduut2-mb-k-01_1.wav</this><with>aamsgadapduut2-mb-k-01.wav</with></replace>
+<replace><this>aamda_haayk-mb-k-01_1.wav</this><with>aamda_haayk-mb-k-01.wav</with></replace>
+<replace><this>aamndap-mb-k-01_1.wav</this><with>aamndap-mb-k-01.wav</with></replace>
+<replace><this>aamsga'aam-mb-k-01_1.wav</this><with>aamsga'aam-mb-k-01.wav</with></replace>
+<replace><this>aap-mb-k-01_1.wav</this><with>aap-mb-k-01.wav</with></replace>
+<replace><this>yagwa_luup'is_aat-ca-hb-79_1.wav</this><with>yagwa_luup'is_aat-ca-hb-79.wav</with></replace>
+<replace><this>aatk-vn-hb-06_1.wav</this><with>aatk-vn-hb-06.wav</with></replace>
+<replace><this>ats'ik-mb-k-01_1.wav</this><with>ats'ik-mb-k-01.wav</with></replace>
+<replace><this>aax-vn-hb-06_1.wav</this><with>aax-vn-hb-06.wav</with></replace>
+<replace><this>aayuwa_n-db-kk-03_1.wav</this><with>aayuwa_n-db-kk-03.wav</with></replace>
+<replace><this>aba'ask-mb-k-01_1.wav</this><with>aba'ask-mb-k-01.wav</with></replace>
+<replace><this>abuu-mb-k-01_1.wav</this><with>abuu-mb-k-01.wav</with></replace>
+<replace><this>ada-mb-k-01_1.wav</this><with>ada-mb-k-01.wav</with></replace>
+<replace><this>ada_wil-mb-k-01_1.wav</this><with>ada_wil-mb-k-01.wav</with></replace>
+<replace><this>adawx2-db-kk-03_1.wav</this><with>adawx2-db-kk-03.wav</with></replace>
+<replace><this>aag_a-t'aa-db-kk-03_1.wav</this><with>aag_a-t'aa-db-kk-03.wav</with></replace>
+<replace><this>akadi-gool-sguu-ca-hb-79_1.wav</this><with>akadi-gool-sguu-ca-hb-79.wav</with></replace>
+<replace><this>aksyaamsk-db-kk-03_1.wav</this><with>aksyaamsk-db-kk-03.wav</with></replace>
+<replace><this>aksya'ansk-vn-hb-01_1_1.wav</this><with>aksya'ansk-vn-hb-01_1.wav</with></replace>
+<replace><this>algyax-vn-hb-06_1.wav</this><with>algyax-vn-hb-06.wav</with></replace>
+<replace><this>aalx-db-kk-03_1.wav</this><with>aalx-db-kk-03.wav</with></replace>
+<replace><this>al'alx-vn-hb-01_1.wav</this><with>al'alx-vn-hb-01.wav</with></replace>
+<replace><this>al-db-kk-03_1.wav</this><with>al-db-kk-03.wav</with></replace>
+<replace><this>algadigo-db-kk-03_1.wav</this><with>algadigo-db-kk-03.wav</with></replace>
+<replace><this>aama2-vn-hb-06_1.wav</this><with>aama2-vn-hb-06.wav</with></replace>
+<replace><this>amaalk.vr.hb.mp3</this><with>amaalk.vr.hb.mp3</with></replace>
+<replace><this>amuks-mb-k-01_2.mp3</this><with>amuks-mb-k-01_2.mp3</with></replace>
+<replace><this>anaay-mb-k-01_1.wav</this><with>anaay-mb-k-01.wav</with></replace>
+<replace><this>-s_cn_1.wav</this><with>-s_cn.wav</with></replace>
+<replace><this>asda-vn-hb-06_1.wav</this><with>asda-vn-hb-06.wav</with></replace>
+<replace><this>ayaa-db-kk-03_1.wav</this><with>ayaa-db-kk-03.wav</with></replace>
+<replace><this>a'a?yaa??-northern lights-vn-hb-2014_2.mp3</this><with>a'a?yaa??-northern lights-vn-hb-2014_2.mp3</with></replace>
+<replace><this>baask-mb-k-01_1_1.wav</this><with>baask-mb-k-01_1.wav</with></replace>
+<replace><this>basagan-mb-k-01_1.wav</this><with>basagan-mb-k-01.wav</with></replace>
+<replace><this>bets.mp3</this><with>bets.mp3</with></replace>
+<replace><this>ba'wis-db-kk-03_1.wav</this><with>ba'wis-db-kk-03.wav</with></replace>
+<replace><this>bax1-db-kk-03_1.wav</this><with>bax1-db-kk-03.wav</with></replace>
+<replace><this>-gm-vn-hb-06_1.wav</this><with>-gm-vn-hb-06.wav</with></replace>
+<replace><this>ben-pr-hb-01_1.wav</this><with>ben-pr-hb-01.wav</with></replace>
+<replace><this>binbenGoop-vn-hb-06_1.wav</this><with>binbenGoop-vn-hb-06.wav</with></replace>
+<replace><this>bisbaasaxk-pr-hb-01_1.wav</this><with>bisbaasaxk-pr-hb-01.wav</with></replace>
+<replace><this>boosn-vn-hb-06_1.wav</this><with>boosn-vn-hb-06.wav</with></replace>
+<replace><this>dit-mb-k-01_1.wav</this><with>dit-mb-k-01.wav</with></replace>
+<replace><this>dee-vn-hb-06_1.wav</this><with>dee-vn-hb-06.wav</with></replace>
+<replace><this>dm'al-mb-k-01_1_1.wav</this><with>dm'al-mb-k-01_1.wav</with></replace>
+<replace><this>doo1-db-kk-03_1.wav</this><with>doo1-db-kk-03.wav</with></replace>
+<replace><this>doox-mb-k-01_1.wav</this><with>doox-mb-k-01.wav</with></replace>
+<replace><this>dox2_1.wav</this><with>dox2.wav</with></replace>
+<replace><this>duula-2-mb-k-01_1.wav</this><with>duula-2-mb-k-01.wav</with></replace>
+<replace><this>dziilks-pr-hb-01_1.wav</this><with>dziilks-pr-hb-01.wav</with></replace>
+<replace><this>dziiws-pr-hb-01_1.wav</this><with>dziiws-pr-hb-01.wav</with></replace>
+<replace><this>dziiW-pr-hb-01_1.wav</this><with>dziiW-pr-hb-01.wav</with></replace>
+<replace><this>dzulaa-pr-hb-01_1.wav</this><with>dzulaa-pr-hb-01.wav</with></replace>
+<replace><this>dzildziilks-pr-hb-01_1.wav</this><with>dzildziilks-pr-hb-01.wav</with></replace>
+<replace><this>dzida2-pr-hb-01_1.wav</this><with>dzida2-pr-hb-01.wav</with></replace>
+<replace><this>dzinda-pr-hb-01_1.wav</this><with>dzinda-pr-hb-01.wav</with></replace>
+<replace><this>dzi'i-pr-hb-01_1.wav</this><with>dzi'i-pr-hb-01.wav</with></replace>
+<replace><this>dzog_a_t'aa-pr-hb-01_1.wav</this><with>dzog_a_t'aa-pr-hb-01.wav</with></replace>
+<replace><this>dzog_a_t'aa-pr-hb-01_1.wav</this><with>dzog_a_t'aa-pr-hb-01.wav</with></replace>
+<replace><this>dzoga_a_'aks-pr-hb-01_1.wav</this><with>dzoga_a_'aks-pr-hb-01.wav</with></replace>
+<replace><this>dzooL-vn-hb-06_1.wav</this><with>dzooL-vn-hb-06.wav</with></replace>
+<replace><this>dzox-pr-hb-01_1.wav</this><with>dzox-pr-hb-01.wav</with></replace>
+<replace><this>eesk-db-kk-03_1.wav</this><with>eesk-db-kk-03.wav</with></replace>
+<replace><this>gap-pr-hb-01_1.wav</this><with>gap-pr-hb-01.wav</with></replace>
+<replace><this>gyisihawaask-sc-k-01_1.wav</this><with>gyisihawaask-sc-k-01.wav</with></replace>
+<replace><this>goo-ab-hb-01_1.wav</this><with>goo-ab-hb-01.wav</with></replace>
+<replace><this>gUUlka-mb-kk-06_1.wav</this><with>gUUlka-mb-kk-06.wav</with></replace>
+<replace><this>gwaantk-2-ab-hb-01_1.wav</this><with>gwaantk-2-ab-hb-01.wav</with></replace>
+<replace><this>gwida'atsmsgyen-ab-hb-01_1.wav</this><with>gwida'atsmsgyen-ab-hb-01.wav</with></replace>
+<replace><this>guda'ats-vn-hb-06_1.wav</this><with>guda'ats-vn-hb-06.wav</with></replace>
+<replace><this>gyeks-sr-hb-01_1.wav</this><with>gyeks-sr-hb-01.wav</with></replace>
+<replace><this>gyelks-db-kk-03_1.wav</this><with>gyelks-db-kk-03.wav</with></replace>
+<replace><this>gyenti-db-kk-03_1.wav</this><with>gyenti-db-kk-03.wav</with></replace>
+<replace><this>gyesk-vn-hb-01_1.wav</this><with>gyesk-vn-hb-01.wav</with></replace>
+<replace><this>gibaaw-db-kk-03_1.wav</this><with>gibaaw-db-kk-03.wav</with></replace>
+<replace><this>gidigaduu-vn-hb-01_1.wav</this><with>gidigaduu-vn-hb-01.wav</with></replace>
+<replace><this>gyigyaani-db-kk-03_1.wav</this><with>gyigyaani-db-kk-03.wav</with></replace>
+<replace><this>gyigyi'oosk-sl-mk-01_1.wav</this><with>gyigyi'oosk-sl-mk-01.wav</with></replace>
+<replace><this>gyiloo2-db-kk-03_1.wav</this><with>gyiloo2-db-kk-03.wav</with></replace>
+<replace><this>gagoot-mw-hb-01_1.wav</this><with>gagoot-mw-hb-01.wav</with></replace>
+<replace><this>Galts'ap2-vn-hb-06_1.wav</this><with>Galts'ap2-vn-hb-06.wav</with></replace>
+<replace><this>Gani-tr-hb-06_1.wav</this><with>Gani-tr-hb-06.wav</with></replace>
+<replace><this>ganiyaatk-mb-kk-01_1.wav</this><with>ganiyaatk-mb-kk-01.wav</with></replace>
+<replace><this>ts'ilts'al-dl-hb-03_1.wav</this><with>ts'ilts'al-dl-hb-03.wav</with></replace>
+<replace><this>ga'aax-mb-kk-01_1.wav</this><with>ga'aax-mb-kk-01.wav</with></replace>
+<replace><this>gee-db-kk-03_1.wav</this><with>gee-db-kk-03.wav</with></replace>
+<replace><this>golts'ax-dl-hb-01_1.wav</this><with>golts'ax-dl-hb-01.wav</with></replace>
+<replace><this>ha-mw-hb-01_1.wav</this><with>ha-mw-hb-01.wav</with></replace>
+<replace><this>haalgn-mw-hb-01_1.wav</this><with>haalgn-mw-hb-01.wav</with></replace>
+<replace><this>haas-mw-hb-01_1.wav</this><with>haas-mw-hb-01.wav</with></replace>
+<replace><this>haas2-mw-hb-01_1.wav</this><with>haas2-mw-hb-01.wav</with></replace>
+<replace><this>haas3-mw-hb-01_1.wav</this><with>haas3-mw-hb-01.wav</with></replace>
+<replace><this>haat-mw-hb-01_1.wav</this><with>haat-mw-hb-01.wav</with></replace>
+<replace><this>haawk-mw-hb-01_1.wav</this><with>haawk-mw-hb-01.wav</with></replace>
+<replace><this>haaxk-mw-hb-01_1.wav</this><with>haaxk-mw-hb-01.wav</with></replace>
+<replace><this>haayk-mw-hb-01_1.wav</this><with>haayk-mw-hb-01.wav</with></replace>
+<replace><this>haayk(n)-mw-hb-01_1.wav</this><with>haayk(n)-mw-hb-01.wav</with></replace>
+<replace><this>habax-mw-hb-01_1.wav</this><with>habax-mw-hb-01.wav</with></replace>
+<replace><this>habaxyaamaks-mw-hb-01_1.wav</this><with>habaxyaamaks-mw-hb-01.wav</with></replace>
+<replace><this>habol-mw-hb-01_1.wav</this><with>habol-mw-hb-01.wav</with></replace>
+<replace><this>habuiltk-mw-hb-01_1.wav</this><with>habuiltk-mw-hb-01.wav</with></replace>
+<replace><this>hadaay-mw-hb-01_1.wav</this><with>hadaay-mw-hb-01.wav</with></replace>
+<replace><this>hadanii-mw-hb-01_1.wav</this><with>hadanii-mw-hb-01.wav</with></replace>
+<replace><this>hadap'a-mw-hb-01_1.wav</this><with>hadap'a-mw-hb-01.wav</with></replace>
+<replace><this>hadl-mw-hb-01_1.wav</this><with>hadl-mw-hb-01.wav</with></replace>
+<replace><this>hadzoox2-mw-hb-01_1.wav</this><with>hadzoox2-mw-hb-01.wav</with></replace>
+<replace><this>hagwil-mw-hb-01_1.wav</this><with>hagwil-mw-hb-01.wav</with></replace>
+<replace><this>hagwildaask-mw-hb-01_1.wav</this><with>hagwildaask-mw-hb-01.wav</with></replace>
+<replace><this>hagwilhuu3-mw-hb-01_1.wav</this><with>hagwilhuu3-mw-hb-01.wav</with></replace>
+<replace><this>hagwn-mw-hb-01_1.wav</this><with>hagwn-mw-hb-01.wav</with></replace>
+<replace><this>hagyel-mw-hb-01_1.wav</this><with>hagyel-mw-hb-01.wav</with></replace>
+<replace><this>hagagaytk-mw-hb-01_1.wav</this><with>hagagaytk-mw-hb-01.wav</with></replace>
+<replace><this>hahhawkla-mw-hb-01_1.wav</this><with>hahhawkla-mw-hb-01.wav</with></replace>
+<replace><this>hakhalels-mw-hb-01_1.wav</this><with>hakhalels-mw-hb-01.wav</with></replace>
+<replace><this>hakhaloo-mw-hb-01_1.wav</this><with>hakhaloo-mw-hb-01.wav</with></replace>
+<replace><this>hakhaloo-mw-hb-01_1.wav</this><with>hakhaloo-mw-hb-01.wav</with></replace>
+<replace><this>haks-mw-hb-01_1.wav</this><with>haks-mw-hb-01.wav</with></replace>
+<replace><this>hak'wilo'ox_1.wav</this><with>hak'wilo'ox.wav</with></replace>
+<replace><this>hakoo-mw-hb-01_1.wav</this><with>hakoo-mw-hb-01.wav</with></replace>
+<replace><this>hak'oo-db-kk-03_1.wav</this><with>hak'oo-db-kk-03.wav</with></replace>
+<replace><this>hakwdak-mw-hb-01_1.wav</this><with>hakwdak-mw-hb-01.wav</with></replace>
+<replace><this>ha'kayaan-mw-hb-01_1.wav</this><with>ha'kayaan-mw-hb-01.wav</with></replace>
+<replace><this>hak'ossami-mw-hb-01_1.wav</this><with>hak'ossami-mw-hb-01.wav</with></replace>
+<replace><this>halayax-mw-hb-01_1.wav</this><with>halayax-mw-hb-01.wav</with></replace>
+<replace><this>halaxsanaxnox-mw-hb-01_1.wav</this><with>halaxsanaxnox-mw-hb-01.wav</with></replace>
+<replace><this>haldm-mw-hb-01_1.wav</this><with>haldm-mw-hb-01.wav</with></replace>
+<replace><this>haldmbaa-mw-hb-01_1.wav</this><with>haldmbaa-mw-hb-01.wav</with></replace>
+<replace><this>halhal-mw-hb-01_1.wav</this><with>halhal-mw-hb-01.wav</with></replace>
+<replace><this>halhooltk-mw-hb-01_1.wav</this><with>halhooltk-mw-hb-01.wav</with></replace>
+<replace><this>haluyooksa-mw-hb-01_1.wav</this><with>haluyooksa-mw-hb-01.wav</with></replace>
+<replace><this>hatsauul-mw-hb-01_1.wav</this><with>hatsauul-mw-hb-01.wav</with></replace>
+<replace><this>nda di hawn-ac-ps-06.mp3</this><with>nda di hawn-ac-ps-06.mp3</with></replace>
+<replace><this>haytsmgask-mw-hb-01_1.wav</this><with>haytsmgask-mw-hb-01.wav</with></replace>
+<replace><this>haytsmgask-mw-hb-01_1.wav</this><with>haytsmgask-mw-hb-01.wav</with></replace>
+<replace><this>kyilams-arnold-hoon-ca-hb-79_1.wav</this><with>kyilams-arnold-hoon-ca-hb-79.wav</with></replace>
+<replace><this>int-br-k-01_1.wav</this><with>int-br-k-01.wav</with></replace>
+<replace><this>intahoon-br-k-01_1.wav</this><with>intahoon-br-k-01.wav</with></replace>
+<replace><this>intaleta-db-kk-03_1.wav</this><with>intaleta-db-kk-03.wav</with></replace>
+<replace><this>intalnaaws-db-kk-03_1.wav</this><with>intalnaaws-db-kk-03.wav</with></replace>
+<replace><this>ksaa-dl-hb-03_1.wav</this><with>ksaa-dl-hb-03.wav</with></replace>
+<replace><this>ksemx-br-k-01_1.wav</this><with>ksemx-br-k-01.wav</with></replace>
+<replace><this>ksi-br-k-01_1.wav</this><with>ksi-br-k-01.wav</with></replace>
+<replace><this>ksigatsaaW-br-k-01_1.wav</this><with>ksigatsaaW-br-k-01.wav</with></replace>
+<replace><this>k'wila'maxs-db-kk-03_1.wav</this><with>k'wila'maxs-db-kk-03.wav</with></replace>
+<replace><this>k'yinasguu-dl-hb-01_1.wav</this><with>k'yinasguu-dl-hb-01.wav</with></replace>
+<replace><this>k'a(most)em-hb-02_1.wav</this><with>k'a(most)em-hb-02.wav</with></replace>
+<replace><this></this><with></with></replace>
+<replace><this>k'a'aam-em-hb-02_1.wav</this><with>k'a'aam-em-hb-02.wav</with></replace>
+<replace><this>k'abak'a'a-em-hb-02_1.wav</this><with>k'abak'a'a-em-hb-02.wav</with></replace>
+<replace><this>k'axaays-em-hb-02_1.wav</this><with>k'axaays-em-hb-02.wav</with></replace>
+<replace><this>k'eexk-em-hb-02_1.wav</this><with>k'eexk-em-hb-02.wav</with></replace>
+<replace><this>k'oo-em-hb-02_1.wav</this><with>k'oo-em-hb-02.wav</with></replace>
+<replace><this>gap'ilah-dl-hb-01_1.wav</this><with>gap'ilah-dl-hb-01.wav</with></replace>
+<replace><this>ganksts'ool-tl-hb-01_1.wav</this><with>ganksts'ool-tl-hb-01.wav</with></replace>
+<replace><this>k'awts-1-dl-hb-01_2.mp3</this><with>k'awts-1-dl-hb-01_2.mp3</with></replace>
+<replace><this></this><with></with></replace>
+<replace><this>k'oolx-dl-hb-01_1.wav</this><with>k'oolx-dl-hb-01.wav</with></replace>
+<replace><this>k'o'opn2-dl-hb-01_1.wav</this><with>k'o'opn2-dl-hb-01.wav</with></replace>
+<replace><this></this><with></with></replace>
+<replace><this>ladzaba-dl-hb-01_1.wav</this><with>ladzaba-dl-hb-01.wav</with></replace>
+<replace><this>laalt-dl-hb-01_1.wav</this><with>laalt-dl-hb-01.wav</with></replace>
+<replace><this>laaltk-dl-hb-01_1.wav</this><with>laaltk-dl-hb-01.wav</with></replace>
+<replace><this>laalk-dl-hb-01_1.wav</this><with>laalk-dl-hb-01.wav</with></replace>
+<replace><this>laam-dl-hb-01_1.wav</this><with>laam-dl-hb-01.wav</with></replace>
+<replace><this>laan-dl-hb-01_1.wav</this><with>laan-dl-hb-01.wav</with></replace>
+<replace><this>laanmhoon-dl-hb-01_1.wav</this><with>laanmhoon-dl-hb-01.wav</with></replace>
+<replace><this>laat-dl-hb-01_1.wav</this><with>laat-dl-hb-01.wav</with></replace>
+<replace><this>laakws-dl-hb-01_1.wav</this><with>laakws-dl-hb-01.wav</with></replace>
+<replace><this>laawksmgoom-dl-hb-01_1.wav</this><with>laawksmgoom-dl-hb-01.wav</with></replace>
+<replace><this>laawksmgyelx-dl-hb-01_1.wav</this><with>laawksmgyelx-dl-hb-01.wav</with></replace>
+<replace><this>laawksmts'amti-dl-hb-01_1.wav</this><with>laawksmts'amti-dl-hb-01.wav</with></replace>
+<replace><this>laawksmyeey-dl-hb-01_1.wav</this><with>laawksmyeey-dl-hb-01.wav</with></replace>
+<replace><this>laaW-dl-hb-01_1.wav</this><with>laaW-dl-hb-01.wav</with></replace>
+<replace><this>labn-dl-hb-01_1.wav</this><with>labn-dl-hb-01.wav</with></replace>
+<replace><this>laguulgit-dl-hb-01_1.wav</this><with>laguulgit-dl-hb-01.wav</with></replace>
+<replace><this>laguulk'a-dl-hb-01_1.wav</this><with>laguulk'a-dl-hb-01.wav</with></replace>
+<replace><this>lagax-\-dl-hb-01_1.wav</this><with>lagax-\-dl-hb-01.wav</with></replace>
+<replace><this>lagax'algyax-dl-hb-01_1.wav</this><with>lagax'algyax-dl-hb-01.wav</with></replace>
+<replace><this>lagaxni'itsk-dl-hb-01_1.wav</this><with>lagaxni'itsk-dl-hb-01.wav</with></replace>
+<replace><this>lagaxgyigyootk-dl-hb-01_1.wav</this><with>lagaxgyigyootk-dl-hb-01.wav</with></replace>
+<replace><this>lagaxgadeelpk-dl-hb-01_1.wav</this><with>lagaxgadeelpk-dl-hb-01.wav</with></replace>
+<replace><this>lagaxhaytk-dl-hb-01_1.wav</this><with>lagaxhaytk-dl-hb-01.wav</with></replace>
+<replace><this>lagaxnaks-dl-hb-01_1.wav</this><with>lagaxnaks-dl-hb-01.wav</with></replace>
+<replace><this>lagaxts'ap-dl-hb-01_1.wav</this><with>lagaxts'ap-dl-hb-01.wav</with></replace>
+<replace><this>lagm-\-dl-hb-01_1.wav</this><with>lagm-\-dl-hb-01.wav</with></replace>
+<replace><this>lagmt'aa-dl-hb-01_1.wav</this><with>lagmt'aa-dl-hb-01.wav</with></replace>
+<replace><this>lahaal-dl-hb-01_1.wav</this><with>lahaal-dl-hb-01.wav</with></replace>
+<replace><this>lahaytk-dl-hb-01_1.wav</this><with>lahaytk-dl-hb-01.wav</with></replace>
+<replace><this>laak'wil-dl-hb-01_1.wav</this><with>laak'wil-dl-hb-01.wav</with></replace>
+<replace><this>lamdzax-dl-hb-01_1.wav</this><with>lamdzax-dl-hb-01.wav</with></replace>
+<replace><this>lamk-dl-hb-01_1.wav</this><with>lamk-dl-hb-01.wav</with></replace>
+<replace><this>laniist-dl-hb-01_1.wav</this><with>laniist-dl-hb-01.wav</with></replace>
+<replace><this>lapweel-dl-hb-01_1.wav</this><with>lapweel-dl-hb-01.wav</with></replace>
+<replace><this>lap'l-dl-hb-01_1.wav</this><with>lap'l-dl-hb-01.wav</with></replace>
+<replace><this>lax2-dl-hb-01_1.wav</this><with>lax2-dl-hb-01.wav</with></replace>
+<replace><this>laxst'uup-ab-hb-01_1.wav</this><with>laxst'uup-ab-hb-01.wav</with></replace>
+<replace><this>laxsuulda-ab-hb-01_1.wav</this><with>laxsuulda-ab-hb-01.wav</with></replace>
+<replace><this>laxtaagan-ab-hb-01_1.wav</this><with>laxtaagan-ab-hb-01.wav</with></replace>
+<replace><this>laxt'aa-ab-hb-01_1.wav</this><with>laxt'aa-ab-hb-01.wav</with></replace>
+<replace><this>laxdii-ab-hb-01_1.wav</this><with>laxdii-ab-hb-01.wav</with></replace>
+<replace><this>laxgwatks-ab-hb-01_1.wav</this><with>laxgwatks-ab-hb-01.wav</with></replace>
+<replace><this>laxgibuu-ab-hb-01_1.wav</this><with>laxgibuu-ab-hb-01.wav</with></replace>
+<replace><this>laxgayna-ab-hb-01_1.wav</this><with>laxgayna-ab-hb-01.wav</with></replace>
+<replace><this>laxhuu-ab-hb-01_1.wav</this><with>laxhuu-ab-hb-01.wav</with></replace>
+<replace><this>laxlax-ab-hb-01_1.wav</this><with>laxlax-ab-hb-01.wav</with></replace>
+<replace><this>laxlaxha-ab-hb-01_1.wav</this><with>laxlaxha-ab-hb-01.wav</with></replace>
+<replace><this>lax-ab-hb-01_1.wav</this><with>lax-ab-hb-01.wav</with></replace>
+<replace><this>lax sgyiik di pdeegu-ac-ps-06.mp3</this><with>lax sgyiik di pdeegu-ac-ps-06.mp3</with></replace>
+<replace><this>laxsiit-ab-hb-01_1.wav</this><with>laxsiit-ab-hb-01.wav</with></replace>
+<replace><this>laxsimaay-ab-hb-01_1.wav</this><with>laxsimaay-ab-hb-01.wav</with></replace>
+<replace><this>laxwusii-ab-hb-01_1.wav</this><with>laxwusii-ab-hb-01.wav</with></replace>
+<replace><this>lax'wiihoon-tl-hb-01_1.wav</this><with>lax'wiihoon-tl-hb-01.wav</with></replace>
+<replace><this>laxyuup-tl-hb-01_1.wav</this><with>laxyuup-tl-hb-01.wav</with></replace>
+<replace><this>llaxaws-ab-hb-01_1.wav</this><with>llaxaws-ab-hb-01.wav</with></replace>
+<replace><this>lax'o-ab-hb-01_1.wav</this><with>lax'o-ab-hb-01.wav</with></replace>
+<replace><this>lax'oo_waap-ab-hb-01_1.wav</this><with>lax'oo_waap-ab-hb-01.wav</with></replace>
+<replace><this>lax'ool-ab-hb-01_1.wav</this><with>lax'ool-ab-hb-01.wav</with></replace>
+<replace><this>layoon-tl-hb-01_1.wav</this><with>layoon-tl-hb-01.wav</with></replace>
+<replace><this>la'aks-dl-hb-01_1.wav</this><with>la'aks-dl-hb-01.wav</with></replace>
+<replace><this>la'awkyaa-dl-hb-01_1.wav</this><with>la'awkyaa-dl-hb-01.wav</with></replace>
+<replace><this>labaal-dl-hb-01_1.wav</this><with>labaal-dl-hb-01.wav</with></replace>
+<replace><this>labaalsk-dl-hb-01_1.wav</this><with>labaalsk-dl-hb-01.wav</with></replace>
+<replace><this>labaalx-dl-hb-01_1.wav</this><with>labaalx-dl-hb-01.wav</with></replace>
+<replace><this>ts'ilts'al-dl-hb-03_1.wav</this><with>ts'ilts'al-dl-hb-03.wav</with></replace>
+<replace><this>siluunga_na_hoya-ca-hb-79_1.wav</this><with>siluunga_na_hoya-ca-hb-79.wav</with></replace>
+<replace><this>'libaat-em-hb-02_1.wav</this><with>'libaat-em-hb-02.wav</with></replace>
+<replace><this>'liiyelk-em-hb-02_1.wav</this><with>'liiyelk-em-hb-02.wav</with></replace>
+<replace><this>la'nak-em-hb-02_1.wav</this><with>la'nak-em-hb-02.wav</with></replace>
+<replace><this>leexk-finish_eat-em-hb-02_1.wav</this><with>leexk-finish_eat-em-hb-02.wav</with></replace>
+<replace><this>lguksn-em-hb-02_1.wav</this><with>lguksn-em-hb-02.wav</with></replace>
+<replace><this>Ladm_LgUULkadat-ca-hb-79_1.wav</this><with>Ladm_LgUULkadat-ca-hb-79.wav</with></replace>
+<replace><this>maalk-vn-hb-01_1.wav</this><with>maalk-vn-hb-01.wav</with></replace>
+<replace><this>maamxsk-vn-hb-01_1.wav</this><with>maamxsk-vn-hb-01.wav</with></replace>
+<replace><this>maan-vn-hb-01_1.wav</this><with>maan-vn-hb-01.wav</with></replace>
+<replace><this>maaxay-vn-hb-01_1.wav</this><with>maaxay-vn-hb-01.wav</with></replace>
+<replace><this>maay-vn-hb-01_1.wav</this><with>maay-vn-hb-01.wav</with></replace>
+<replace><this>maayahagwilhuu-vn-hb-01_1.wav</this><with>maayahagwilhuu-vn-hb-01.wav</with></replace>
+<replace><this>maguul-vn-hb-01_1.wav</this><with>maguul-vn-hb-01.wav</with></replace>
+<replace><this>magaayt-vn-hb-01_2.mp3</this><with>magaayt-vn-hb-01_2.mp3</with></replace>
+<replace><this>magoon-explain-db-kk-03.mp3</this><with>magoon-explain-db-kk-03.mp3</with></replace>
+<replace><this>magonsgm_sa'awnsk-vn-hb-01_1.wav</this><with>magonsgm_sa'awnsk-vn-hb-01.wav</with></replace>
+<replace><this>magonsk-vn-hb-01_1.wav</this><with>magonsk-vn-hb-01.wav</with></replace>
+<replace><this>magoop-vn-hb-01_1.wav</this><with>magoop-vn-hb-01.wav</with></replace>
+<replace><this>mahaayx-vn-hb-01_1.wav</this><with>mahaayx-vn-hb-01.wav</with></replace>
+<replace><this>maksiilk-pg-ps-01_1.wav</this><with>maksiilk-pg-ps-01.wav</with></replace>
+<replace><this>ma'kooxs-vn-hb-01_1.wav</this><with>ma'kooxs-vn-hb-01.wav</with></replace>
+<replace><this>maalsk-vn-hb-01_1.wav</this><with>maalsk-vn-hb-01.wav</with></replace>
+<replace><this>malwo-vn-hb-01_1.wav</this><with>malwo-vn-hb-01.wav</with></replace>
+<replace><this>mal-vn-hb-01_1.wav</this><with>mal-vn-hb-01.wav</with></replace>
+<replace><this>man-vn-hb-01_1.wav</this><with>man-vn-hb-01.wav</with></replace>
+<replace><this>manaxk-vn-hb-01_1.wav</this><with>manaxk-vn-hb-01.wav</with></replace>
+<replace><this>manbuuaks-pg-ps-01_1.wav</this><with>manbuuaks-pg-ps-01.wav</with></replace>
+<replace><this>manganeexs-vn-hb-01_1.wav</this><with>manganeexs-vn-hb-01.wav</with></replace>
+<replace><this>manhap-vn-hb-01_1.wav</this><with>manhap-vn-hb-01.wav</with></replace>
+<replace><this>manliplooyk-vn-hb-01_1.wav</this><with>manliplooyk-vn-hb-01.wav</with></replace>
+<replace><this>ma'a-vn-hb-01_1.wav</this><with>ma'a-vn-hb-01.wav</with></replace>
+<replace><this>ma'awks-vn-hb-01_1.wav</this><with>ma'awks-vn-hb-01.wav</with></replace>
+<replace><this>ma'awlk-vn-hb-01_2.mp3</this><with>ma'awlk-vn-hb-01_2.mp3</with></replace>
+<replace><this>naayu-doni-ca-hb-79_1.wav</this><with>naayu-doni-ca-hb-79.wav</with></replace>
+<replace><this>na'naat-mb-tak-02_1.wav</this><with>na'naat-mb-tak-02.wav</with></replace>
+<replace><this>nanak-mb-tak-02_1.wav</this><with>nanak-mb-tak-02.wav</with></replace>
+<replace><this>naats'iks-mb-tak-02_1.wav</this><with>naats'iks-mb-tak-02.wav</with></replace>
+<replace><this>aamndap-mb-k-01_1.wav</this><with>aamndap-mb-k-01.wav</with></replace>
+<replace><this>ndaayu di wil waatgn-ac-ps-06.mp3</this><with>ndaayu di wil waatgn-ac-ps-06.mp3</with></replace>
+<replace><this>'nagyelx-em-hb-02_1.wav</this><with>'nagyelx-em-hb-02.wav</with></replace>
+<replace><this>'naka-em-hb-02_1.wav</this><with>'naka-em-hb-02.wav</with></replace>
+<replace><this>'nik'awks-em-hb-02_1.wav</this><with>'nik'awks-em-hb-02.wav</with></replace>
+<replace><this>naniit-mb-tak-02_1.wav</this><with>naniit-mb-tak-02.wav</with></replace>
+<replace><this>nawa'naa-mb-tak-02_1.wav</this><with>nawa'naa-mb-tak-02.wav</with></replace>
+<replace><this>'nax'nuu-em-hb-02_1.wav</this><with>'nax'nuu-em-hb-02.wav</with></replace>
+<replace><this>pteex-ab-takwaan-00_1.wav</this><with>pteex-ab-takwaan-00.wav</with></replace>
+<replace><this>plakskw-Q-ab-takwaan-00_1.wav</this><with>plakskw-Q-ab-takwaan-00.wav</with></replace>
+<replace><this>ploon-ab-takwaan-00_1.wav</this><with>ploon-ab-takwaan-00.wav</with></replace>
+<replace><this>ptool-ab-takwaan-00_1.wav</this><with>ptool-ab-takwaan-00.wav</with></replace>
+<replace><this>pts'aan-ab-takwaan-00_1.wav</this><with>pts'aan-ab-takwaan-00.wav</with></replace>
+<replace><this>pts'ih-ab-takwaan-00_1.wav</this><with>pts'ih-ab-takwaan-00.wav</with></replace>
+<replace><this>p'inpa'an_1.wav</this><with>p'inpa'an.wav</with></replace>
+<replace><this>pn'pa'in_anaay-db-kk-03_1.wav</this><with>pn'pa'in_anaay-db-kk-03.wav</with></replace>
+<replace><this>p'uul_1.wav</this><with>p'uul.wav</with></replace>
+<replace><this>saxsaasax-dl-hb-01_1.wav</this><with>saxsaasax-dl-hb-01.wav</with></replace>
+<replace><this>saxdoo-dl-hb-01_1.wav</this><with>saxdoo-dl-hb-01.wav</with></replace>
+<replace><this>sayp.vr.hb.mp3</this><with>sayp.vr.hb.mp3</with></replace>
+<replace><this>sguu2-dl-hb-03_1.wav</this><with>sguu2-dl-hb-03.wav</with></replace>
+<replace><this>sgoksk-dl-hb-01_1.wav</this><with>sgoksk-dl-hb-01.wav</with></replace>
+<replace><this>suulk-dl-hb-03_1.wav</this><with>suulk-dl-hb-03.wav</with></replace>
+<replace><this>suulk-dl-hb-03_1.wav</this><with>suulk-dl-hb-03.wav</with></replace>
+<replace><this>txalaam_2-dl-hb-01_1.wav</this><with>txalaam_2-dl-hb-01.wav</with></replace>
+<replace><this>t'aa-dl-hb-03_1.wav</this><with>t'aa-dl-hb-03.wav</with></replace>
+<replace><this>t'aa2-dl-hb-03_1.wav</this><with>t'aa2-dl-hb-03.wav</with></replace>
+<replace><this>ts'emti-ge-hb-01_1.wav</this><with>ts'emti-ge-hb-01.wav</with></replace>
+<replace><this>dziis-pr-hb-01_1.wav</this><with>dziis-pr-hb-01.wav</with></replace>
+<replace><this>ts'iiwksa-db-kk-03_1.wav</this><with>ts'iiwksa-db-kk-03.wav</with></replace>
+<replace><this>ts'iikwsa-pr-hh-01_1.wav</this><with>ts'iikwsa-pr-hh-01.wav</with></replace>
+<replace><this>uusk-dl-hb-03_1_1.wav</this><with>uusk-dl-hb-03_1.wav</with></replace>
+<replace><this>lukwil aam wila loosm-ac-ps-06.mp3</this><with>lukwil aam wila loosm-ac-ps-06.mp3</with></replace>
+<replace><this>xaa-dl-hb-03_1.wav</this><with>xaa-dl-hb-03.wav</with></replace>
+<replace><this>xanooyx-dl-hb-03_1.wav</this><with>xanooyx-dl-hb-03.wav</with></replace>
+<replace><this>xbiism gwini'itsnsk-mb-kk-06.mp3</this><with>xbiism gwini'itsnsk-mb-kk-06.mp3</with></replace>
+<replace><this>xbismsguu-dl-hb-03_1.wav</this><with>xbismsguu-dl-hb-03.wav</with></replace>
+<replace><this>xeex-dl-hb-03_1.wav</this><with>xeex-dl-hb-03.wav</with></replace>
+<replace><this>xgap'sk-dl-hb-03_1.wav</this><with>xgap'sk-dl-hb-03.wav</with></replace>
+<replace><this>xgwatks-ab-takwaan-01_1.wav</this><with>xgwatks-ab-takwaan-01.wav</with></replace>
+<replace><this>saxswooxs_xswooxs-dl-hb-01_1.wav</this><with>saxswooxs_xswooxs-dl-hb-01.wav</with></replace>
+<replace><this>'yaanst-dl-hb-03_1.wav</this><with>'yaanst-dl-hb-03.wav</with></replace>
+<replace><this>'ya'anstk-dl-hb-03_1.wav</this><with>'ya'anstk-dl-hb-03.wav</with></replace>
+<replace><this>'yaayx-dl-hb-03_1.wav</this><with>'yaayx-dl-hb-03.wav</with></replace>
+<replace><this>'yaga-dl-hb-03_1.wav</this><with>'yaga-dl-hb-03.wav</with></replace>
+<replace><this>'yagabaa-dl-hb-03_1.wav</this><with>'yagabaa-dl-hb-03.wav</with></replace>
+<replace><this>'yagagoo-dl-hb-03_1.wav</this><with>'yagagoo-dl-hb-03.wav</with></replace>
+<replace><this>'yagaloo-dl-hb-03_1.wav</this><with>'yagaloo-dl-hb-03.wav</with></replace>
+<replace><this>'yagase'ik-dl-hb-03_1.wav</this><with>'yagase'ik-dl-hb-03.wav</with></replace>
+<replace><this>'yagay-dl-hb-03_1.wav</this><with>'yagay-dl-hb-03.wav</with></replace>
+<replace><this>'yay'niit-dl-hb-03_1.wav</this><with>'yay'niit-dl-hb-03.wav</with></replace>
+<replace><this>'yens-dl-hb-03_1.wav</this><with>'yens-dl-hb-03.wav</with></replace>
+<replace><this>'yikwdelt-dl-hb-03_1.wav</this><with>'yikwdelt-dl-hb-03.wav</with></replace>
+<replace><this>'yikwla'adool-dl-hb-03_1.wav</this><with>'yikwla'adool-dl-hb-03.wav</with></replace>
+<replace><this>'yikwla'aatk-dl-hb-03_1.wav</this><with>'yikwla'aatk-dl-hb-03.wav</with></replace>
+<replace><this>'yikwla'on-dl-hb-03_1.wav</this><with>'yikwla'on-dl-hb-03.wav</with></replace>
+<replace><this>'yu'ut'isk-dl-hb-03_1.wav</this><with>'yu'ut'isk-dl-hb-03.wav</with></replace>
+<replace><this>'yuusl-dl-hb-03_1.wav</this><with>'yuusl-dl-hb-03.wav</with></replace>
+<replace><this>'yuuta-dl-hb-03_1.wav</this><with>'yuuta-dl-hb-03.wav</with></replace>
+<replace><this>'yuutk-dl-hb-03_1.wav</this><with>'yuutk-dl-hb-03.wav</with></replace>
+<replace><this>aLa-vn-hb-06_1.wav</this><with>aLa-vn-hb-06.wav</with></replace>
+<replace><this>k'ap-dl-hb-01_1.wav</this><with>k'ap-dl-hb-01.wav</with></replace>
+<replace><this>'as-mb-k-01_1.wav</this><with>'as-mb-k-01.wav</with></replace>
+<replace><this>asba-vn-hb-06_1.wav</this><with>asba-vn-hb-06.wav</with></replace>
+<replace><this>'is-br-k-01_1.wav</this><with>'is-br-k-01.wav</with></replace>
+<replace><this>'onda-dl-hb-03_1.wav</this><with>'onda-dl-hb-03.wav</with></replace>-->
+        </elem>
+        
+        <!--<elem name="ResponseOne">
+            <replace>
+                <this>True</this>
+                <with>Okay</with>
+            </replace>
+            <replace>
+                <this>False</this>
+                <with>Error</with>
+            </replace>
+        </elem>-->
+    </xsl:param>
+    
+    <xsl:variable name="vReps" select=
+        "document('')/*/xsl:param[@name='pReps']"/>
+    
+    <xsl:template match="node()|@*">
+        <xsl:copy>
+            <xsl:apply-templates select="node()|@*"/>
+        </xsl:copy>
+    </xsl:template>
+    
+    <xsl:template match="text()">
+        <xsl:variable name="vNewVal" select=
+            "$vReps/elem
+            [@name=name(current()/..)]
+            /replace[this = current()]
+            /with/text()
+            "/>
+        
+        <xsl:copy-of select=
+            "$vNewVal | self::text()[not($vNewVal)]"/>
+    </xsl:template>
+</xsl:stylesheet>
