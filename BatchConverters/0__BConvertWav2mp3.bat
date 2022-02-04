@@ -1,7 +1,5 @@
 @REM Converts Wav to mp3
-@REM and copies all wavs from Linked Files\AudioVisual if they do not yet exist to the web\mp3s directory
-@REM and then resizes ALL jpgs in the web "jpgs" directory
-@REM larry_hayashi@sil.org
+@REM larry.hayashi@canil.ca
 @echo on
 
 @REM CALLS 000PARAMETERS.bat which has a list of source and destination directories.

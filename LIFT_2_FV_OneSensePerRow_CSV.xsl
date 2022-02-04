@@ -76,10 +76,9 @@
 ...
 </range>
 Based on the above structure found in LIFT.lift-ranges, an external XML file, we load just the parts-of-speech node with all of its elements
-        into the varialbe vPOSRangeList. This variable is called later to retrieve the abbreviation for the Grammatical Category.
+        into the variable vPOSRangeList. This variable is called later to retrieve the abbreviation for the Grammatical Category.
         The range/@id is the same as the full name of the default Analysis writing system for each element. -->
-    <xsl:variable name="vPOSRangeList"
-        select="document('InputTestFiles/LIFT/LIFT.lift-ranges')/lift-ranges/range[@id='grammatical-info']"/>
+    <xsl:variable name="vPOSRangeList"       select="document('file:///c:/Users/Larry/Desktop/LIFT4FirstVoices/LIFT4FirstVoices.lift-ranges')/lift-ranges/range[@id='grammatical-info']"/>
     <!--Need to know the writing systems that are in use. Perhaps create parameters for these-->
     <xsl:template match="lift">
         <xsl:text>"WORD_ID","WORD","PART_OF_SPEECH","PRONUNCIATION","DEFINITION","LITERAL_TRANSLATION","RELATED_PHRASE","RELATED_PHRASE_DEFINITION","RELATED_PHRASE_LITERAL_TRANSLATION","RELATED_PHRASE_AUDIO_TITLE","RELATED_PHRASE_AUDIO_FILENAME","RELATED_PHRASE_AUDIO_SOURCE","CATEGORIES","CULTURAL_NOTE","REFERENCE","INCLUDE_IN_GAMES","CHILD_FRIENDLY","AUDIO_TITLE","AUDIO_DESCRIPTION","AUDIO_FILENAME","AUDIO_SHARED_WITH_OTHER_DIALECTS","AUDIO_CHILD_FOCUSED","AUDIO_SOURCE","AUDIO_RECORDER","IMG_TITLE","IMG_FILENAME","IMG_DESCRIPTION","IMG_SOURCE","USERNAME","CONTRIBUTOR"&#13;</xsl:text>
@@ -177,7 +176,7 @@ Based on the above structure found in LIFT.lift-ranges, an external XML file, we
         XSL 2.0 and above allow for the use of the separator attribute leaving its value off the last occurrence.
         Ain't that sweet? -->
         <xsl:text>"</xsl:text>
-        <xsl:value-of select="trait[@name='FVCategories']/@value" separator=", "/>
+        <xsl:value-of select="trait[@name='FVCategories']/@value" separator=","/>
         <!--<xsl:for-each select="trait[@name='FVCategories']">
                 <xsl:value-of select="@value" separator=", "/>
         </xsl:for-each>-->
@@ -190,14 +189,32 @@ Based on the above structure found in LIFT.lift-ranges, an external XML file, we
         <!--Here we use replace to escape double-quotes found within the example sentence itself - Wolf said to Fish, "Let's go swimming!"-->
         <xsl:value-of
             select="replace(../note[@type='bibliography']/form/text/., '&quot;' , '&quot;&quot;')"/>
-        <xsl:text>",</xsl:text>
-        <!-- "INCLUDE_IN_GAMES" For now, indicated as yes with 1. Eventually need to treat this as a publication type or use a custom field FV_Games-->
-        <xsl:text>"</xsl:text>
-        <xsl:text>1</xsl:text>
-        <xsl:text>",</xsl:text>
-        <!--"CHILD_FRIENDLY" Not used for now.-->
-        <xsl:text>"</xsl:text>
-        <xsl:text>",</xsl:text>
+        <xsl:text>",</xsl:text>        
+        <!--<trait name ="semantic-domain-ddp4" value="2.1.8.3 Male organs"/>-->
+        <xsl:choose>
+            <!--Check if in sensitive semantic domain category. Note this should be done manually with a publication type-->
+            <xsl:when test="trait[starts-with(@value,'2.1.8.3') or starts-with(@value,'2.1.8.4') or starts-with(@value,'2.6.2')]">
+                <!-- "INCLUDE_IN_GAMES" Indicate with ZERO-->
+                <xsl:text>"</xsl:text>
+                <xsl:text>0</xsl:text>
+                <xsl:text>",</xsl:text>
+                <!--"CHILD_FRIENDLY" Indicate with ZERO.-->
+                <xsl:text>"</xsl:text>
+                <xsl:text>0</xsl:text>
+                <xsl:text>",</xsl:text>
+            </xsl:when>
+            <!-- If not in sensitive category then mark with 1-->
+            <xsl:otherwise>
+                <!-- "INCLUDE_IN_GAMES" For now, indicated as yes with 1. Eventually need to treat this as a publication type or use a custom field FV_Games-->
+                <xsl:text>"</xsl:text>
+                <xsl:text>1</xsl:text>
+                <xsl:text>",</xsl:text>
+                <!--"CHILD_FRIENDLY" Indicate with 1.-->
+                <xsl:text>"</xsl:text>
+                <xsl:text>1</xsl:text>
+                <xsl:text>",</xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
         <!-- ____________________ NEXT ELEMENTS ARE FOR AUDIO FILE FOR ENTRY ____________________ -->
         <!--This section is for entries that have their headwords recording using the audio-writing-system method in FieldWorks -->
         <!--"AUDIO_TITLE" Required by FV, Web-friendly title for the audio. Generated only if there is an audio file, otherwise empty ""   -->
