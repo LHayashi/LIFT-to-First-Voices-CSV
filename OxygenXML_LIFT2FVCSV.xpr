@@ -1500,6 +1500,10 @@
                             </scenario>
                         </scenario-array>
                     </entry>
+                    <entry>
+                        <String>validation.scenarios</String>
+                        <validationScenario-array/>
+                    </entry>
                 </map>
             </serialized>
         </options>
