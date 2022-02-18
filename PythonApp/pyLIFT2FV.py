@@ -59,7 +59,7 @@ def create_transform_window(settings):
 
     layout = [  [sg.Text('Change relevant settings first.', font='Any 12')],
                 [sg.Text('Be sure to check the date.', font='Any 12')],
-                [TextLabel('FieldWorks database file'), sg.Input(key='-FWDATA_file-'), sg.FileBrowse(target='-FWDATA_file-', file_types = (("fwdata", "*.fwdata"), ))],
+                [TextLabel('FieldWorks database file'), sg.Input(key='-FWDATA_file-'), sg.FileBrowse(target='-FWDATA_file-', file_types = (("fwdata", "*.fwdata"), ),)],
                 [TextLabel('Exported LIFT file'),sg.Input(key='-LIFT_file-'), sg.FileBrowse(target='-LIFT_file-', file_types = (("LIFT", "*.lift"), ))],
                 [TextLabel('FirstVoices CSV file'),sg.Input(key='-output_xhtml-'), sg.FileBrowse(target='-output_xhtml-')],
                 [TextLabel('LIFT2FirstVoices XSL file'),sg.Input(key='-transform_file-'), sg.FileBrowse(target='-transform_file-', file_types = (("XSLT", "*.xsl"), ))],
@@ -86,7 +86,7 @@ def create_settings_window(settings):
     def TextLabel(text): return sg.Text(text+':', justification='l', size=(17,1))
 
     layout = [  [sg.Text('Lex Clean File Settings', font='Any 15')],
-                [TextLabel('FieldWorks database file'), sg.Input(key='-FWDATA_file-'), sg.FileBrowse(target='-FWDATA_file-', file_types = (("fwdata", "*.fwdata"), ))],
+                [TextLabel('FieldWorks database file'), sg.Input(key='-FWDATA_file-'), sg.FileBrowse(target='-FWDATA_file-', file_types = (("fwdata", "*.fwdata"), ),)],
                 [TextLabel('Exported LIFT file'),sg.Input(key='-LIFT_file-'), sg.FileBrowse(target='-LIFT_file-', file_types = (("LIFT", "*.lift"), ))],
                 [TextLabel('FirstVoices CSV file'),sg.Input(key='-output_xhtml-'), sg.FileBrowse(target='-output_xhtml-')],
                 [TextLabel('LIFT2FirstVoices XSL file'),sg.Input(key='-transform_file-'), sg.FileBrowse(target='-transform_file-', file_types = (("XSLT", "*.xsl"), ))],
@@ -126,6 +126,7 @@ def main():
 
         event, values = window.read()
         if event in (None, 'Exit'):
+            save_settings(SETTINGS_FILE, settings, values)
             break
         if event == 'Save Settings':
                 save_settings(SETTINGS_FILE, settings, values)
@@ -135,19 +136,7 @@ def main():
                 #window.close()
                 #window = None
                 #save_settings(SETTINGS_FILE, settings, values)
-        if event == 'Transform':
-            event, values = create_transform_window(settings).read(close=True)
-            if event == 'Transform LIFT to FirstVoices':
-                #input = "C:/Users/Larry/Desktop/OxygenXMLGradingProject/DesktopLIFT/DesktopLIFT.lift"
-                input = values['-LIFT_file-']
-                output = values['-output_xhtml-']
-                xslt = values['-transform_file-']
-                lastdate = values['-last_date-']
-                subprocess.call(f"java -cp C:\SaxonHE11-1J\saxon-he-11.1.jar net.sf.saxon.Transform -t -s:{input} -xsl:{xslt} -o:{output} pLIFTfile={input} pLastDateExport={lastdate}")
-                window.close()
-                window = None
-                #save_settings(SETTINGS_FILE, settings, values)
-                sg.popup('Transformation successful!')
+
         if event == 'Transform LIFT to FirstVoices':            
             #input = "C:/Users/Larry/Desktop/OxygenXMLGradingProject/DesktopLIFT/DesktopLIFT.lift"
             input = values['-LIFT_file-']
