@@ -57,18 +57,56 @@ def create_transform_window(settings):
     #TextLabel is used below.
     def TextLabel(text): return sg.Text(text+':', justification='l', size=(20,1))
 
-    layout = [  [sg.Text('Change relevant settings first.', font='Any 12')],
-                [sg.Text('Be sure to check the date.', font='Any 12')],
-                [TextLabel('FieldWorks database file'), sg.Input(key='-FWDATA_file-'), sg.FileBrowse(target='-FWDATA_file-', file_types = (("fwdata", "*.fwdata"), ))],
-                [TextLabel('Exported LIFT file'),sg.Input(key='-LIFT_file-'), sg.FileBrowse(target='-LIFT_file-', file_types = (("LIFT", "*.lift"), ))],
-                [TextLabel('FirstVoices CSV file'),sg.Input(key='-output_xhtml-'), sg.FileBrowse(target='-output_xhtml-')],
-                [TextLabel('LIFT2FirstVoices XSL file'),sg.Input(key='-transform_file-'), sg.FileBrowse(target='-transform_file-', file_types = (("XSLT", "*.xsl"), ))],
-                [TextLabel('Saxon transform.jar file'),sg.Input(key='-saxon_jar-'), sg.FileBrowse(target='-saxon_jar-', file_types = (("JAR", "*.jar"), ))],
-                [TextLabel('Date of last export'),sg.Input(key='-last_date-'), sg.CalendarButton('Choose Date', target='-last_date-', format="%Y-%m-%dT%H:%M:00Z")],
-                
-                [sg.Button('Save Settings'), sg.Button('Transform LIFT to FirstVoices'), sg.Button('Exit')]  ]
+    layout1 = [
+        [sg.Text('\nPlease follow the instructions below:', font='Any 12')],
+        [sg.Checkbox('1. Do a send and receive')],
+        [sg.Image(filename='Trial.png', key='image')],
+        [sg.Checkbox('2. Clean up data')],
+        [sg.Checkbox('3. Turn off all filters')],
+        [sg.Checkbox('4. "Sort" by head word')],
+        [sg.Checkbox('5. Filter by publication')],
+        [sg.Checkbox('6. Add filter for date modified (on or after last export)')],
+    ]
 
-    window = sg.Window('FieldWorks LIFT to First Voices', layout, size=(700, 400), keep_on_top=True, finalize=True)
+    layout2 = [
+        [sg.Text('Change relevant settings first.', font='Any 12')],
+        [sg.Text('Be sure to check the date.', font='Any 12')],
+        [TextLabel('FieldWorks database file'), sg.Input(key='-FWDATA_file-'), sg.FileBrowse(target='-FWDATA_file-', file_types = (("fwdata", "*.fwdata"), ))],
+        [TextLabel('Exported LIFT file'),sg.Input(key='-LIFT_file-'), sg.FileBrowse(target='-LIFT_file-', file_types = (("LIFT", "*.lift"), ))],
+        [TextLabel('FirstVoices CSV file'),sg.Input(key='-output_xhtml-'), sg.FileBrowse(target='-output_xhtml-')],
+        [TextLabel('LIFT2FirstVoices XSL file'),sg.Input(key='-transform_file-'), sg.FileBrowse(target='-transform_file-', file_types = (("XSLT", "*.xsl"), ))],
+        [TextLabel('Saxon transform.jar file'),sg.Input(key='-saxon_jar-'), sg.FileBrowse(target='-saxon_jar-', file_types = (("JAR", "*.jar"), ))],
+        [TextLabel('Date of last export'),sg.Input(key='-last_date-'), sg.CalendarButton('Choose Date', target='-last_date-', format="%Y-%m-%dT%H:%M:00Z")],
+                
+        [sg.Button('Save Settings'), sg.Button('Transform LIFT to FirstVoices'), sg.Button('Exit')]
+    ]
+
+    layout3 = [
+        [sg.Text('This is my third tab!', font='Any 12')]
+    ]
+
+    layout4 = [
+        [sg.Text('This is my fourth tab!', font='Any 12')]
+    ]
+
+    layout5 = [
+        [sg.Text('This is my third tab!', font='Any 12')]
+    ]
+
+    tab_group = [
+        [sg.TabGroup([
+            [
+                sg.Tab('Clean up & Instructions', layout1, title_color='Black'),
+                sg.Tab('Settings', layout2, title_color='Black'),
+                sg.Tab('LIFT to FV', layout3, title_color='Black'),
+                sg.Tab('Zip Files', layout4, title_color='Black'),
+                sg.Tab('Send', layout5, title_color='Black')
+            ]
+        ], tab_location='topleft', title_color='Black', tab_background_color='Gray',
+            selected_title_color='White', selected_background_color='Gray', border_width=0)]
+    ]
+
+    window = sg.Window('FieldWorks LIFT to First Voices', tab_group, size=(700, 500), keep_on_top=True, finalize=True)
 
     for key in SETTINGS_KEYS_TO_ELEMENT_KEYS:   # update window with the values read from settings file
         try:
