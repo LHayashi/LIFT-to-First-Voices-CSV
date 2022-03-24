@@ -12,6 +12,9 @@ from os import path
 import zipfile
 import os
 
+#import for today's date on Settings Tab
+from datetime import date
+
 """
     A simple "settings" implementation.  Load/Edit/Save settings for your programs
     Uses json file format which makes it trivial to integrate into a Python program.  If you can
@@ -66,6 +69,8 @@ def prepare_zip(dir_path):
 
         for file in files:
             zip.write(os.path.join(dir_path, file), f_path + file)
+
+
     zip.close()
     print("File Created successfully..")
     return new_file
@@ -89,23 +94,29 @@ def create_transform_window(settings):
     ]
 
     layout2 = [
-        [sg.Text('\nChange relevant settings first.', font='Any 12')],
-        [sg.Text('\nBe sure to check the date.', font='Any 12')],
-        [TextLabel('FieldWorks database file'), sg.Input(key='-FWDATA_file-'), sg.FileBrowse(target='-FWDATA_file-', file_types = (("fwdata", "*.fwdata"), ))],
-        [TextLabel('Exported LIFT file'),sg.Input(key='-LIFT_file-'), sg.FileBrowse(target='-LIFT_file-', file_types = (("LIFT", "*.lift"), ))],
-        [TextLabel('FirstVoices CSV file'),sg.Input(key='-output_xhtml-'), sg.FileBrowse(target='-output_xhtml-')],
-        [TextLabel('LIFT2FirstVoices XSL file'),sg.Input(key='-transform_file-'), sg.FileBrowse(target='-transform_file-', file_types = (("XSLT", "*.xsl"), ))],
-        [TextLabel('Saxon transform.jar file'),sg.Input(key='-saxon_jar-'), sg.FileBrowse(target='-saxon_jar-', file_types = (("JAR", "*.jar"), ))],
-        [TextLabel('Date of last export'),sg.Input(key='-last_date-'), sg.CalendarButton('Choose Date', target='-last_date-', format="%Y-%m-%dT%H:%M:00Z")],
-                
-        [sg.Button('Save Settings'), sg.Button('Transform LIFT to FirstVoices'), sg.Button('Exit')]
+        [sg.Text('\nLog of previous exports:', font='Any 12')],
+        [sg.Output(key='-logs-', size=(70, 20))]
     ]
 
     layout3 = [
-        [sg.Text('\nTransform LIFT to First Voices', font='Any 12')],
+        [sg.Text('\nChange relevant settings first.', font='Any 12')],
+        [sg.Text('\nBe sure to check the date.', font='Any 12')],
+        [TextLabel('FieldWorks database file'), sg.Input(key='-FWDATA_file-'), sg.FileBrowse(target='-FWDATA_file-', file_types = (("fwdata", "*.fwdata"), ))],
+        [TextLabel('Exported LIFT file'),sg.Input(key='-LIFT_file-', enable_events=True), sg.FileBrowse(target='-LIFT_file-', file_types = (("LIFT", "*.lift"), ))],
+        [TextLabel('FirstVoices CSV folder'),sg.Input(key='-output_xhtml-', readonly=True)],
+        [TextLabel('LIFT2FirstVoices XSL file'),sg.Input(key='-transform_file-'), sg.FileBrowse(target='-transform_file-', file_types = (("XSLT", "*.xsl"), ))],
+        [TextLabel('Saxon transform.jar file'),sg.Input(key='-saxon_jar-'), sg.FileBrowse(target='-saxon_jar-', file_types = (("JAR", "*.jar"), ))],
+        [TextLabel('Date of last export'),sg.Input(key='-last_date-'), sg.CalendarButton('Choose Date', target='-last_date-', format="%Y-%m-%dT%H:%M:00Z")],
+        [TextLabel("Automated Date"),sg.Input(key='-auto_date-', visible=False), sg.Text(date.today(), tooltip="Today's date being saved for next export")],
+
+        [sg.Button('Save Settings'), sg.Button('Transform LIFT to FirstVoices'), sg.Button('Exit')]
     ]
 
     layout4 = [
+        [sg.Text('\nTransform LIFT to First Voices', font='Any 12')],
+    ]
+
+    layout5 = [
         [sg.Text("\nLet's ZIP your files!", font='Any 12')],
         [sg.Text("Upload your Audio and Image files below")],
         [TextLabel('Audio folder'), sg.Input(key='-audio_folder-'), sg.FolderBrowse()],
@@ -114,7 +125,7 @@ def create_transform_window(settings):
         [sg.Button('ZIP Files')]
     ]
 
-    layout5 = [
+    layout6 = [
         [sg.Text('\nThis is my third tab!', font='Any 12')],
         [sg.Text('\nDate of Last Export', font='Any 12')],
         [sg.Button('Update Date of Last Export')] # add field underneath showing date and manual override calendar
@@ -124,10 +135,11 @@ def create_transform_window(settings):
         [sg.TabGroup([
             [
                 sg.Tab('Clean up & Instructions', layout1, title_color='Black'),
-                sg.Tab('Settings', layout2, title_color='Black'),
-                sg.Tab('LIFT to FV', layout3, title_color='Black'),
-                sg.Tab('Zip Files', layout4, title_color='Black'),
-                sg.Tab('Send', layout5, title_color='Black')
+                sg.Tab('Exports', layout2, title_color='Black'),
+                sg.Tab('Settings', layout3, title_color='Black'),
+                sg.Tab('LIFT to FV', layout4, title_color='Black'),
+                sg.Tab('Zip Files', layout5, title_color='Black'),
+                sg.Tab('Send', layout6, title_color='Black')
             ]
         ], tab_location='topleft', title_color='Black', tab_background_color='Gray',
             selected_title_color='White', selected_background_color='Gray', border_width=0)]
@@ -185,14 +197,25 @@ def create_main_window(settings):
 def main():
     window, settings = None, load_settings(SETTINGS_FILE, DEFAULT_SETTINGS )
 
+    # read log file
+    f = open("logs.txt", "r")
+    #print(f.read())
+
+
     while True:             # Event Loop
         if window is None:
             #window = create_main_window(settings)
             window = create_transform_window(settings)
 
+        window['-logs-'].update(value=f.read())
         event, values = window.read()
+        print(event)
         if event in (None, 'Exit'):
             break
+        if event == '-LIFT_file-':
+            new_file_name = values['-LIFT_file-']
+            new_file_name = (new_file_name[:-5]) + '_fv.csv'
+            window['-output_xhtml-'].update(value=new_file_name)
         if event == 'Save Settings':
                 save_settings(SETTINGS_FILE, settings, values)
         #if event == 'Change Settings':
@@ -232,8 +255,8 @@ def main():
             window.close()
             window = None
             sg.popup('Transformation successful!')
-    window.close()
 
+    window.close()
 main()
 
 
