@@ -121,7 +121,6 @@ def create_transform_window(settings):
         [sg.Text("Upload your Audio and Image files below")],
         [TextLabel('Audio folder'), sg.Input(key='-audio_folder-'), sg.FolderBrowse()],
         [TextLabel('Images folder'), sg.Input(key='-image_folder-'), sg.FolderBrowse()],
-        [sg.Text("An additional Folder browse here for anything extra?")],
         [sg.Button('ZIP Files')]
     ]
 
@@ -214,8 +213,12 @@ def main():
             break
         if event == '-LIFT_file-':
             new_file_name = values['-LIFT_file-']
-            new_file_name = (new_file_name[:-5]) + '_fv.csv'
-            window['-output_xhtml-'].update(value=new_file_name)
+            #new_file_name = (new_file_name[:-5]) + '/FirstVoices'
+
+            os.mkdir('FirstVoices')
+            new_folder = os.path.abspath('FirstVoices')
+            window['-output_xhtml-'].update(value=new_folder)
+
         if event == 'Save Settings':
                 save_settings(SETTINGS_FILE, settings, values)
         #if event == 'Change Settings':
@@ -251,6 +254,8 @@ def main():
             sg.popup('Transformation successful!')
         if event == 'ZIP Files':
             input = values['-audio_folder-']
+            prepare_zip(input)
+            input = values['-image_folder-']
             prepare_zip(input)
             window.close()
             window = None
