@@ -84,8 +84,7 @@ def create_transform_window(settings):
 
     layout1 = [
         [sg.Text('\nPlease follow the instructions below:', font='Any 12')],
-        [sg.Checkbox('1. Do a send and receive')],
-        [sg.Image(filename='Trial.png', key='image')],
+        [sg.Checkbox('1. Do a send and receive'), sg.Image(filename='SendReceive.png', key='image', size=(250,250))],
         [sg.Checkbox('2. Clean up data')],
         [sg.Checkbox('3. Turn off all filters')],
         [sg.Checkbox('4. "Sort" by head word')],
@@ -103,7 +102,7 @@ def create_transform_window(settings):
         [sg.Text('\nBe sure to check the date.', font='Any 12')],
         [TextLabel('FieldWorks database file'), sg.Input(key='-FWDATA_file-'), sg.FileBrowse(target='-FWDATA_file-', file_types = (("fwdata", "*.fwdata"), ))],
         [TextLabel('Exported LIFT file'),sg.Input(key='-LIFT_file-', enable_events=True), sg.FileBrowse(target='-LIFT_file-', file_types = (("LIFT", "*.lift"), ))],
-        [TextLabel('FirstVoices CSV folder'),sg.Input(key='-output_xhtml-', readonly=True)],
+        [TextLabel('FirstVoices CSV folder'), sg.Input(key='-output_xhtml-', readonly=True, tooltip="This is a new folder that has been created on your computer")],
         [TextLabel('LIFT2FirstVoices XSL file'),sg.Input(key='-transform_file-'), sg.FileBrowse(target='-transform_file-', file_types = (("XSLT", "*.xsl"), ))],
         [TextLabel('Saxon transform.jar file'),sg.Input(key='-saxon_jar-'), sg.FileBrowse(target='-saxon_jar-', file_types = (("JAR", "*.jar"), ))],
         [TextLabel('Date of last export'),sg.Input(key='-last_date-'), sg.CalendarButton('Choose Date', target='-last_date-', format="%Y-%m-%dT%H:%M:00Z")],
@@ -125,9 +124,9 @@ def create_transform_window(settings):
     ]
 
     layout6 = [
-        [sg.Text('\nThis is my third tab!', font='Any 12')],
+        [sg.Text("\nAnd you're done!", font='Any 12')],
         [sg.Text('\nDate of Last Export', font='Any 12')],
-        [sg.Button('Update Date of Last Export')] # add field underneath showing date and manual override calendar
+        [sg.Button('Update Date of Last Export: '), sg.Input(key='-auto_date-', visible=False), sg.Text(date.today())] # add field underneath showing date and manual override calendar
     ]
 
     tab_group = [
@@ -197,7 +196,7 @@ def main():
     window, settings = None, load_settings(SETTINGS_FILE, DEFAULT_SETTINGS )
 
     # read log file
-    f = open("logs.txt", "r")
+    f = open("logs.txt", "r+")
     #print(f.read())
 
 
@@ -260,6 +259,25 @@ def main():
             window.close()
             window = None
             sg.popup('Transformation successful!')
+
+        if event == 'Update Date of Last Export: ':
+            #with open("logs.txt", "r+") as file:
+                #f = open("logs.txt", "r+")
+            #window['-logs-'].update(value=f.write())
+            #event, values = window.write()
+            #print(event)
+            file = open('logs.txt', 'w')
+            input = values['-auto_date-']
+            file.write('input')
+            file.close()
+            #new_date = '-auto_date-'
+            #print('Hello')
+            #logs.write('new_date')
+
+            #with open('logs.txt', 'w') as f:
+                #f.write('-auto_date-')
+                #f.write('\n')
+
 
     window.close()
 main()
