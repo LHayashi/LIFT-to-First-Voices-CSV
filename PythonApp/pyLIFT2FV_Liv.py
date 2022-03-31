@@ -84,7 +84,8 @@ def create_transform_window(settings):
 
     layout1 = [
         [sg.Text('\nPlease follow the instructions below:', font='Any 12')],
-        [sg.Checkbox('1. Do a send and receive'), sg.Image(filename='SendReceive.png', key='image', size=(250,250))],
+        [sg.Checkbox('1. Do a send and receive')],
+        [sg.Image(filename='SendReceive_small.png', key='image', size=(150,100)), sg.Button('Expand Photo')],
         [sg.Checkbox('2. Clean up data')],
         [sg.Checkbox('3. Turn off all filters')],
         [sg.Checkbox('4. "Sort" by head word')],
@@ -106,7 +107,7 @@ def create_transform_window(settings):
         [TextLabel('LIFT2FirstVoices XSL file'),sg.Input(key='-transform_file-'), sg.FileBrowse(target='-transform_file-', file_types = (("XSLT", "*.xsl"), ))],
         [TextLabel('Saxon transform.jar file'),sg.Input(key='-saxon_jar-'), sg.FileBrowse(target='-saxon_jar-', file_types = (("JAR", "*.jar"), ))],
         [TextLabel('Date of last export'),sg.Input(key='-last_date-'), sg.CalendarButton('Choose Date', target='-last_date-', format="%Y-%m-%dT%H:%M:00Z")],
-        [TextLabel("Automated Date"),sg.Input(key='-auto_date-', visible=False), sg.Text(date.today(), tooltip="Today's date being saved for next export")],
+        [TextLabel("Automated Date"), sg.Text(date.today(), tooltip="Today's date being saved for next export")],
 
         [sg.Button('Save Settings'), sg.Button('Transform LIFT to FirstVoices'), sg.Button('Exit')]
     ]
@@ -133,13 +134,13 @@ def create_transform_window(settings):
         [sg.TabGroup([
             [
                 sg.Tab('Clean up & Instructions', layout1, title_color='Black'),
-                sg.Tab('Exports', layout2, title_color='Black'),
+                sg.Tab('Exports', layout2, title_color='Black', key='tab_export'),
                 sg.Tab('Settings', layout3, title_color='Black'),
                 sg.Tab('LIFT to FV', layout4, title_color='Black'),
                 sg.Tab('Zip Files', layout5, title_color='Black'),
                 sg.Tab('Send', layout6, title_color='Black')
             ]
-        ], tab_location='topleft', title_color='Black', tab_background_color='Gray',
+        ], key='tab_group', enable_events=True, tab_location='topleft', title_color='Black', tab_background_color='Gray',
             selected_title_color='White', selected_background_color='Gray', border_width=0)]
     ]
 
@@ -195,21 +196,24 @@ def create_main_window(settings):
 def main():
     window, settings = None, load_settings(SETTINGS_FILE, DEFAULT_SETTINGS )
 
-    # read log file
-    f = open("logs.txt", "r+")
-    #print(f.read())
-
 
     while True:             # Event Loop
         if window is None:
             #window = create_main_window(settings)
             window = create_transform_window(settings)
 
-        window['-logs-'].update(value=f.read())
         event, values = window.read()
         print(event)
         if event in (None, 'Exit'):
             break
+
+        if event == 'tab_group':
+            active_tab = values['tab_group']
+            if active_tab == 'tab_export':
+                file = open('logs.txt', 'r')
+                window['-logs-'].update(value=file.read())
+                file.close()
+
         if event == '-LIFT_file-':
             new_file_name = values['-LIFT_file-']
             #new_file_name = (new_file_name[:-5]) + '/FirstVoices'
@@ -219,13 +223,17 @@ def main():
             window['-output_xhtml-'].update(value=new_folder)
 
         if event == 'Save Settings':
-                save_settings(SETTINGS_FILE, settings, values)
+            save_settings(SETTINGS_FILE, settings, values)
         #if event == 'Change Settings':
             #event, values = create_settings_window(settings).read(close=True)
             #if event == 'Save Settings':
                 #window.close()
                 #window = None
                 #save_settings(SETTINGS_FILE, settings, values)
+
+        if event == 'Expand Photo':
+            sg.popup_no_buttons(title='Send Receive', keep_on_top=True, image='SendReceive_large.png')
+
         if event == 'Transform':
             event, values = create_transform_window(settings).read(close=True)
             if event == 'Transform LIFT to FirstVoices':
@@ -261,22 +269,9 @@ def main():
             sg.popup('Transformation successful!')
 
         if event == 'Update Date of Last Export: ':
-            #with open("logs.txt", "r+") as file:
-                #f = open("logs.txt", "r+")
-            #window['-logs-'].update(value=f.write())
-            #event, values = window.write()
-            #print(event)
-            file = open('logs.txt', 'w')
-            input = values['-auto_date-']
-            file.write('input')
+            file = open('logs.txt', 'a+')
+            file.write(f'{date.today()}: Exported new entries\n')
             file.close()
-            #new_date = '-auto_date-'
-            #print('Hello')
-            #logs.write('new_date')
-
-            #with open('logs.txt', 'w') as f:
-                #f.write('-auto_date-')
-                #f.write('\n')
 
 
     window.close()
