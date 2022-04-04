@@ -90,7 +90,7 @@ def create_transform_window(settings):
         [sg.Checkbox('3. Turn off all filters')],
         [sg.Checkbox('4. "Sort" by head word')],
         [sg.Checkbox('5. Filter by publication')],
-        [sg.Checkbox('6. Add filter for date modified (on or after last export)')], #add the date of last export from layout 2 here
+        [sg.Checkbox('6. Add filter for date modified, see "Exports" tab for last export date')], #add the date of last export from layout 2 here
     ]
 
     layout2 = [
@@ -106,14 +106,15 @@ def create_transform_window(settings):
         [TextLabel('FirstVoices CSV folder'), sg.Input(key='-output_xhtml-', readonly=True, tooltip="This is a new folder that has been created on your computer")],
         [TextLabel('LIFT2FirstVoices XSL file'),sg.Input(key='-transform_file-'), sg.FileBrowse(target='-transform_file-', file_types = (("XSLT", "*.xsl"), ))],
         [TextLabel('Saxon transform.jar file'),sg.Input(key='-saxon_jar-'), sg.FileBrowse(target='-saxon_jar-', file_types = (("JAR", "*.jar"), ))],
-        [TextLabel('Date of last export'),sg.Input(key='-last_date-'), sg.CalendarButton('Choose Date', target='-last_date-', format="%Y-%m-%dT%H:%M:00Z")],
+        [TextLabel('Date of last export'),sg.Input(key='-last_date-'), sg.CalendarButton('Choose Date', target='-last_date-', format="%Y-%m-%d")],
         [TextLabel("Automated Date"), sg.Text(date.today(), tooltip="Today's date being saved for next export")],
 
-        [sg.Button('Save Settings'), sg.Button('Transform LIFT to FirstVoices'), sg.Button('Exit')]
+        [sg.Button('Save Settings'), sg.Button('Exit')]
     ]
 
     layout4 = [
         [sg.Text('\nTransform LIFT to First Voices', font='Any 12')],
+        [sg.Button('Transform LIFT to FirstVoices')]
     ]
 
     layout5 = [
@@ -125,9 +126,16 @@ def create_transform_window(settings):
     ]
 
     layout6 = [
-        [sg.Text("\nAnd you're done!", font='Any 12')],
-        [sg.Text('\nDate of Last Export', font='Any 12')],
-        [sg.Button('Update Date of Last Export: '), sg.Input(key='-auto_date-', visible=False), sg.Text(date.today())] # add field underneath showing date and manual override calendar
+        [sg.Text("\nAnd you're done!\n", font='Any 12')],
+        [sg.Text('Date of Last Export:'), sg.Input(key='-override_date-'), sg.Button('Today'), sg.CalendarButton('Override', target='-override_date-', format="%Y-%m-%d")],
+        [sg.Text('Type of Export:'), sg.Checkbox('New', default=True, key='-export_type_new-'), sg.Checkbox('Modified', default=True, key='-export_type_modified-')],
+        [sg.Text('\nAdd the "Date of Last Export" to the "Exports" tab:\n'), sg.Button('Add')]
+
+
+        #[sg.Text('Date of Last Export:'), sg.Text(date.today()), sg.Button('Today')],
+        #[sg.Text('If Date of Last Export was not today:'), sg.Input(key='-override_date-'), sg.CalendarButton('Override', target='-override_date-', format="%Y-%m-%dT%H:%M:00Z")]
+
+        # add field underneath showing date and manual override calendar
     ]
 
     tab_group = [
@@ -268,10 +276,22 @@ def main():
             window = None
             sg.popup('Transformation successful!')
 
-        if event == 'Update Date of Last Export: ':
+        if event == 'Today':
+            window['-override_date-'].update(value=date.today())
+
+        if event == 'Add':
             file = open('logs.txt', 'a+')
-            file.write(f'{date.today()}: Exported new entries\n')
+            export_date = values['-override_date-']
+            if values['-export_type_new-'] is True and values['-export_type_modified-'] is True:
+                file.write(f'{export_date}: Exported new and modified entries\n')
+            elif values['-export_type_new-'] is True:
+                file.write(f'{export_date}: Exported new entries\n')
+            elif values['-export_type_modified-'] is True:
+                file.write(f'{export_date}: Exported modified entries\n')
+            else:
+                file.write(f'{export_date}: Exported new and modified entries\n')
             file.close()
+            sg.popup('Successfully added to Exports Log!', keep_on_top=True)
 
 
     window.close()
