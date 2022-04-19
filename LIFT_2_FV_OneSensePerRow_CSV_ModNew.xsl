@@ -106,6 +106,7 @@ Based on the above structure found in LIFT.lift-ranges, an external XML file, we
     <!--Need to know the writing systems that are in use. Perhaps create parameters for these-->
     <xsl:template match="lift">
         <xsl:text>"WORD_ID","WORD","PART_OF_SPEECH","PRONUNCIATION","DEFINITION","LITERAL_TRANSLATION","RELATED_PHRASE","RELATED_PHRASE_DEFINITION","RELATED_PHRASE_LITERAL_TRANSLATION","RELATED_PHRASE_AUDIO_TITLE","RELATED_PHRASE_AUDIO_FILENAME","RELATED_PHRASE_AUDIO_SOURCE","CATEGORIES","CULTURAL_NOTE","REFERENCE","INCLUDE_IN_GAMES","CHILD_FRIENDLY","AUDIO_TITLE","AUDIO_DESCRIPTION","AUDIO_FILENAME","AUDIO_SHARED_WITH_OTHER_DIALECTS","AUDIO_CHILD_FOCUSED","AUDIO_SOURCE","AUDIO_RECORDER","IMG_TITLE","IMG_FILENAME","IMG_DESCRIPTION","IMG_SOURCE","USERNAME","CONTRIBUTOR"&#13;</xsl:text>
+        <!--<xsl:apply-templates select="entry[not(@dateCreated gt $pLastDateExport)][@dateModified gt $pLastDateExport]/sense"/>-->
         <xsl:apply-templates select="entry[@dateCreated gt $pLastDateExport][@dateModified gt $pLastDateExport]/sense"/>
         <!--<xsl:apply-templates select="entry[@dateCreated lt $pDateCreated][@dateModified gt $pDateCreated]/sense"/>-->
     </xsl:template>
