@@ -103,11 +103,11 @@ def create_transform_window(settings):
         [sg.Text('\nBe sure to check the date.', font='Any 12')],
         [TextLabel('FieldWorks database file'), sg.Input(key='-FWDATA_file-'), sg.FileBrowse(target='-FWDATA_file-', file_types = (("fwdata", "*.fwdata"), ))],
         [TextLabel('Exported LIFT file'),sg.Input(key='-LIFT_file-', enable_events=True), sg.FileBrowse(target='-LIFT_file-', file_types = (("LIFT", "*.lift"), ))],
-        [TextLabel('FirstVoices CSV folder'), sg.Input(key='-output_xhtml-', readonly=True, tooltip="This is a new folder that has been created on your computer")],
+        [TextLabel('FirstVoices CSV folder'), sg.Input(key='-output_xhtml-', tooltip="This is a new folder that has been created on your computer")],
         [TextLabel('LIFT2FirstVoices XSL file'),sg.Input(key='-transform_file-'), sg.FileBrowse(target='-transform_file-', file_types = (("XSLT", "*.xsl"), ))],
         [TextLabel('Saxon transform.jar file'),sg.Input(key='-saxon_jar-'), sg.FileBrowse(target='-saxon_jar-', file_types = (("JAR", "*.jar"), ))],
-        [TextLabel('Date of last export'),sg.Input(key='-last_date-'), sg.CalendarButton('Choose Date', target='-last_date-', format="%Y-%m-%d")],
-        [TextLabel("Automated Date"), sg.Text(date.today(), tooltip="Today's date being saved for next export")],
+        [TextLabel('Export entries since'),sg.Input(key='-last_date-'), sg.CalendarButton('Choose Date', target='-last_date-', format="%Y-%m-%d")],
+        [TextLabel("and up to"), sg.Input(key='-to_date-'), sg.CalendarButton('Choose Date', target='-to_date-', format="%Y-%m-%d")],
 
         [sg.Button('Save Settings'), sg.Button('Exit')]
     ]
@@ -129,7 +129,7 @@ def create_transform_window(settings):
         [sg.Text("\nAnd you're done!\n", font='Any 12')],
         [sg.Text('Date of Last Export:'), sg.Input(key='-override_date-'), sg.Button('Today'), sg.CalendarButton('Override', target='-override_date-', format="%Y-%m-%d")],
         [sg.Text('Type of Export:'), sg.Checkbox('New', default=True, key='-export_type_new-'), sg.Checkbox('Modified', default=True, key='-export_type_modified-')],
-        [sg.Text('\nAdd the "Date of Last Export" to the "Exports" tab:\n'), sg.Button('Add')]
+        [sg.Button('Record to Export Log')]
 
 
         #[sg.Text('Date of Last Export:'), sg.Text(date.today()), sg.Button('Today')],
@@ -146,7 +146,7 @@ def create_transform_window(settings):
                 sg.Tab('Settings', layout3, title_color='Black'),
                 sg.Tab('LIFT to FV', layout4, title_color='Black'),
                 sg.Tab('Zip Files', layout5, title_color='Black'),
-                sg.Tab('Send', layout6, title_color='Black')
+                sg.Tab('Finish', layout6, title_color='Black')
             ]
         ], key='tab_group', enable_events=True, tab_location='topleft', title_color='Black', tab_background_color='Gray',
             selected_title_color='White', selected_background_color='Gray', border_width=0)]
@@ -224,7 +224,7 @@ def main():
 
         if event == '-LIFT_file-':
             new_file_name = values['-LIFT_file-']
-            #new_file_name = (new_file_name[:-5]) + '/FirstVoices'
+            # new_file_name = (new_file_name[:-5]) + '/FirstVoices'
 
             os.mkdir('FirstVoices')
             new_folder = os.path.abspath('FirstVoices')
@@ -274,12 +274,12 @@ def main():
             prepare_zip(input)
             window.close()
             window = None
-            sg.popup('Transformation successful!')
+            sg.popup('Successfully zipped!')
 
         if event == 'Today':
             window['-override_date-'].update(value=date.today())
 
-        if event == 'Add':
+        if event == 'Record to Export Log':
             file = open('logs.txt', 'a+')
             export_date = values['-override_date-']
             if values['-export_type_new-'] is True and values['-export_type_modified-'] is True:
