@@ -86,7 +86,7 @@ def create_transform_window(settings):
     def TextLabel(text): return sg.Text(text+':', justification='l', size=(20,1))
 
     layout1 = [
-        [sg.Text('\nPlease follow the instructions below:', font='Any 12')],
+        [sg.Text('\nIn FieldWorks, please do each of the steps below:', font='Any 12')],
         [sg.Checkbox('1. Do a send and receive')],
         [sg.Image(filename='SendReceive_small.png', key='image', size=(150,100)), sg.Button('Expand Photo')],
         [sg.Checkbox('2. Clean up data')],
@@ -94,6 +94,8 @@ def create_transform_window(settings):
         [sg.Checkbox('4. "Sort" by head word')],
         [sg.Checkbox('5. Filter by publication')],
         [sg.Checkbox('6. Add filter for date modified, see "Exports" tab for last export date')], #add the date of last export from layout 2 here
+        [sg.Checkbox('7. File ... Export ... ')], 
+        [sg.Image(filename='ExportLIFT_small.png', key='image', size=(150,100)), sg.Button('Expand Photo')],
     ]
 
     layout2 = [
