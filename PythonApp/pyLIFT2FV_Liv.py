@@ -1,6 +1,6 @@
 from multiprocessing.sharedctypes import Value
 import PySimpleGUI as sg
-#import os
+
 import subprocess
 import sys
 #sys.path.append("C:/Program Files/Saxonica/SaxonC HE 11.1/Saxon.C.API/python-saxon")
@@ -15,6 +15,8 @@ import os
 #import for today's date on Settings Tab
 from datetime import date
 
+#Testing path finder
+from tkinter import filedialog
 """
     A simple "settings" implementation.  Load/Edit/Save settings for your programs
     Uses json file format which makes it trivial to integrate into a Python program.  If you can
@@ -28,9 +30,10 @@ from datetime import date
 """
 
 SETTINGS_FILE = path.join(path.dirname(__file__), r'settings_file.cfg')
-DEFAULT_SETTINGS = {'FWDATA_file': 10, 'LIFT_file': None , 'transform_file': None, 'output_xhtml' : None, 'saxon_jar': None, 'last_date': None}
+DEFAULT_SETTINGS = {'FWDATA_file': 10, 'LIFT_file': None , 'transform_file': None, 'output_xhtml' : None, 'saxon_jar': None,'from_date': None, 'to_date': None}
 # "Map" from the settings dictionary keys to the window's element keys
-SETTINGS_KEYS_TO_ELEMENT_KEYS = {'FWDATA_file': '-FWDATA_file-', 'LIFT_file': '-LIFT_file-' , 'transform_file': '-transform_file-', 'output_xhtml' : '-output_xhtml-', 'saxon_jar' : '-saxon_jar-', 'last_date' : '-last_date-'}
+SETTINGS_KEYS_TO_ELEMENT_KEYS = {'FWDATA_file': '-FWDATA_file-', 'LIFT_file': '-LIFT_file-' , 'transform_file': '-transform_file-', 'output_xhtml' : '-output_xhtml-', 'saxon_jar' : '-saxon_jar-', 'from_date' : '-from_date-', 'to_date' : '-to_date-'}
+
 
 ########################################## Load/Save Settings File ##########################################
 def load_settings(settings_file, default_settings):
@@ -95,18 +98,19 @@ def create_transform_window(settings):
 
     layout2 = [
         [sg.Text('\nLog of previous exports:', font='Any 12')],
-        [sg.Output(key='-logs-', size=(70, 20))]
+        [sg.Output(key='-logs-', size=(80, 20))]
     ]
+
 
     layout3 = [
         [sg.Text('\nChange relevant settings first.', font='Any 12')],
         [sg.Text('\nBe sure to check the date.', font='Any 12')],
         [TextLabel('FieldWorks database file'), sg.Input(key='-FWDATA_file-'), sg.FileBrowse(target='-FWDATA_file-', file_types = (("fwdata", "*.fwdata"), ))],
         [TextLabel('Exported LIFT file'),sg.Input(key='-LIFT_file-', enable_events=True), sg.FileBrowse(target='-LIFT_file-', file_types = (("LIFT", "*.lift"), ))],
-        [TextLabel('FirstVoices CSV folder'), sg.Input(key='-output_xhtml-', tooltip="This is a new folder that has been created on your computer")],
+        [TextLabel('FirstVoices CSV folder'), sg.Input(key='-output_xhtml-', tooltip="Choose where you would like your .csv files to go"), sg.FolderBrowse(target='-output_xhtml-')],
         [TextLabel('LIFT2FirstVoices XSL file'),sg.Input(key='-transform_file-'), sg.FileBrowse(target='-transform_file-', file_types = (("XSLT", "*.xsl"), ))],
         [TextLabel('Saxon transform.jar file'),sg.Input(key='-saxon_jar-'), sg.FileBrowse(target='-saxon_jar-', file_types = (("JAR", "*.jar"), ))],
-        [TextLabel('Export entries since'),sg.Input(key='-last_date-'), sg.CalendarButton('Choose Date', target='-last_date-', format="%Y-%m-%d")],
+        [TextLabel('Export entries since'),sg.Input(key='-from_date-'), sg.CalendarButton('Choose Date', target='-from_date-', format="%Y-%m-%d")],
         [TextLabel("and up to"), sg.Input(key='-to_date-'), sg.CalendarButton('Choose Date', target='-to_date-', format="%Y-%m-%d")],
 
         [sg.Button('Save Settings'), sg.Button('Exit')]
@@ -127,8 +131,9 @@ def create_transform_window(settings):
 
     layout6 = [
         [sg.Text("\nAnd you're done!\n", font='Any 12')],
-        [sg.Text('Date of Last Export:'), sg.Input(key='-override_date-'), sg.Button('Today'), sg.CalendarButton('Override', target='-override_date-', format="%Y-%m-%d")],
-        [sg.Text('Type of Export:'), sg.Checkbox('New', default=True, key='-export_type_new-'), sg.Checkbox('Modified', default=True, key='-export_type_modified-')],
+        #[sg.Text('Date of Last Export:'), sg.Input(key='-override_date-'), sg.Button('Today'), sg.CalendarButton('Override', target='-override_date-', format="%Y-%m-%d")],
+        # [sg.Text('Type of Export:'), sg.Checkbox('New', default=True, key='-export_type_new-'), sg.Checkbox('Modified', default=True, key='-export_type_modified-')],
+        [sg.Text('Double check that your dates are accurate in the Settings tab, then click below:\n')],
         [sg.Button('Record to Export Log')]
 
 
@@ -143,7 +148,7 @@ def create_transform_window(settings):
             [
                 sg.Tab('Clean up & Instructions', layout1, title_color='Black'),
                 sg.Tab('Exports', layout2, title_color='Black', key='tab_export'),
-                sg.Tab('Settings', layout3, title_color='Black'),
+                sg.Tab('Settings', layout3, title_color='Black', key='tab_settings'),
                 sg.Tab('LIFT to FV', layout4, title_color='Black'),
                 sg.Tab('Zip Files', layout5, title_color='Black'),
                 sg.Tab('Finish', layout6, title_color='Black')
@@ -170,14 +175,14 @@ def create_settings_window(settings):
     #TextLabel is used below.
     def TextLabel(text): return sg.Text(text+':', justification='l', size=(17,1))
 
-    layout = [  [sg.Text('Lex Clean File Settings', font='Any 15')],
-                [TextLabel('FieldWorks database file'), sg.Input(key='-FWDATA_file-'), sg.FileBrowse(target='-FWDATA_file-', file_types = (("fwdata", "*.fwdata"), ))],
-                [TextLabel('Exported LIFT file'),sg.Input(key='-LIFT_file-'), sg.FileBrowse(target='-LIFT_file-', file_types = (("LIFT", "*.lift"), ))],
-                [TextLabel('FirstVoices CSV file'),sg.Input(key='-output_xhtml-'), sg.FileBrowse(target='-output_xhtml-')],
-                [TextLabel('LIFT2FirstVoices XSL file'),sg.Input(key='-transform_file-'), sg.FileBrowse(target='-transform_file-', file_types = (("XSLT", "*.xsl"), ))],
-                [TextLabel('Saxon transform.jar file'),sg.Input(key='-saxon_jar-'), sg.FileBrowse(target='-saxon_jar-', file_types = (("JAR", "*.jar"), ))],
-                [TextLabel('Date of last export'),sg.Input(key='-last_date-'), sg.CalendarButton('Choose Date', target='-last_date-', format="%Y-%m-%dT%H:%M:00Z")],
-                [sg.Button('Save Settings'), sg.Button('Cancel')]  ]
+    # layout = [  [sg.Text('Lex Clean File Settings', font='Any 15')],
+    #             [TextLabel('FieldWorks database file'), sg.Input(key='-FWDATA_file-'), sg.FileBrowse(target='-FWDATA_file-', file_types = (("fwdata", "*.fwdata"), ))],
+    #             [TextLabel('Exported LIFT file'),sg.Input(key='-LIFT_file-'), sg.FileBrowse(target='-LIFT_file-', file_types = (("LIFT", "*.lift"), ))],
+    #             [TextLabel('FirstVoices CSV file'),sg.Input(key='-output_xhtml-'), sg.FileBrowse(target='-output_xhtml-')],
+    #             [TextLabel('LIFT2FirstVoices XSL file'),sg.Input(key='-transform_file-'), sg.FileBrowse(target='-transform_file-', file_types = (("XSLT", "*.xsl"), ))],
+    #             [TextLabel('Saxon transform.jar file'),sg.Input(key='-saxon_jar-'), sg.FileBrowse(target='-saxon_jar-', file_types = (("JAR", "*.jar"), ))],
+    #             [TextLabel('Date of last export'),sg.Input(key='-last_date-'), sg.CalendarButton('Choose Date', target='-last_date-', format="%Y-%m-%dT%H:%M:00Z")],
+    #             [sg.Button('Save Settings'), sg.Button('Cancel')]  ]
 
 
     window = sg.Window('Settings', layout, size=(600, 300), keep_on_top=True, finalize=True)
@@ -190,15 +195,27 @@ def create_settings_window(settings):
 
     return window
 
+########### Testing finding a path #########
+
+#def search_for_file_path ():
+#
+#    currdir = os.getcwd()
+#    tempdir = filedialog.askdirectory(parent=root, initialdir=currdir, title='Please select a directory')
+#    if len(tempdir) > 0:
+#        print ("You chose: %s" % tempdir)
+
+#    return tempdir
+
+
 ########################################## Main Program Window & Event Loop ##########################################
-def create_main_window(settings):
-    sg.theme('Light Blue 2')
-
-    layout = [[sg.T('This is my main application')],
-              [sg.T('Add your primary window stuff in here')],
-              [sg.B('Transform'), sg.B('Exit'), sg.B('Change Settings')]]
-
-    return sg.Window('FieldWorks LIFT to FirstVoices CSV', layout)
+# def create_main_window(settings):
+#     sg.theme('Light Blue 2')
+#
+#     layout = [[sg.T('This is my main application')],
+#               [sg.T('Add your primary window stuff in here')],
+#               [sg.B('Transform'), sg.B('Exit'), sg.B('Change Settings')]]
+#
+#     return sg.Window('FieldWorks LIFT to FirstVoices CSV', layout)
 
 
 def main():
@@ -222,13 +239,22 @@ def main():
                 window['-logs-'].update(value=file.read())
                 file.close()
 
-        if event == '-LIFT_file-':
-            new_file_name = values['-LIFT_file-']
-            # new_file_name = (new_file_name[:-5]) + '/FirstVoices'
+        # if event == 'tab_group':
+        #     active_tab = values['tab_group']
+        #     if active_tab == 'tab_settings':
+        #         pathlift = os.path.dirname(os.path.abspath(values['-LIFT_file-']))
+        #         pathoutput = values['-output_xhtml-']
+        #         pathfieldworks = os.path.dirname(os.path.abspath(values['-LIFT_file-']))
 
-            os.mkdir('FirstVoices')
-            new_folder = os.path.abspath('FirstVoices')
-            window['-output_xhtml-'].update(value=new_folder)
+        # if event == '-LIFT_file-':
+        #     new_file_name = values['-LIFT_file-']
+        #     # new_file_name = (new_file_name[:-5]) + '/FirstVoices'
+        #     os.mkdir('FirstVoices')
+        #     new_folder = os.path.abspath('FirstVoices')
+        #     window['-output_xhtml-'].update(value=new_folder)
+
+        #if event ==
+
 
         if event == 'Save Settings':
             save_settings(SETTINGS_FILE, settings, values)
@@ -244,29 +270,34 @@ def main():
 
         if event == 'Transform':
             event, values = create_transform_window(settings).read(close=True)
-            if event == 'Transform LIFT to FirstVoices':
-                #input = "C:/Users/Larry/Desktop/OxygenXMLGradingProject/DesktopLIFT/DesktopLIFT.lift"
-                input = values['-LIFT_file-']
-                output = values['-output_xhtml-']
-                xslt = values['-transform_file-']
-                lastdate = values['-last_date-']
-                subprocess.call(f"java -cp C:\SaxonHE11-1J\saxon-he-11.1.jar net.sf.saxon.Transform -t -s:{input} -xsl:{xslt} -o:{output} pLIFTfile={input} pLastDateExport={lastdate}")
-                window.close()
-                window = None
-                #save_settings(SETTINGS_FILE, settings, values)
-                sg.popup('Transformation successful!')
-        if event == 'Transform LIFT to FirstVoices':            
+            # if event == 'Transform LIFT to FirstVoices':
+            #      #input = "C:/Users/Larry/Desktop/OxygenXMLGradingProject/DesktopLIFT/DesktopLIFT.lift"
+            #      input = values['-LIFT_file-']
+            #      output = values['-output_xhtml-']
+            #      xslt = values['-transform_file-']
+            #      lastdate = values['-last_date-']
+            #      subprocess.call(f"java -cp C:\SaxonHE11-1J\saxon-he-11.1.jar net.sf.saxon.Transform -t -s:{input} -xsl:{xslt} -o:{output} pLIFTfile={input} pLastDateExport={lastdate}")
+            #      window.close()
+            #      window = None
+            #      #save_settings(SETTINGS_FILE, settings, values)
+            #      sg.popup('Transformation successful!')
+        if event == 'Transform LIFT to FirstVoices':
             #input = "C:/Users/Larry/Desktop/OxygenXMLGradingProject/DesktopLIFT/DesktopLIFT.lift"
             input = values['-LIFT_file-']
             output = values['-output_xhtml-']
+            outputnew = output+'/NewEntries.csv'
+            outputmodified = output+'/ModifiedEntries.csv'
             xslt = values['-transform_file-']
-            lastdate = values['-last_date-']
+            fromdate = values['-from_date-']
+            todate = values['-to_date-']
             save_settings(SETTINGS_FILE, settings, values)
-            subprocess.call(f"java -cp C:\SaxonHE11-1J\saxon-he-11.1.jar net.sf.saxon.Transform -t -s:{input} -xsl:{xslt} -o:{output} pLIFTfile={input} pLastDateExport={lastdate}")
+            subprocess.call(f"java -cp C:\SaxonHE11-1J\saxon-he-11.1.jar net.sf.saxon.Transform -t -s:{input} -xsl:{xslt} -o:{outputnew}  pLIFTfile={input} pDateFrom={fromdate} pDateTo={todate} pExportMode='new'")
+            subprocess.call(f"java -cp C:\SaxonHE11-1J\saxon-he-11.1.jar net.sf.saxon.Transform -t -s:{input} -xsl:{xslt} -o:{outputmodified} pLIFTfile={input} pDateFrom={fromdate} pDateTo={todate} pExportMode='modified'")
             window.close()
             window = None
-            #save_settings(SETTINGS_FILE, settings, values)
+            save_settings(SETTINGS_FILE, settings, values)
             sg.popup('Transformation successful!')
+
         if event == 'ZIP Files':
             input = values['-audio_folder-']
             prepare_zip(input)
@@ -281,17 +312,30 @@ def main():
 
         if event == 'Record to Export Log':
             file = open('logs.txt', 'a+')
-            export_date = values['-override_date-']
-            if values['-export_type_new-'] is True and values['-export_type_modified-'] is True:
-                file.write(f'{export_date}: Exported new and modified entries\n')
-            elif values['-export_type_new-'] is True:
-                file.write(f'{export_date}: Exported new entries\n')
-            elif values['-export_type_modified-'] is True:
-                file.write(f'{export_date}: Exported modified entries\n')
-            else:
-                file.write(f'{export_date}: Exported new and modified entries\n')
+            firstdate = values['-from_date-']
+            seconddate = values['-to_date-']
+            file.write(f'{date.today()}: Exported new and modified entries between {firstdate} and {seconddate}\n')
             file.close()
             sg.popup('Successfully added to Exports Log!', keep_on_top=True)
+
+
+
+#### When we had radio buttons###
+        #export_date = values['-override_date-']
+        # if values['-export_type_new-'] is True and values['-export_type_modified-'] is True:
+        #     file.write(f'{export_date}: Exported new and modified entries\n')
+        # elif values['-export_type_new-'] is True:
+        #     file.write(f'{export_date}: Exported new entries\n')
+        # elif values['-export_type_modified-'] is True:
+        #     file.write(f'{export_date}: Exported modified entries\n')
+        # else:
+        #     file.write(f'{export_date}: Exported new and modified entries\n')
+
+
+        #if event == '[-FWDATA_file-]':
+        #    file_path_variable = search_for_file_path()
+        #    print("\nfile_path_variable = ", file_path_variable)
+
 
 
     window.close()
