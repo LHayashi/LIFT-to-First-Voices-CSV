@@ -30,9 +30,9 @@ from tkinter import filedialog
 """
 
 SETTINGS_FILE = path.join(path.dirname(__file__), r'settings_file.cfg')
-DEFAULT_SETTINGS = {'FWDATA_file': 10, 'LIFT_file': None , 'transform_file': None, 'output_xhtml' : None, 'saxon_jar': None,'from_date': None, 'to_date': None}
+DEFAULT_SETTINGS = {'FWDATA_file': 10, 'LIFT_file': None , 'transform_file': None, 'output_folder' : None, 'saxon_jar': None,'from_date': None, 'to_date': None}
 # "Map" from the settings dictionary keys to the window's element keys
-SETTINGS_KEYS_TO_ELEMENT_KEYS = {'FWDATA_file': '-FWDATA_file-', 'LIFT_file': '-LIFT_file-' , 'transform_file': '-transform_file-', 'output_xhtml' : '-output_xhtml-', 'saxon_jar' : '-saxon_jar-', 'from_date' : '-from_date-', 'to_date' : '-to_date-'}
+SETTINGS_KEYS_TO_ELEMENT_KEYS = {'FWDATA_file': '-FWDATA_file-', 'LIFT_file': '-LIFT_file-' , 'transform_file': '-transform_file-', 'output_folder' : '-output_folder-', 'saxon_jar' : '-saxon_jar-', 'from_date' : '-from_date-', 'to_date' : '-to_date-'}
 
 
 ########################################## Load/Save Settings File ##########################################
@@ -107,7 +107,7 @@ def create_transform_window(settings):
         [sg.Text('\nBe sure to check the date.', font='Any 12')],
         [TextLabel('FieldWorks database file'), sg.Input(key='-FWDATA_file-'), sg.FileBrowse(target='-FWDATA_file-', file_types = (("fwdata", "*.fwdata"), ),)],
         [TextLabel('Exported LIFT file'),sg.Input(key='-LIFT_file-', enable_events=True), sg.FileBrowse(target='-LIFT_file-', file_types = (("LIFT", "*.lift"), ),)],
-        [TextLabel('FirstVoices CSV folder'), sg.Input(key='-output_xhtml-', tooltip="Choose where you would like your .csv files to go"), sg.FolderBrowse(target='-output_xhtml-',)],
+        [TextLabel('FirstVoices CSV folder'), sg.Input(key='-output_folder-', tooltip="Choose where you would like your .csv files to go"), sg.FolderBrowse(target='-output_folder-',)],
         [TextLabel('LIFT2FirstVoices XSL file'),sg.Input(key='-transform_file-'), sg.FileBrowse(target='-transform_file-', file_types = (("XSLT", "*.xsl"), ),)],
         [TextLabel('Saxon transform.jar file'),sg.Input(key='-saxon_jar-'), sg.FileBrowse(target='-saxon_jar-', file_types = (("JAR", "*.jar"), ),)],
         [TextLabel('Export entries since'),sg.Input(key='-from_date-'), sg.CalendarButton('Choose Date', target='-from_date-', format="%Y-%m-%d")],
@@ -178,7 +178,7 @@ def create_settings_window(settings):
     # layout = [  [sg.Text('Lex Clean File Settings', font='Any 15')],
     #             [TextLabel('FieldWorks database file'), sg.Input(key='-FWDATA_file-'), sg.FileBrowse(target='-FWDATA_file-', file_types = (("fwdata", "*.fwdata"), ))],
     #             [TextLabel('Exported LIFT file'),sg.Input(key='-LIFT_file-'), sg.FileBrowse(target='-LIFT_file-', file_types = (("LIFT", "*.lift"), ))],
-    #             [TextLabel('FirstVoices CSV file'),sg.Input(key='-output_xhtml-'), sg.FileBrowse(target='-output_xhtml-')],
+    #             [TextLabel('FirstVoices CSV file'),sg.Input(key='-output_folder-'), sg.FileBrowse(target='-output_folder-')],
     #             [TextLabel('LIFT2FirstVoices XSL file'),sg.Input(key='-transform_file-'), sg.FileBrowse(target='-transform_file-', file_types = (("XSLT", "*.xsl"), ))],
     #             [TextLabel('Saxon transform.jar file'),sg.Input(key='-saxon_jar-'), sg.FileBrowse(target='-saxon_jar-', file_types = (("JAR", "*.jar"), ))],
     #             [TextLabel('Date of last export'),sg.Input(key='-last_date-'), sg.CalendarButton('Choose Date', target='-last_date-', format="%Y-%m-%dT%H:%M:00Z")],
@@ -243,7 +243,7 @@ def main():
         #     active_tab = values['tab_group']
         #     if active_tab == 'tab_settings':
         #         pathlift = os.path.dirname(os.path.abspath(values['-LIFT_file-']))
-        #         pathoutput = values['-output_xhtml-']
+        #         pathoutput = values['-output_folder-']
         #         pathfieldworks = os.path.dirname(os.path.abspath(values['-LIFT_file-']))
 
         # if event == '-LIFT_file-':
@@ -251,7 +251,7 @@ def main():
         #     # new_file_name = (new_file_name[:-5]) + '/FirstVoices'
         #     os.mkdir('FirstVoices')
         #     new_folder = os.path.abspath('FirstVoices')
-        #     window['-output_xhtml-'].update(value=new_folder)
+        #     window['-output_folder-'].update(value=new_folder)
 
         #if event ==
 
@@ -273,7 +273,7 @@ def main():
             # if event == 'Transform LIFT to FirstVoices':
             #      #input = "C:/Users/Larry/Desktop/OxygenXMLGradingProject/DesktopLIFT/DesktopLIFT.lift"
             #      input = values['-LIFT_file-']
-            #      output = values['-output_xhtml-']
+            #      output = values['-output_folder-']
             #      xslt = values['-transform_file-']
             #      lastdate = values['-last_date-']
             #      subprocess.call(f"java -cp C:\SaxonHE11-1J\saxon-he-11.1.jar net.sf.saxon.Transform -t -s:{input} -xsl:{xslt} -o:{output} pLIFTfile={input} pLastDateExport={lastdate}")
@@ -284,7 +284,7 @@ def main():
         if event == 'Transform LIFT to FirstVoices':
             #input = "C:/Users/Larry/Desktop/OxygenXMLGradingProject/DesktopLIFT/DesktopLIFT.lift"
             input = values['-LIFT_file-']
-            output = values['-output_xhtml-']
+            output = values['-output_folder-']
             outputnew = output+'/NewEntries.csv'
             outputmodified = output+'/ModifiedEntries.csv'
             xslt = values['-transform_file-']
