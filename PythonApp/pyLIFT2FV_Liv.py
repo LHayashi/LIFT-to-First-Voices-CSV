@@ -105,11 +105,11 @@ def create_transform_window(settings):
     layout3 = [
         [sg.Text('\nChange relevant settings first.', font='Any 12')],
         [sg.Text('\nBe sure to check the date.', font='Any 12')],
-        [TextLabel('FieldWorks database file'), sg.Input(key='-FWDATA_file-'), sg.FileBrowse(target='-FWDATA_file-', file_types = (("fwdata", "*.fwdata"), ))],
-        [TextLabel('Exported LIFT file'),sg.Input(key='-LIFT_file-', enable_events=True), sg.FileBrowse(target='-LIFT_file-', file_types = (("LIFT", "*.lift"), ))],
-        [TextLabel('FirstVoices CSV folder'), sg.Input(key='-output_xhtml-', tooltip="Choose where you would like your .csv files to go"), sg.FolderBrowse(target='-output_xhtml-')],
-        [TextLabel('LIFT2FirstVoices XSL file'),sg.Input(key='-transform_file-'), sg.FileBrowse(target='-transform_file-', file_types = (("XSLT", "*.xsl"), ))],
-        [TextLabel('Saxon transform.jar file'),sg.Input(key='-saxon_jar-'), sg.FileBrowse(target='-saxon_jar-', file_types = (("JAR", "*.jar"), ))],
+        [TextLabel('FieldWorks database file'), sg.Input(key='-FWDATA_file-'), sg.FileBrowse(target='-FWDATA_file-', file_types = (("fwdata", "*.fwdata"), ),)],
+        [TextLabel('Exported LIFT file'),sg.Input(key='-LIFT_file-', enable_events=True), sg.FileBrowse(target='-LIFT_file-', file_types = (("LIFT", "*.lift"), ),)],
+        [TextLabel('FirstVoices CSV folder'), sg.Input(key='-output_xhtml-', tooltip="Choose where you would like your .csv files to go"), sg.FolderBrowse(target='-output_xhtml-',)],
+        [TextLabel('LIFT2FirstVoices XSL file'),sg.Input(key='-transform_file-'), sg.FileBrowse(target='-transform_file-', file_types = (("XSLT", "*.xsl"), ),)],
+        [TextLabel('Saxon transform.jar file'),sg.Input(key='-saxon_jar-'), sg.FileBrowse(target='-saxon_jar-', file_types = (("JAR", "*.jar"), ),)],
         [TextLabel('Export entries since'),sg.Input(key='-from_date-'), sg.CalendarButton('Choose Date', target='-from_date-', format="%Y-%m-%d")],
         [TextLabel("and up to"), sg.Input(key='-to_date-'), sg.CalendarButton('Choose Date', target='-to_date-', format="%Y-%m-%d")],
 
