@@ -88,14 +88,14 @@ def create_transform_window(settings):
     layout1 = [
         [sg.Text('\nIn FieldWorks, please do each of the steps below:', font='Any 12')],
         [sg.Checkbox('1. Do a send and receive')],
-        [sg.Image(filename='SendReceive_small.png', key='image', size=(150,100)), sg.Button('Expand Photo')],
+        [sg.Image(filename='SendReceive_small.png', key='image', size=(150,100)), sg.Button('Expand Photo', key='-button0-')],
         [sg.Checkbox('2. Clean up data')],
         [sg.Checkbox('3. Turn off all filters')],
         [sg.Checkbox('4. "Sort" by head word')],
         [sg.Checkbox('5. Filter by publication')],
         [sg.Checkbox('6. Add filter for date modified, see "Exports" tab for last export date')], #add the date of last export from layout 2 here
         [sg.Checkbox('7. File ... Export ... ')], 
-        [sg.Image(filename='ExportLIFT_small.png', key='image', size=(150,100)), sg.Button('Expand Photo')],
+        [sg.Image(filename='ExportLIFT_small.png', key='image', size=(150,100)), sg.Button('Expand Photo', key='-button1-')],
     ]
 
     layout2 = [
@@ -267,8 +267,11 @@ def main():
                 #window = None
                 #save_settings(SETTINGS_FILE, settings, values)
 
-        if event == 'Expand Photo':
+        if event == '-button0-':
             sg.popup_no_buttons(title='Send Receive', keep_on_top=True, image='SendReceive_large.png')
+
+        if event == '-button1-':
+            sg.popup_no_buttons(title='Send Receive', keep_on_top=True, image='ExportLIFT_large.png')
 
         if event == 'Transform':
             event, values = create_transform_window(settings).read(close=True)
@@ -301,13 +304,28 @@ def main():
             sg.popup('Transformation successful!')
 
         if event == 'ZIP Files':
-            input = values['-audio_folder-']
-            prepare_zip(input)
-            input = values['-image_folder-']
-            prepare_zip(input)
-            window.close()
-            window = None
-            sg.popup('Successfully zipped!')
+            firstdate = values['-from_date-']
+            seconddate = values['-to_date-']
+            audio = values['-audio_folder-']
+            images = values['-image_folder-']
+            targetfolder = values['-output_folder-']
+            os.chdir(targetfolder)
+            foldercreated = os.mkdir(f'{firstdate}to{seconddate}_FV')
+
+            # file1 = open(foldercreated, "w")
+            # file1.write(audio)
+            # file1.close()
+
+
+
+
+            # input = values['-audio_folder-']
+            # prepare_zip(input)
+            # input = values['-image_folder-']
+            # prepare_zip(input)
+            # window.close()
+            # window = None
+            # sg.popup('Successfully zipped!')
 
         if event == 'Today':
             window['-override_date-'].update(value=date.today())
