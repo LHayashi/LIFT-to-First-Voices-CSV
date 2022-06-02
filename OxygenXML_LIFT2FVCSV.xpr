@@ -10,11 +10,11 @@
                         <scenarioAssociation-array>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>file:/F:/OxygenXMLGradingProject/LexicalHousingKeeping.xsl</String>
+                                    <String>LIFT_2_FV_OneSensePerRow_CSV_ModNew.xsl</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
-                                        <String>LexicalHousingKeeping</String>
+                                        <String>LIFT_2_FV_OneSensePerRow_CSV_ModNew</String>
                                     </list>
                                 </field>
                                 <field name="scenarioTypes">
@@ -25,11 +25,11 @@
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>LIFT_2_FV_OneSensePerRow_CSV_ModNew.xsl</String>
+                                    <String>file:/F:/OxygenXMLGradingProject/LexicalHousingKeeping.xsl</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
-                                        <String>LIFT_2_FV_OneSensePerRow_CSV_ModNew</String>
+                                        <String>LexicalHousingKeeping</String>
                                     </list>
                                 </field>
                                 <field name="scenarioTypes">

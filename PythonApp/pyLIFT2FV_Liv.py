@@ -30,9 +30,9 @@ from tkinter import filedialog
 """
 
 SETTINGS_FILE = path.join(path.dirname(__file__), r'settings_file.cfg')
-DEFAULT_SETTINGS = {'FWDATA_file': 10, 'LIFT_file': None , 'transform_file': None, 'output_folder' : None, 'saxon_jar': None,'from_date': None, 'to_date': None}
+DEFAULT_SETTINGS = {'FWDATA_file': 10, 'LIFT_file': None , 'transform_file': None, 'output_folder' : None, 'saxon_jar': None, 'audio_folder': None, 'images_folder': None, 'from_date': None, 'to_date': None}
 # "Map" from the settings dictionary keys to the window's element keys
-SETTINGS_KEYS_TO_ELEMENT_KEYS = {'FWDATA_file': '-FWDATA_file-', 'LIFT_file': '-LIFT_file-' , 'transform_file': '-transform_file-', 'output_folder' : '-output_folder-', 'saxon_jar' : '-saxon_jar-', 'from_date' : '-from_date-', 'to_date' : '-to_date-'}
+SETTINGS_KEYS_TO_ELEMENT_KEYS = {'FWDATA_file': '-FWDATA_file-', 'LIFT_file': '-LIFT_file-' , 'transform_file': '-transform_file-', 'output_folder' : '-output_folder-', 'saxon_jar' : '-saxon_jar-', 'audio_folder': '-audio_folder-', 'images_folder': '-images_folder-', 'from_date' : '-from_date-', 'to_date' : '-to_date-'}
 
 
 ########################################## Load/Save Settings File ##########################################
@@ -109,6 +109,8 @@ def create_transform_window(settings):
         [sg.Text('\nBe sure to check the date.', font='Any 12')],
         [TextLabel('FieldWorks database file'), sg.Input(key='-FWDATA_file-'), sg.FileBrowse(target='-FWDATA_file-', file_types = (("fwdata", "*.fwdata"), ),)],
         [TextLabel('Exported LIFT file'),sg.Input(key='-LIFT_file-', enable_events=True), sg.FileBrowse(target='-LIFT_file-', file_types = (("LIFT", "*.lift"), ),)],
+        [TextLabel('Audio folder'), sg.Input(key='-audio_folder-', tooltip="Choose the folder where the LIFT export audio files are"), sg.FolderBrowse(target='-audio_folder-',)],
+        [TextLabel('Images folder'), sg.Input(key='-images_folder-', tooltip="Choose the folder where the LIFT export image files are"), sg.FolderBrowse(target='-images_folder-',)],
         [TextLabel('FirstVoices CSV folder'), sg.Input(key='-output_folder-', tooltip="Choose where you would like your .csv files to go"), sg.FolderBrowse(target='-output_folder-',)],
         [TextLabel('LIFT2FirstVoices XSL file'),sg.Input(key='-transform_file-'), sg.FileBrowse(target='-transform_file-', file_types = (("XSLT", "*.xsl"), ),)],
         [TextLabel('Saxon transform.jar file'),sg.Input(key='-saxon_jar-'), sg.FileBrowse(target='-saxon_jar-', file_types = (("JAR", "*.jar"), ),)],
@@ -125,9 +127,9 @@ def create_transform_window(settings):
 
     layout5 = [
         [sg.Text("\nLet's ZIP your files!", font='Any 12')],
-        [sg.Text("Upload your Audio and Image files below")],
-        [TextLabel('Audio folder'), sg.Input(key='-audio_folder-'), sg.FolderBrowse()],
-        [TextLabel('Images folder'), sg.Input(key='-image_folder-'), sg.FolderBrowse()],
+        #[sg.Text("Upload your Audio and Image files below")],
+        #[TextLabel('Audio folder'), sg.Input(key='-audio_folder-'), sg.FolderBrowse()],
+        #[TextLabel('Images folder'), sg.Input(key='-image_folder-'), sg.FolderBrowse()],
         [sg.Button('ZIP Files')]
     ]
 
@@ -307,7 +309,7 @@ def main():
             firstdate = values['-from_date-']
             seconddate = values['-to_date-']
             audio = values['-audio_folder-']
-            images = values['-image_folder-']
+            images = values['-images_folder-']
             targetfolder = values['-output_folder-']
             os.chdir(targetfolder)
             foldercreated = os.mkdir(f'{firstdate}to{seconddate}_FV')
@@ -321,7 +323,7 @@ def main():
 
             # input = values['-audio_folder-']
             # prepare_zip(input)
-            # input = values['-image_folder-']
+            # input = values['-images_folder-']
             # prepare_zip(input)
             # window.close()
             # window = None
