@@ -1,6 +1,7 @@
 from multiprocessing.sharedctypes import Value
+#from signal import pause
 import PySimpleGUI as sg
-
+import time
 import subprocess
 import sys
 #sys.path.append("C:/Program Files/Saxonica/SaxonC HE 11.1/Saxon.C.API/python-saxon")
@@ -17,10 +18,6 @@ from datetime import date
 
 #Testing path finder
 from tkinter import filedialog
-
-### copy contents into a new folder###
-import shutil
-
 """
     A simple "settings" implementation.  Load/Edit/Save settings for your programs
     Uses json file format which makes it trivial to integrate into a Python program.  If you can
@@ -34,11 +31,10 @@ import shutil
 """
 
 SETTINGS_FILE = path.join(path.dirname(__file__), r'settings_file.cfg')
-DEFAULT_SETTINGS = {'FWDATA_file': 10, 'LIFT_file': None , 'transform_file': None, 'output_folder' : None, 'saxon_jar': None,'from_date': None, 'to_date': None}
+DEFAULT_SETTINGS = {'FWDATA_file': 10, 'LIFT_file': None , 'transform_file': None, 'output_folder' : None, 'saxon_jar': None, 'audio_folder': None, 'images_folder': None, 'from_date': None, 'to_date': None}
 # "Map" from the settings dictionary keys to the window's element keys
-SETTINGS_KEYS_TO_ELEMENT_KEYS = {'FWDATA_file': '-FWDATA_file-', 'LIFT_file': '-LIFT_file-' , 'transform_file': '-transform_file-', 'output_folder' : '-output_folder-', 'saxon_jar' : '-saxon_jar-', 'from_date' : '-from_date-', 'to_date' : '-to_date-'}
-
-
+SETTINGS_KEYS_TO_ELEMENT_KEYS = {'FWDATA_file': '-FWDATA_file-', 'LIFT_file': '-LIFT_file-' , 'transform_file': '-transform_file-', 'output_folder' : '-output_folder-', 'saxon_jar' : '-saxon_jar-', 'audio_folder' : '-audio_folder-', 'images_folder' : '-images_folder-', 'from_date' : '-from_date-', 'to_date' : '-to_date-'}
+BAR_MAX = 1000
 ########################################## Load/Save Settings File ##########################################
 def load_settings(settings_file, default_settings):
     try:
@@ -76,8 +72,7 @@ def prepare_zip(dir_path):
 
         for file in files:
             zip.write(os.path.join(dir_path, file), f_path + file)
-
-
+            
     zip.close()
     print("File Created successfully..")
     return new_file
@@ -113,6 +108,8 @@ def create_transform_window(settings):
         [sg.Text('\nBe sure to check the date.', font='Any 12')],
         [TextLabel('FieldWorks database file'), sg.Input(key='-FWDATA_file-'), sg.FileBrowse(target='-FWDATA_file-', file_types = (("fwdata", "*.fwdata"), ),)],
         [TextLabel('Exported LIFT file'),sg.Input(key='-LIFT_file-', enable_events=True), sg.FileBrowse(target='-LIFT_file-', file_types = (("LIFT", "*.lift"), ),)],
+        [TextLabel('Audio folder'), sg.Input(key='-audio_folder-', tooltip="Choose the folder where the LIFT export audio files are"), sg.FolderBrowse(target='-audio_folder-',)],
+        [TextLabel('Images folder'), sg.Input(key='-images_folder-', tooltip="Choose the folder where the LIFT export image files are"), sg.FolderBrowse(target='-images_folder-',)],
         [TextLabel('FirstVoices CSV folder'), sg.Input(key='-output_folder-', tooltip="Choose where you would like your .csv files to go"), sg.FolderBrowse(target='-output_folder-',)],
         [TextLabel('LIFT2FirstVoices XSL file'),sg.Input(key='-transform_file-'), sg.FileBrowse(target='-transform_file-', file_types = (("XSLT", "*.xsl"), ),)],
         [TextLabel('Saxon transform.jar file'),sg.Input(key='-saxon_jar-'), sg.FileBrowse(target='-saxon_jar-', file_types = (("JAR", "*.jar"), ),)],
@@ -129,11 +126,16 @@ def create_transform_window(settings):
 
     layout5 = [
         [sg.Text("\nLet's ZIP your files!", font='Any 12')],
-        [sg.Text("Upload your Audio and Image files below")],
-        [TextLabel('Audio folder'), sg.Input(key='-audio_folder-'), sg.FolderBrowse()],
-        [TextLabel('Images folder'), sg.Input(key='-image_folder-'), sg.FolderBrowse()],
-        [sg.Button('ZIP Files')]
-    ]
+        #[sg.Text("Upload your Audio and Image files below")],
+        #[TextLabel('Audio folder'), sg.Input(key='-audio_folder-'), sg.FolderBrowse()],
+        #[TextLabel('Images folder'), sg.Input(key='-image_folder-'), sg.FolderBrowse()],
+        [sg.Button('ZIP Audio')],
+        [sg.Button('ZIP Images')],
+        #[sg.ProgressBar(BAR_MAX, orientation='h', size=(20,20), key='-PROG-')],
+        [TextLabel('Progress'), sg.Text(size=(20,1), key='-OUTPUT-')],
+        [sg.Cancel()]
+        ]
+    
 
     layout6 = [
         [sg.Text("\nAnd you're done!\n", font='Any 12')],
@@ -191,7 +193,7 @@ def create_settings_window(settings):
     #             [sg.Button('Save Settings'), sg.Button('Cancel')]  ]
 
 
-    window = sg.Window('Settings', layout, size=(600, 300), keep_on_top=True, finalize=True)
+    window = sg.Window('Settings', size=(600, 300), keep_on_top=True, finalize=True)
 
     for key in SETTINGS_KEYS_TO_ELEMENT_KEYS:   # update window with the values read from settings file
         try:
@@ -307,28 +309,47 @@ def main():
             save_settings(SETTINGS_FILE, settings, values)
             sg.popup('Transformation successful!')
 
-        if event == 'ZIP Files':
-            first_date = values['-from_date-']
-            second_date = values['-to_date-']
+        if event == 'ZIP Audio':
+            input = values['-audio_folder-']
+            window['-OUTPUT-'].update('Zipping audio files... Please wait patiently until...')
+            event, values = window.read()
+            time.sleep(3)
+            prepare_zip(input)
+            event, values = window.read()
+            window['-OUTPUT-'].update('Done')
+            
+
+            
+            #input = values['-images_folder-']
+            #prepare_zip(input)
+
+            #window.close()
+            #window = None
+            #sg.popup('Successfully zipped!')
+            #firstdate = values['-from_date-']
+            #seconddate = values['-to_date-']
+            #audio = values['-audio_folder-']
+            #images = values['-images_folder-']
+            #targetfolder = values['-output_folder-']
+            #os.chdir(targetfolder)
+            #foldercreated = os.mkdir(f'{firstdate}to{seconddate}_FV')
+
+        if event == 'ZIP Images':
+            input = values['-images_folder-']
+            prepare_zip(input)
+            #input = values['-images_folder-']
+            #prepare_zip(input)
+
+            #window.close()
+            #window = None
+            sg.popup('Successfully zipped!')
+            firstdate = values['-from_date-']
+            seconddate = values['-to_date-']
             audio = values['-audio_folder-']
-            images = values['-image_folder-']
-            target_folder_path = values['-output_folder-']
-            os.chdir(target_folder_path)
-
-            new_folder_name = f'{first_date}to{second_date}_FV'
-            new_image_folder_path = os.path.join(target_folder_path, new_folder_name, 'image')
-            new_audio_folder_path = os.path.join(target_folder_path, new_folder_name, 'audio')
-
-            shutil.copytree(images, new_image_folder_path)
-            shutil.copytree(audio, new_audio_folder_path)
-
-
-            # prepare_zip(input)
-            # input = values['-image_folder-']
-            # prepare_zip(input)
-            # window.close()
-            # window = None
-            # sg.popup('Successfully zipped!')
+            #images = values['-images_folder-']
+            targetfolder = values['-output_folder-']
+            os.chdir(targetfolder)
+            foldercreated = os.mkdir(f'{firstdate}to{seconddate}_FV')
 
         if event == 'Today':
             window['-override_date-'].update(value=date.today())
