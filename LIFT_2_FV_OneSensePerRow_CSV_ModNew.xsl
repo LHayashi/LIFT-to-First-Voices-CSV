@@ -61,7 +61,7 @@
     -->
     <xsl:output method="text" encoding="UTF-8" omit-xml-declaration="yes" indent="no"/>
     <!-- Parameters: 
-    pExportMode = all | modified | new entries only since date 
+    pExportMode = all | modified | new    (entries only since date) 
     pVernacular = Code for vernacular encoding that should be used eg. tsi 
     pFieldWorksFwdataFile = Full path of FLEx fwdata file
     pLIFTfile = Full path of Exported LIFT file e.g. C:/Users/Larry/Desktop/TSI_LIFT/TSI_LIFT.lift
