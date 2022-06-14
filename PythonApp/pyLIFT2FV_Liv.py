@@ -17,6 +17,10 @@ from datetime import date
 
 #Testing path finder
 from tkinter import filedialog
+
+### copy contents into a new folder###
+import shutil
+
 """
     A simple "settings" implementation.  Load/Edit/Save settings for your programs
     Uses json file format which makes it trivial to integrate into a Python program.  If you can
@@ -304,22 +308,21 @@ def main():
             sg.popup('Transformation successful!')
 
         if event == 'ZIP Files':
-            firstdate = values['-from_date-']
-            seconddate = values['-to_date-']
+            first_date = values['-from_date-']
+            second_date = values['-to_date-']
             audio = values['-audio_folder-']
             images = values['-image_folder-']
-            targetfolder = values['-output_folder-']
-            os.chdir(targetfolder)
-            foldercreated = os.mkdir(f'{firstdate}to{seconddate}_FV')
+            target_folder_path = values['-output_folder-']
+            os.chdir(target_folder_path)
 
-            # file1 = open(foldercreated, "w")
-            # file1.write(audio)
-            # file1.close()
+            new_folder_name = f'{first_date}to{second_date}_FV'
+            new_image_folder_path = os.path.join(target_folder_path, new_folder_name, 'image')
+            new_audio_folder_path = os.path.join(target_folder_path, new_folder_name, 'audio')
+
+            shutil.copytree(images, new_image_folder_path)
+            shutil.copytree(audio, new_audio_folder_path)
 
 
-
-
-            # input = values['-audio_folder-']
             # prepare_zip(input)
             # input = values['-image_folder-']
             # prepare_zip(input)
