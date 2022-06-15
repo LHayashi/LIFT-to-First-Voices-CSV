@@ -243,9 +243,12 @@ def main():
         if event == 'tab_group':
             active_tab = values['tab_group']
             if active_tab == 'tab_export':
-                file = open('logs.txt', 'r')
-                window['-logs-'].update(value=file.read())
-                file.close()
+                if path.exists('logs.txt'):
+                    file = open('logs.txt', 'r')
+                    window['-logs-'].update(value=file.read())
+                    file.close()
+                else:
+                    pass
 
         # if event == 'tab_group':
         #     active_tab = values['tab_group']
