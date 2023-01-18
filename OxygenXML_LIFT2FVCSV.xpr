@@ -10,6 +10,36 @@
                         <scenarioAssociation-array>
                             <scenarioAssociation>
                                 <field name="url">
+                                    <String>file:/S:/Larry/xml2Leipzig.xsl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>xml2Leipzig</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XML</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>LIFT_2_FV_OneSensePerRow_CSV.xsl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>LIFT_2_FV_OneSensePerRow_CSV</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XML</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
                                     <String>LIFT_2_FV_OneSensePerRow_CSV_ModNew.xsl</String>
                                 </field>
                                 <field name="scenarioIds">
@@ -30,21 +60,6 @@
                                 <field name="scenarioIds">
                                     <list>
                                         <String>LexicalHousingKeeping</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XML</String>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>LIFT_2_FV_OneSensePerRow_CSV.xsl</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>LIFT_2_FV_OneSensePerRow_CSV</String>
                                     </list>
                                 </field>
                                 <field name="scenarioTypes">
@@ -1663,10 +1678,10 @@
                                     <String></String>
                                 </field>
                                 <field name="inputXSLURL">
-                                    <String>${currentFileURL}</String>
+                                    <String>file:/S:/Larry/xml2Leipzig.xsl</String>
                                 </field>
                                 <field name="inputXMLURL">
-                                    <String>file:/C:/Users/Larry/Desktop/gotong.flextext</String>
+                                    <String>file:/S:/Larry/test.flextext</String>
                                 </field>
                                 <field name="defaultScenario">
                                     <Boolean>false</Boolean>
@@ -1684,7 +1699,7 @@
                                     <Boolean>true</Boolean>
                                 </field>
                                 <field name="outputFile">
-                                    <File>C:/Users/Larry/Desktop/sentences.html</File>
+                                    <File>S:/Larry/sentences.html</File>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean>false</Boolean>
