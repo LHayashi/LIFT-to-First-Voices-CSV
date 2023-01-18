@@ -52,8 +52,8 @@ def create_settings_window(settings):
     def TextLabel(text): return sg.Text(text+':', justification='l', size=(17,1))
 
     layout = [  [sg.Text('Lex Clean File Settings', font='Any 15')],
-                [TextLabel('FieldWorks database file'), sg.Input(key='-FWDATA_file-'), sg.FileBrowse(target='-FWDATA_file-', file_types = (("fwdata", "*.fwdata"), ))],
-                [TextLabel('Exported LIFT file'),sg.Input(key='-LIFT_file-'), sg.FileBrowse(target='-LIFT_file-', file_types = (("LIFT", "*.lift"), ))],
+                [TextLabel('FieldWorks database file'), sg.Input(key='-FWDATA_file-'), sg.FileBrowse(target='-FWDATA_file-', file_types = (("fwdata", "*.fwdata"), ),)],
+                [TextLabel('Exported LIFT file'),sg.Input(key='-LIFT_file-'), sg.FileBrowse(target='-LIFT_file-', file_types = (("LIFT", "*.lift"), ),)],
                 [TextLabel('Lex Clean output html'),sg.Input(key='-output_xhtml-'), sg.FileBrowse(target='-output_xhtml-')],
                 [TextLabel('Lex Clean transform'),sg.Input(key='-transform_file-'), sg.FileBrowse(target='-transform_file-', file_types = (("XSLT", "*.xsl"), ))],
                 [sg.Button('Save'), sg.Button('Cancel')]  ]
