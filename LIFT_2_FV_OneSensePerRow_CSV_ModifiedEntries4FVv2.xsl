@@ -2,6 +2,50 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0">
     <!-- Export from FieldWorks based on LIFT export. Creates a CSV file for FirstVoices.com which expects the following: 
+WORD_ID
+WORD River  /lift/entry/lexical-unit/form/text
+PART_OF_SPEECH noun /lift/entry[1]/sense[1]/grammatical-info[1]/@value
+PRONUNCIATION ɹɪvəɹ /lift/entry[1]/pronunciation[1]/form[1]/text[1]
+TRANSLATION A large and often winding stream which drains a land mass, carrying water down from higher areas to a lower point, ending at an ocean or in an inland sea. /lift/entry[1]/sense[1]/definition[1]/form[1]/text[1]
+TRANSLATION_2
+TRANSLATION_3
+TRANSLATION_4
+CATEGORIES Events, Activities, Body - String multiple of these together: <trait name ="semantic-domain-ddp4" value="Ts-W Handling and physical transfer"/> for the sense. We need to create a custom field that uses the FV categories.
+NOTE
+NOTE_2
+NOTE_3
+ACKNOWLEDGEMENT
+ACKNOWLEDGEMENT_2
+FOR_KIDS
+AUDIO_TITLE
+AUDIO_DESCRIPTION
+AUDIO_FILENAME
+AUDIO_FOR_KIDS
+AUDIO_SPEAKER
+AUDIO_ACKNOWLEDGEMENT
+IMG_TITLE
+IMG_FILENAME
+IMG_DESCRIPTION
+IMG_FOR_KIDS
+IMG_ACKNOWLEDGEMENT
+IMG_ACKNOWLEDGEMENT_2
+VIDEO_TITLE
+VIDEO_FILENAME
+VIDEO_DESCRIPTION
+VIDEO_FOR_KIDS
+VIDEO_ACKNOWLEDGEMENT
+VIDEO_ACKNOWLEDGEMENT_2
+RELATED_PHRASE I'd like to float down river today. /lift/entry[11]/sense[1]/example[1]/form[1]/text[1]/span[1]
+RELATED_PHRASE_TRANSLATION One of the many things I'd like to do on a sunny day. /lift/entry[11]/sense[1]/example[1]/translation[@type="Free translation"]/form[1]/text[1]
+RELATED_PHRASE_NOTE
+RELATED_PHRASE_ACKNOWLEDGEMENT
+RELATED_PHRASE_AUDIO_TITLE
+RELATED_PHRASE_AUDIO_DESCRIPTION
+RELATED_PHRASE_AUDIO_FILENAME
+RELATED_PHRASE_AUDIO_FOR_KIDS
+RELATED_PHRASE_AUDIO_SPEAKER
+RELATED_PHRASE_AUDIO_ACKNOWLEDGEMENT
+USERNAME
     \WORD River  /lift/entry/lexical-unit/form/text
     \PART_OF_SPEECH noun /lift/entry[1]/sense[1]/grammatical-info[1]/@value
     \PRONUNCIATION ɹɪvəɹ /lift/entry[1]/pronunciation[1]/form[1]/text[1]
@@ -87,21 +131,15 @@ Based on the above structure found in LIFT.lift-ranges, an external XML file, we
     </xsl:template>
     <!--Instead of matching against entry, we match against sense for better use of the First Voices presentation to the user. 
         Thus no entries in FV will have multiple senses and instead there will be some entries in FV that are homographs.-->
+    
     <xsl:template match="entry/sense">
         <!--Here we capture the lexeme form and exclude the audio-writing-system data that stores the sound files link.-->
         <!--WORD River  /lift/entry/lexical-unit/form/text-->
         <!--Store the form in variable vWord for use in later fields-->
         <!--WORD_ID Using the sense guid to create a unique identifier for each row-->
-        <xsl:text>"</xsl:text>
-        <xsl:value-of select="@id"/>
-        <xsl:text>",</xsl:text>
-        <xsl:variable name="vWord">
-            <xsl:value-of select="../lexical-unit/form[@lang[not(contains(., 'audio'))]]/text"/>
-        </xsl:variable>
-        <!--WORD River  /lift/entry/lexical-unit/form/text. Don't use the form from audio-writing-system -->
-        <xsl:text>"</xsl:text>
-        <xsl:value-of select="../lexical-unit/form[@lang[not(contains(., 'x-audio'))]]/text"/>
-        <xsl:text>",</xsl:text>
+        <xsl:call-template name="WORD_ID"/>
+        <xsl:call-template name="WORD"/>
+
         <!--PART_OF_SPEECH noun /lift/entry/sense/grammatical-info[1]/@value
         We load this value into the variable vCurrentPOS. 
         We then use the variable we set up at the very start of the document for LIFT.lift-ranges data
@@ -126,36 +164,7 @@ Based on the above structure found in LIFT.lift-ranges, an external XML file, we
         <xsl:value-of
             select="replace(../field[@type = 'literal-meaning']/form[1]/text[1], '&quot;', '&quot;&quot;')"/>
         <xsl:text>",</xsl:text>
-        <!-- RELATED_PHRASE or what FieldWorks calls EXAMPLE SENTENCE: sense[1]/example[1]/form[1]/text[1] - Note that FV does not support multiple example sentences so we only export the first example on a sense-->
-        <xsl:text>"</xsl:text>
-        <!--Here we use replace to escape double-quotes found within the example sentence itself - Wolf said to Fish, "Let's go swimming!"-->
-        <xsl:value-of select="replace(example[1]/form[1]/text[1]/., '&quot;', '&quot;&quot;')"/>
-        <xsl:text>",</xsl:text>
-        <!-- RELATED_PHRASE_DEFINITION (same as Free translation on an example sentence) 
-        2023-02-16 This is a required field in FirstVoices but some example sentences may only have a literal. 
-        Thus here we check for the existence of a free translation. If there is one, we use it. 
-        If not, we check for a literal translation and use it and then skip putting the literal translation in the RELATED_PHRASE_LITERAL_TRANSLATION.-->
-        <xsl:choose>
-            <xsl:when test="example[1]/translation[@type = 'Free translation']">
-                <xsl:text>"</xsl:text>
-                <!--Here we use replace to escape double-quotes found within the example sentence itself - Wolf said to Fish, "Let's go swimming!"-->
-                <xsl:value-of
-                    select="replace(example[1]/translation[@type = 'Free translation']/form[1]/text[1]/., '&quot;', '&quot;&quot;')"/>
-                <xsl:text>",</xsl:text>
-                <!--Here we use replace to escape double-quotes found within the example sentence itself - Wolf said to Fish, "Let's go swimming!"-->
-                <xsl:value-of
-                    select="replace(example[1]/translation[@type = 'Literal translation']/form[1]/text[1]/., '&quot;', '&quot;&quot;')"/>
-                <xsl:text>",</xsl:text>
-            </xsl:when>
-            <xsl:otherwise>
-                <!-- RELATED_PHRASE_LITERAL_TRANSLATION (same as Literal translation on an example sentence) -->
-                <xsl:text>"</xsl:text>
-                <!--Here we use replace to escape double-quotes found within the example sentence itself - Wolf said to Fish, "Let's go swimming!"-->
-                <xsl:value-of
-                    select="replace(example[1]/translation[@type = 'Literal translation']/form[1]/text[1]/., '&quot;', '&quot;&quot;')"/>
-                <xsl:text>",</xsl:text>
-            </xsl:otherwise>
-        </xsl:choose>          
+        
         <!-- ____________________ NEXT ELEMENTS ARE FOR AUDIO FILE FOR EXAMPLE SENTENCE ____________________ -->
         <!--"RELATED_PHRASE_AUDIO_TITLE" Required by FV, Web-friendly title for the audio. Generated only if there is an audio file, otherwise empty ""   -->
         <xsl:choose>
@@ -306,7 +315,20 @@ Based on the above structure found in LIFT.lift-ranges, an external XML file, we
         <xsl:text>"</xsl:text>
         <xsl:text>&#13;</xsl:text>
     </xsl:template>
-
+    <xsl:template name="WORD_ID">
+        <xsl:text>"</xsl:text>
+        <xsl:value-of select="@id"/>
+        <xsl:text>",</xsl:text>
+    </xsl:template>
+    <xsl:template name="WORD">
+        <xsl:variable name="vWord">
+            <xsl:value-of select="../lexical-unit/form[@lang[not(contains(., 'audio'))]]/text"/>
+        </xsl:variable>
+        <!--WORD River  /lift/entry/lexical-unit/form/text. Don't use the form from audio-writing-system -->
+        <xsl:text>"</xsl:text>
+        <xsl:value-of select="../lexical-unit/form[@lang[not(contains(., 'x-audio'))]]/text"/>
+        <xsl:text>",</xsl:text>
+    </xsl:template>
     <xsl:template match="*">
         <xsl:copy>
             <xsl:copy-of select="@*"/>
